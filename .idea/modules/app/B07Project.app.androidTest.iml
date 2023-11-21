@@ -104,5 +104,4 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.resourceinspection:resourceinspection-annotation:1.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.collection:collection-ktx:1.1.0" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="B07Project.app.main" />
 </module>
