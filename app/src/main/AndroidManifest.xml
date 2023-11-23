@@ -13,11 +13,25 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
-            android:name="com.StudentSideComplaints"
-            android:exported="false" />
+            android:name="com.example.finalmerge.homePage.homePage"
+            android:exported="true"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/Theme.FinalMerge.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ScheduleEvent.ScheduleEvent"
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
