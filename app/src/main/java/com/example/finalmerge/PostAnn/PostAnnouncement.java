@@ -32,7 +32,7 @@ public class PostAnnouncement extends AppCompatActivity {
 
         subject = findViewById(R.id.subject);
         ann_description = findViewById(R.id.ann_description);
-        announcementDbRef = FirebaseDatabase.getInstance().getReference("https://cscb0-13f6b-default-rtdb.firebaseio.com/");
+        announcementDbRef = FirebaseDatabase.getInstance().getReference();
 
         home_btn.setOnClickListener(new View.OnClickListener() {
             @Override
