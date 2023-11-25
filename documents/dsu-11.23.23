@@ -15,7 +15,9 @@ Summary:
 Bug fixing:
 --> Gradle compile SDK to low
   --> Solution: gradle lv app compileSDK: 33 -> 34
+
 --> Can't start activity no andriod studio (Lynn, Jess)
   --> Solution: run/debug select a specific activity to run
+
 --> Can't run andriod studio (Hillary)
   --> No solution, bad laptop, get someone else to run it for me
