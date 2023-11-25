@@ -20,8 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/title"
-            android:hint="@string/event_subject"
+            android:id="@+id/subject"
+            android:hint="@string/ann_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -33,8 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/date"
-            android:hint="@string/event_description"
+            android:id="@+id/ann_description"
+            android:hint="@string/ann_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -46,7 +46,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/post_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/post"
@@ -54,7 +54,7 @@
         tools:layout_editor_absoluteY="502dp" />
 
     <Button
-        android:id="@+id/home_b_schedule"
+        android:id="@+id/home_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home"
