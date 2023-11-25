@@ -7,9 +7,12 @@ Summary:
 --> Reassigning work to every group member
   --> Login Page done: frontEnd Jess, backEnd David, FireBase done 
   --> homePage inProgress: frontEnd done, David
-  --> complaints inProgress: frontEnd done, Hillary, backEnd Hillary
-  --> annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase done
-  --> eventPage inProgress: no progress
+  --> Admin.complaints inProgress: noProgress
+  --> Student.complaints inProgress: frontEnd done, Hillary, backEnd Hillary
+  --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase done (Encountered bug rn)
+  --> Student.annoucement inProgress: noProgress
+  --> Admin.eventPage inProgress: no progress
+  --> Student.eventPage inProgress: no progress
   --> POSt page inProgress: no progress
 
 Bug fixing:
