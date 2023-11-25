@@ -1,0 +1,21 @@
+
+11/23/23
+
+Daily Stand Up meeting 
+
+Summary: 
+--> Reassigning work to every group member
+  --> Login Page done: frontEnd Jess, backEnd David, FireBase done 
+  --> homePage inProgress: frontEnd done, David
+  --> complaints inProgress: frontEnd done, Hillary
+  --> annoucement inProgress: frontEnd done, Lynn 
+  --> eventPage inProgress: no progress
+  --> POSt page inProgress: no progress
+
+Bug fixing:
+--> Gradle compile SDK to low
+  --> Solution: gradle lv app compileSDK: 33 -> 34
+--> Can't start activity no andriod studio (Lynn, Jess)
+  --> Solution: run/debug select a specific activity to run
+--> Can't run andriod studio (Hillary)
+  --> No solution, bad laptop, get someone else to run it for me
