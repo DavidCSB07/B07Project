@@ -1,0 +1,15 @@
+Attendees: Judy, Lynn, Hillary, David, Kehu, Jessica
+
+Notes:
+  - Went over everyone's design ideas for their respective methods
+  - Meeting with TA
+    - Minjun asked what everyone is working on and we gave our report
+    - Minjun recommends:
+      - Add difficulty levels for each user story (ex: time)
+      - Connect Firebase to Android Studio ASAP
+    - We asked how to connect Firebase to Android Studeio
+      - New project on Android Studio and get the GitHub link (make a new project and everyone adds to their own branches)
+      - Minjun will add a tutorial video on how to connect the two
+    - Discussed database design
+    - Next goals:
+      - Figure out database stuff
