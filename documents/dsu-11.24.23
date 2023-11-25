@@ -1,1 +1,23 @@
 
+11/24/23
+
+Daily Stand Up meeting 
+
+Summary: 
+--> Reassigning work to every group member
+  --> Login Page done: frontEnd Jess, backEnd David, FireBase done 
+  --> homePage inProgress: frontEnd done, David
+  --> complaints inProgress: frontEnd done, Hillary
+  --> annoucement inProgress: frontEnd done, Lynn 
+  --> eventPage inProgress: no progress
+  --> POSt page inProgress: no progress
+
+Bug fixing:
+--> Gradle compile SDK to low (David)
+  --> Solution: gradle lv app compileSDK: 33 -> 34
+
+--> Can't start activity no andriod studio (Lynn, Jess)
+  --> Solution: run/debug select a specific activity to run
+
+--> App crushing right after launching with no warning or notification (Lynn)
+  --> Solution: FirebaseDatabase.getInstance().getReference("PATH") --> FirebaseDatabase.getInstance().getReference() to no path
