@@ -45,8 +45,11 @@
     </string>
 
     <string name="announcements">Post Announcements</string>
-    <string name="ann_subject">enter announcement subject</string>
-    <string name="ann_description">enter announcement description</string>
+    <string name="ann_subject">Enter announcement subject</string>
+    <string name="ann_description">Enter announcement description</string>
     <string name="post">Post</string>
     <string name="home">Home</string>
+    <string name="id">ID</string>
+    <string name="description">Description</string>
+    <string name="subject">Subject</string>
 </resources>
