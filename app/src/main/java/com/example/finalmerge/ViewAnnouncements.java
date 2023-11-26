@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.finalmerge.homePage.models.Announcements;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,20 +31,32 @@ public class ViewAnnouncements extends AppCompatActivity {
         listView = findViewById(R.id.ListView);
         announcementList = new ArrayList<>();
         announcementDbRef = FirebaseDatabase.getInstance().getReference("https://cscb0-13f6b-default-rtdb.firebaseio.com/");
-        announcementDbRef.addValueEventListener(new ValueEventListener() {
+        announcementDbRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
-                announcementList.clear();
+            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
+                //toast notification when a new announcement is added
+                Toast.makeText(ViewAnnouncements.this, "A new announcement has been added.",Toast.LENGTH_SHORT).show();
 
-                for (DataSnapshot announcementDataSnap : dataSnapshot.getChildren()){
-                    Announcements announcements = announcementDataSnap.getValue(Announcements.class);
-                    announcementList.add(announcements);
-                }
+                Announcements announcements = dataSnapshot.getValue(Announcements.class);
+                announcementList.add(announcements);
                 ListAdapter adapter = new ListAdapter(ViewAnnouncements.this, announcementList);
                 listView.setAdapter(adapter);
             }
+
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError){
+            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
 
