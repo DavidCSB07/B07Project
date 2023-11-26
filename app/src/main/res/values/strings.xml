@@ -49,6 +49,7 @@
     <string name="ann_description">Enter announcement description</string>
     <string name="post">Post</string>
     <string name="home">Home</string>
+    <string name="view_announcements">Announcements</string>
     <string name="id">ID</string>
     <string name="description">Description</string>
     <string name="subject">Subject</string>
