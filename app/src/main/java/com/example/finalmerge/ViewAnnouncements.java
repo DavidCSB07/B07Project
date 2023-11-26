@@ -36,7 +36,6 @@ public class ViewAnnouncements extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 //toast notification when a new announcement is added
                 Toast.makeText(ViewAnnouncements.this, "A new announcement has been added.",Toast.LENGTH_SHORT).show();
-
                 Announcements announcements = dataSnapshot.getValue(Announcements.class);
                 announcementList.add(announcements);
                 ListAdapter adapter = new ListAdapter(ViewAnnouncements.this, announcementList);

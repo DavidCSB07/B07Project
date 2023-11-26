@@ -1,4 +1,5 @@
 package com.example.finalmerge;
+import com.example.finalmerge.homePage.models.Announcements;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -16,7 +17,7 @@ import com.example.finalmerge.homePage.models.Announcements;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ListAdapter extends ArrayAdapter {
+public class ListAdapter extends ArrayAdapter{
 
     private Activity mContext;
     List<Announcements> announcementList;
@@ -32,8 +33,8 @@ public class ListAdapter extends ArrayAdapter {
         LayoutInflater inflater = mContext.getLayoutInflater();
         View listItemView = inflater.inflate(R.layout.list_item, null, true);
 
-        TextView subject = listItemView.findViewById(R.id.subject);
-        TextView ann_description = listItemView.findViewById(R.id.ann_description);
+        View subject = listItemView.findViewById(R.id.annSubject);
+        TextView ann_description = listItemView.findViewById(R.id.annDescription);
         TextView id = listItemView.findViewById(R.id.id);
 
         Announcements announcements = announcementList.get(position);
