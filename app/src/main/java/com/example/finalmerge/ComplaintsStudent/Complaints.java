@@ -1,30 +1,26 @@
 package com.example.finalmerge.ComplaintsStudent;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class Complaints {
 
-import android.os.Bundle;
+    String email;
+    String subject;
+    String complaint;
 
-import com.example.finalmerge.R;
-
-// firebase
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-public class Complaints extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complaints);
-
-        showComplaintsForm();
+    public Complaints(String email, String subject, String complaint) {
+        this.email = email;
+        this.subject = subject;
+        this.complaint = complaint;
     }
 
-    private void showComplaintsForm() {
-        return;
+    public String getEmail() {
+        return email;
     }
 
+    public String getSubject() {
+        return subject;
     }
+
+    public String getComplaint() {
+        return complaint;
+    }
+}

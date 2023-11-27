@@ -15,10 +15,10 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
-            android:name=".Menu.LandingPage"
+            android:name=".ComplaintsStudent.Menu.LandingPage"
             android:exported="false" />
         <activity
-            android:name=".ComplaintsStudent.Complaints"
+            android:name=".ComplaintsStudent.ComplaintsForm"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
