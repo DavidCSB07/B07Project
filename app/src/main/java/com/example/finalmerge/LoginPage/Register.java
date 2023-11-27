@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.finalmerge.MainActivity;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -35,7 +36,7 @@ public class Register extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), homePage.class);
             startActivity(intent);
             finish();
         }
