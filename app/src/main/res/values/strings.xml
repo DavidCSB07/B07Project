@@ -43,4 +43,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="EditEmail">Email</string>
+    <string name="EditSubject">Subject</string>
+    <string name="FormTitle">Complaints Submission</string>
+    <string name="EditComplaint">Complaint</string>
+    <string name="CancelButton">Cancel</string>
+    <string name="SubmitButton">SUBMIT</string>
+    <string name="FeedbackButton">Submit Feedback</string>
 </resources>
