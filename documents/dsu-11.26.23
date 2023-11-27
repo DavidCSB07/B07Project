@@ -18,6 +18,15 @@ Summary:
 Missing: 
 --> Refactor 
 
+DeadLine:
+--> Tueday 11/28, everyThing Done. frontEnd/backEnd/FireBase
+--> Wednesday 11/29, Refactor everyone's code into one.
+--> Thursday 11/30, Refactor everyone's code into one.
+--> Friday 12/01, Refactor everyone's code into one.
+--> Saturday 12/02, Testing.
+--> Sunday 12/03, Testing.
+
+
 Bug fixing:
 --> Gradle compile SDK to low (David)
   --> Solution: gradle lv app compileSDK: 33 -> 34
