@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
+import com.example.finalmerge.ScheduleEvent.ScheduleEvent;
 
 
 public class homePage extends AppCompatActivity {
@@ -30,6 +31,15 @@ public class homePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ScheduleEvent.class);
                 startActivity(intent);
                 finish();
             }

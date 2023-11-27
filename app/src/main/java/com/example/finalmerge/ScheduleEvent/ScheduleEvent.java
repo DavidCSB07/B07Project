@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.finalmerge.R;
 import com.example.finalmerge.ScheduleEvent.models.Event;
+import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -31,8 +32,8 @@ public class ScheduleEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_event);
 
-        button = findViewById(R.id.scheudle_button);
-        createbutton = findViewById(R.id.home_button);
+        createbutton = findViewById(R.id.scheudle_button);
+        button = findViewById(R.id.home_button);
 
         text_title = findViewById(R.id.title);
         date = findViewById(R.id.date);
@@ -40,7 +41,7 @@ public class ScheduleEvent extends AppCompatActivity {
         participats = findViewById(R.id.participation);
         eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent");
 
-        /*
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +50,7 @@ public class ScheduleEvent extends AppCompatActivity {
                 finish();
             }
         });
-         */
+
         createbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -31,6 +31,7 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar; //id of 'stuff' in layout
     TextView loginNow;
 
+    /*
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -41,7 +42,7 @@ public class Register extends AppCompatActivity {
             finish();
         }
     }
-
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

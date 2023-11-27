@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
     TextView RegisterNow;
 
     //Check if acc is signed in
+    /*
     @Override
     public void onStart() {
         super.onStart();
@@ -42,6 +43,7 @@ public class Login extends AppCompatActivity {
             finish();
         }
     }
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
