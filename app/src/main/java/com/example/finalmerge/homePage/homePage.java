@@ -2,9 +2,12 @@ package com.example.finalmerge.homePage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
+import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
 
 
@@ -22,16 +25,16 @@ public class homePage extends AppCompatActivity {
         POSt = findViewById(R.id.POSt);
         Logout = findViewById(R.id.Logout);
 
-        /*
+
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ScheduleEvent.class);
+                Intent intent = new Intent(getApplicationContext(), Login.class);
                 startActivity(intent);
                 finish();
             }
         });
-        */
+
 
 
     }
