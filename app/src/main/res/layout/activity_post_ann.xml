@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostAnn.PostAnnouncement"
+    tools:context=".PostAnn.PostAnn"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="15dp">
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/subject"
+            android:id="@+id/annSubject"
             android:hint="@string/ann_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ann_description"
+            android:id="@+id/annDes"
             android:hint="@string/ann_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -42,7 +42,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-<!--        // should it be a timestamp showing the realtime it's posted?-->
+    <!--        // should it be a timestamp showing the realtime it's posted?-->
 
 
     <Button
@@ -51,7 +51,8 @@
         android:layout_height="wrap_content"
         android:text="@string/post"
         tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="502dp" />
+        tools:layout_editor_absoluteY="502dp"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/home_btn"

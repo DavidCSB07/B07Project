@@ -1,28 +1,20 @@
 package com.example.finalmerge.homePage.models;
 
-
 public class Announcements {
-    private String id;
-    private String title;
-    private String description;
+    String annSubject, annDes;
 
-    public Announcements(String id, String title, String description) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
+    public Announcements(){
+    }
+    public Announcements(String annSubject, String annDes) {
+        this.annSubject = annSubject;
+        this.annDes = annDes;
     }
 
-    public Announcements() {
+    public String getAnnSubject() {
+        return annSubject;
     }
 
-    public String getId() {
-        return id;
-    }
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
+    public String getAnnDes() {
+        return annDes;
     }
 }
