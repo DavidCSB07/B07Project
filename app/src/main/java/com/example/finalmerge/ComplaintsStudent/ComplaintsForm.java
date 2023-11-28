@@ -26,7 +26,7 @@ public class ComplaintsForm extends AppCompatActivity {
 
     DatabaseReference complaintsDBRef;
 
-    Intent returnHome=new Intent(ComplaintsForm.this, LandingPage.class);
+    //Intent returnHome=new Intent(ComplaintsForm.this, LandingPage.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,9 @@ public class ComplaintsForm extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent returnHome=new Intent(ComplaintsForm.this, LandingPage.class);
                 startActivity(returnHome);
+                finish();
             }
         });
 
@@ -57,6 +59,8 @@ public class ComplaintsForm extends AppCompatActivity {
                 insertComplaintsData();
             }
         });
+
+
     }
 
     private void insertComplaintsData() {
@@ -80,9 +84,11 @@ public class ComplaintsForm extends AppCompatActivity {
         }
 
         Complaints complaints=new Complaints(email, subject, complaint);
-
+        //addSucessListener
         complaintsDBRef.push().setValue(complaints);
         Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
+        Intent returnHome = new Intent(ComplaintsForm.this, LandingPage.class);
         startActivity(returnHome);
+        finish();
     }
 }
