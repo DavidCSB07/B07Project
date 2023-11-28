@@ -13,7 +13,10 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".RetrieveAnn.annlist"
+            android:exported="false" />
+        <activity
+            android:name=".homePage.MainActivity"
             android:exported="false" />
     </application>
 
