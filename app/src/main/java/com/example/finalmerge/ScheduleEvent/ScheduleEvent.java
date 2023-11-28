@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.finalmerge.R;
-import com.example.finalmerge.ScheduleEvent.models.Event;
+import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
