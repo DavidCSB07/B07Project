@@ -13,6 +13,12 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
+            android:name=".ComplaintsAdmin.Menu.LandingPage"
+            android:exported="false" />
+        <activity
+            android:name=".ComplaintsAdmin.ViewComplaints"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -43,4 +43,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="buttonViewFeedback">View Student Complaints</string>
+    <string name="subject">Subject:</string>
+    <string name="complaint">Complaint:</string>
+    <string name="email">Email:</string>
+    <string name="sectionTitle">Student Complaints</string>
 </resources>
