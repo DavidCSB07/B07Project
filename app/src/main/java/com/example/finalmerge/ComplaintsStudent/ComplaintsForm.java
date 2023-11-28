@@ -29,8 +29,6 @@ public class ComplaintsForm extends AppCompatActivity {
 
     Intent returnHome=new Intent(ComplaintsForm.this, LandingPage.class);
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,5 +86,4 @@ public class ComplaintsForm extends AppCompatActivity {
         Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
         startActivity(returnHome);
     }
-
 }
