@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,9 @@ public class ComplaintsForm extends AppCompatActivity {
 
     DatabaseReference complaintsDBRef;
 
+    Intent returnHome=new Intent(ComplaintsForm.this, LandingPage.class);
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +47,7 @@ public class ComplaintsForm extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(ComplaintsForm.this, LandingPage.class);
-                startActivity(intent);
+                startActivity(returnHome);
             }
         });
 
@@ -53,6 +56,7 @@ public class ComplaintsForm extends AppCompatActivity {
         buttonSubmitComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 insertComplaintsData();
             }
         });
@@ -64,10 +68,25 @@ public class ComplaintsForm extends AppCompatActivity {
         String subject=editSubject.getText().toString();
         String complaint=editComplaint.getText().toString();
 
+        // check validity
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(ComplaintsForm.this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(subject)) {
+            Toast.makeText(ComplaintsForm.this, "Subject cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(complaint)) {
+            Toast.makeText(ComplaintsForm.this, "Complaint cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         Complaints complaints=new Complaints(email, subject, complaint);
 
         complaintsDBRef.push().setValue(complaints);
         Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
+        startActivity(returnHome);
     }
 
 }
