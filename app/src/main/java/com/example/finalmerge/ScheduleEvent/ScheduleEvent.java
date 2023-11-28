@@ -32,7 +32,7 @@ public class ScheduleEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule_event);
 
-        createbutton = findViewById(R.id.scheudle_button);
+        createbutton = findViewById(R.id.schedule_button);
         button = findViewById(R.id.home_button);
 
         text_title = findViewById(R.id.title);
