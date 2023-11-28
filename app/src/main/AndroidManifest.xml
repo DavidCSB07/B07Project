@@ -45,7 +45,7 @@
 
         </activity>
         <activity
-            android:name=".ScheduleEvent.ScheduleEvent"
+            android:name=".EventPage.ScheduleEvent"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar">
             <intent-filter>

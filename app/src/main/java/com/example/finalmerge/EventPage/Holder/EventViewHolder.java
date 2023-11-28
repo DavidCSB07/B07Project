@@ -11,7 +11,7 @@ import com.example.finalmerge.R;
 
 public class EventViewHolder extends RecyclerView.ViewHolder{
 
-    public ImageView imageView;
+    //public ImageView imageView;
     public TextView descriptionView, titleView;
     public EventViewHolder(@NonNull View itemView) {
         super(itemView);

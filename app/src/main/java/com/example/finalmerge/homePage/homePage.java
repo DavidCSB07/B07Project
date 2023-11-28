@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
-import com.example.finalmerge.ScheduleEvent.ScheduleEvent;
+import com.example.finalmerge.EventPage.ScheduleEvent;
 
 
 public class homePage extends AppCompatActivity {

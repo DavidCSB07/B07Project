@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.finalmerge.EventPage.Adapter.EventAdapter;
-import com.example.finalmerge.ScheduleEvent.models.Event;
-//import com.example.finalmerge.EventPage.Model.Event;
+import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -47,16 +46,16 @@ public class EventPage extends AppCompatActivity {
         recyclerview.setAdapter(eventAdapter);
 
 
-        /*
+
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    //Event event = dataSnapshot.getValue(Event.class);
-                    //eventsList.add(event);
+                    Event event = dataSnapshot.getValue(Event.class);
+                    eventsList.add(event);
                 }
-                //eventAdapter.notifyDataSetChanged();
+                eventAdapter.notifyDataSetChanged();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -64,7 +63,7 @@ public class EventPage extends AppCompatActivity {
             }
         });
 
-         */
+
 
 
 

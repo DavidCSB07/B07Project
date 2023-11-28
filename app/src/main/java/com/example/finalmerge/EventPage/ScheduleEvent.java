@@ -1,17 +1,16 @@
-package com.example.finalmerge.ScheduleEvent;
+package com.example.finalmerge.EventPage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
-import com.example.finalmerge.ScheduleEvent.models.Event;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
