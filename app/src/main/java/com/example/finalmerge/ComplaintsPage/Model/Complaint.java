@@ -10,6 +10,10 @@ public class Complaint {
         this.email = email;
     }
 
+    public Complaint(){
+
+    }
+
     public void setSubject(String subject) {
         this.subject = subject;
     }
