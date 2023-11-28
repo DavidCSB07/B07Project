@@ -39,7 +39,7 @@ public class ScheduleEvent extends AppCompatActivity {
         date = findViewById(R.id.date);
         text_description = findViewById(R.id.description);
         participats = findViewById(R.id.participation);
-        eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent");
+        eventDbRef = FirebaseDatabase.getInstance().getReference().child("info");
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -54,9 +54,10 @@ public class ScheduleEvent extends AppCompatActivity {
         createbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String description = text_description.getText().toString();
                 String title = text_title.getText().toString();
-                String participants = participats.getText().toString();
+                String description = text_description.getText().toString();
+
+                //String participants = participats.getText().toString();
 
                 //int num_participants = Integer.parseInt(participants);
                 if(TextUtils.isEmpty(title)){
@@ -87,7 +88,7 @@ public class ScheduleEvent extends AppCompatActivity {
         //String key = myRef.getKey();
         //post.setPostKey(key);
 
-        // add post data to firebase database
+        // add event data to firebase database
         eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {

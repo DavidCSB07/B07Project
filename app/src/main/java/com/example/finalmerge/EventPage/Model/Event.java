@@ -2,8 +2,9 @@ package com.example.finalmerge.EventPage.Model;
 
 public class Event {
 
-    String Title;
-    String Description;
+    public String Title;
+    public String Description;
+    
 
     public Event(String title, String description) {
         Title = title;

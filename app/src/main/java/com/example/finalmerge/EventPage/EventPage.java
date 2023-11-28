@@ -34,43 +34,40 @@ public class EventPage extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("ScheduleEvent");
+
+        eventsList = new ArrayList<>();
+        eventAdapter = new EventAdapter(this, eventsList);
+
         recyclerview = findViewById(R.id.recycleView);
+        recyclerview.setHasFixedSize(true);
 
-        List<Event> items = new ArrayList<Event>();
-        items.add(new Event("David", "David@gmail.com"));
-        items.add(new Event("Javid", "Javid@gmail.com"));
-        items.add(new Event("Lynn", "Lynn@gmail.com"));
-        items.add(new Event("Jess", "Jess@gmail.com"));
-        items.add(new Event("Hillary", "Hill@gmail.com"));
-
+        eventsList.add(new Event("title", "description"));
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
-        recyclerview.setAdapter(new EventAdapter(getApplicationContext(), items));
-    }
+        recyclerview.setAdapter(eventAdapter);
 
-    /*
-    @Override
-    protected void onStart() {
-        super.onStart();
 
+        /*
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                eventsList = new ArrayList<>();
-                for(DataSnapshot Eventsnapshot : snapshot.getChildren()){
 
-                    Event event = Eventsnapshot.getValue(Event.class);
-                    eventsList.add(event);
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    //Event event = dataSnapshot.getValue(Event.class);
+                    //eventsList.add(event);
                 }
-
-                eventAdapter = new EventAdapter(getApplicationContext(), eventsList);
-                recyclerview.setAdapter(eventAdapter);
+                //eventAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-       }
-     */
+
+         */
+
+
+
+
+    }
+
 }
