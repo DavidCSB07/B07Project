@@ -4,19 +4,23 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
+    android:padding="15dp"
     android:layout_margin="16dp">
     
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="15dp"
+        >
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -24,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/subject"
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -41,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -48,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/complaint"
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView
@@ -65,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:padding="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -72,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/email"
                 android:textColor="@color/black"
-                android:textSize="26sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <TextView

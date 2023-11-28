@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.example.finalmerge.ComplaintsPage.Adapter.ComplaintAdapter;
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
@@ -24,6 +25,7 @@ public class ViewComplaints extends AppCompatActivity {
     ComplaintAdapter complaintAdapter;
     ArrayList<Complaint> complaintList;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class ViewComplaints extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         complaintList = new ArrayList<>();
-        complaintList.add(new Complaint("email", "subject", "description"));
+        complaintList.add(new Complaint("email", "subject", "descriptiondshaldhjklahfjkldahfdjlkahfjdklahfjdlkahfjdklahfjldkahfdjlkahfldshajfdsalkfhdasjfldhajklfhdajlkfhdjlafhdjlksahfjdlkahfjlkahfjdlkahfjlkdhaflkjdhajlkhfdjklsaf"));
         complaintList.add(new Complaint("email2", "subject2", "description2"));
         complaintList.add(new Complaint("email3", "subject3", "description3"));
 
