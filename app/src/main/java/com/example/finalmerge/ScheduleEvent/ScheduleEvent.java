@@ -76,20 +76,20 @@ public class ScheduleEvent extends AppCompatActivity {
 
                 // implements Post Object and add to firebase
 
-                Event event = new Event(title, description);
-                addEvent(event);
+                //Event event = new Event(title, description);
+                eventDbRef.push().setValue(new Event(title, description));
 
             }
         });
     }
 
-    private void addEvent(Event event) {
+    private void addEvent(String title, Event event) {
 
         //String key = myRef.getKey();
         //post.setPostKey(key);
 
         // add event data to firebase database
-        eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+        eventDbRef.child("title").setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(ScheduleEvent.this, "data inserted", Toast.LENGTH_SHORT).show();
