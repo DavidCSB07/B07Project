@@ -38,12 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ComplaintsAdmin.Menu.LandingPage"
-            android:exported="false" />
+
         <activity
             android:name=".ComplaintsAdmin.ViewComplaints"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />
@@ -52,25 +50,19 @@
             android:exported="true">
 
         </activity>
+
         <activity
             android:name=".EventPage.ScheduleEvent"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar">
-            android:name=".ComplaintsStudent.Menu.LandingPage"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
+
+        \
+
         <activity
             android:name=".ComplaintsStudent.ComplaintsForm"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false" >
 
         </activity>
     </application>

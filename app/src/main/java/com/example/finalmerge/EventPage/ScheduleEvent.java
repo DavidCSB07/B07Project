@@ -3,6 +3,7 @@ package com.example.finalmerge.EventPage;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -39,8 +41,8 @@ public class ScheduleEvent extends AppCompatActivity {
         participats = findViewById(R.id.participation);
         eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent");
 
-        /*
-        button.setOnClickListener(new View.OnClickListener() {
+
+        homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), homePage.class);
@@ -48,7 +50,7 @@ public class ScheduleEvent extends AppCompatActivity {
                 finish();
             }
         });
-         */
+
         schedulebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
