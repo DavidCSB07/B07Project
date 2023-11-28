@@ -8,7 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalmerge.EventPage.Holder.EventViewHolder;
-import com.example.finalmerge.EventPage.Model.Event;
+//import com.example.finalmerge.EventPage.Model.Event;
+import com.example.finalmerge.ScheduleEvent.models.Event;
 import com.example.finalmerge.R;
 
 import java.util.List;

@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.example.finalmerge.EventPage.Adapter.EventAdapter;
-import com.example.finalmerge.EventPage.Model.Event;
+import com.example.finalmerge.ScheduleEvent.models.Event;
+//import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
