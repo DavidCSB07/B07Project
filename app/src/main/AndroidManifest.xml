@@ -37,6 +37,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ComplaintsAdmin.Menu.LandingPage"
+            android:exported="false" />
+        <activity
+            android:name=".ComplaintsAdmin.ViewComplaints"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

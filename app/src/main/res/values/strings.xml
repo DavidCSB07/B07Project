@@ -30,4 +30,10 @@
     <string name="logout">Logout</string>
     <string name="home_page_ui">Home Page UI</string>
     <string name="schedule">Schedule</string>
+
+    <string name="buttonViewFeedback">View Student Complaints</string>
+    <string name="subject">Subject:</string>
+    <string name="complaint">Complaint:</string>
+    //<string name="email">Email:</string>
+    <string name="sectionTitle">Student Complaints</string>
 </resources>
