@@ -1,4 +1,4 @@
-package com.example.finalmerge.ComplaintsStudent;
+package com.example.finalmerge.ComplaintsPage;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
 
 // firebase
@@ -44,7 +45,7 @@ public class ComplaintsForm extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnHome = new Intent(ComplaintsForm.this, homePage.class);
+                Intent returnHome = new Intent(getApplicationContext(), homePage.class);
                 startActivity(returnHome);
                 finish();
             }
@@ -83,7 +84,7 @@ public class ComplaintsForm extends AppCompatActivity {
             return;
         }
 
-        Complaints complaints=new Complaints(email, subject, complaint);
+        Complaint complaints =new Complaint(email, subject, complaint);
         //addSucessListener
         complaintsDBRef.push().setValue(complaints);
         Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();

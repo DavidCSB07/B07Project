@@ -40,7 +40,7 @@
         </activity>
 
         <activity
-            android:name=".ComplaintsAdmin.ViewComplaints"
+            android:name=".ComplaintsPage.ViewComplaints"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -61,7 +61,7 @@
         \
 
         <activity
-            android:name=".ComplaintsStudent.ComplaintsForm"
+            android:name=".ComplaintsPage.ComplaintsForm"
             android:exported="false" >
 
         </activity>

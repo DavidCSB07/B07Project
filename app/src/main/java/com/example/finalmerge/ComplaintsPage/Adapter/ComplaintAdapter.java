@@ -1,4 +1,4 @@
-package com.example.finalmerge.ComplaintsAdmin;
+package com.example.finalmerge.ComplaintsPage.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
 
 import java.util.ArrayList;
