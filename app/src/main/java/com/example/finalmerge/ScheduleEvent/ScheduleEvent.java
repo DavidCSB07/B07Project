@@ -39,7 +39,7 @@ public class ScheduleEvent extends AppCompatActivity {
         date = findViewById(R.id.date);
         text_description = findViewById(R.id.description);
         participats = findViewById(R.id.participation);
-        eventDbRef = FirebaseDatabase.getInstance().getReference().child("info");
+        eventDbRef = FirebaseDatabase.getInstance().getReference().child("Events");
 
 
         button.setOnClickListener(new View.OnClickListener() {

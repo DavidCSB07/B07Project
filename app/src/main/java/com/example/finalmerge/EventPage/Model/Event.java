@@ -6,6 +6,9 @@ public class Event {
     public String Description;
     
 
+    public Event(){
+
+    }
     public Event(String title, String description) {
         Title = title;
         Description = description;
