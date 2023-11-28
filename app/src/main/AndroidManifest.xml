@@ -14,9 +14,6 @@
         tools:targetApi="31">
         <activity
             android:name=".PostAnn.PostAnn"
-            android:exported="false" />
-        <activity
-            android:name=".PostAnn.PostAnnouncement"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar">
             <intent-filter>

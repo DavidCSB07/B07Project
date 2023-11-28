@@ -36,7 +36,7 @@ public class PostAnn extends AppCompatActivity {
                     Announcements announcements = new Announcements(annSubject,annDes);
                     db = FirebaseDatabase.getInstance();
                     ref = db.getReference("Announcements");
-                    ref.child(annSubject).setValue(annSubject).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    ref.child(annSubject).setValue(announcements).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             binding.annSubject.setText("");
