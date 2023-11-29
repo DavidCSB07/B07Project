@@ -9,13 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalmerge.AnnouncementPage.Holder.AnnouncementViewHolder;
 import com.example.finalmerge.R;
 
 import com.example.finalmerge.AnnouncementPage.Model.Announcements;
 
 import java.util.ArrayList;
 
-public class AnnAdapter extends RecyclerView.Adapter<AnnAdapter.MyViewHolder> {
+public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
 
     Context context;
     ArrayList<Announcements> list;
@@ -27,13 +28,13 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnAdapter.MyViewHolder> {
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AnnouncementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.complaints_recycleview,parent,false);
-        return new MyViewHolder(v);
+        return new AnnouncementViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
         Announcements announcements = list.get(position);
         holder.subject.setText(announcements.getAnnSubject());
         holder.description.setText(announcements.getAnnDes());
@@ -43,16 +44,6 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnAdapter.MyViewHolder> {
     @Override
     public int getItemCount() {
         return list.size();
-    }
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-
-        TextView subject, description;
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            subject = itemView.findViewById(R.id.rSubject);
-            description = itemView.findViewById(R.id.rDes);
-        }
     }
 }
 
