@@ -1,15 +1,15 @@
-package com.example.finalmerge.AnnouncementsPage;
+package com.example.finalmerge.AnnouncementPage;
+
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
-import com.example.finalmerge.AnnouncementsPage.Adapter.AnnAdapter;
+import com.example.finalmerge.AnnouncementPage.Adapter.AnnAdapter;
+import com.example.finalmerge.AnnouncementPage.Model.Announcements;
 import com.example.finalmerge.R;
-import com.example.finalmerge.AnnouncementsPage.Model.Announcements;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +28,7 @@ public class AnnouncementPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_annlist);
+        setContentView(R.layout.announcement_page);
 
         recyclerView = findViewById(R.id.annList);
         database = FirebaseDatabase.getInstance().getReference("Announcements");

@@ -1,7 +1,5 @@
 package com.example.finalmerge.ComplaintsPage;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,15 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
-
-// firebase
 import com.example.finalmerge.homePage.Student.Student_homePage;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ComplaintsForm extends AppCompatActivity {
+public class PostComplaint extends AppCompatActivity {
     EditText editEmail;
     EditText editSubject;
     EditText editComplaint;
@@ -32,7 +30,7 @@ public class ComplaintsForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complaints_form);
+        setContentView(R.layout.complaints_post);
 
         editEmail=findViewById(R.id.editEmail);
         editSubject=findViewById(R.id.editSubject);
@@ -72,23 +70,23 @@ public class ComplaintsForm extends AppCompatActivity {
 
         // check validity
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(ComplaintsForm.this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PostComplaint.this, "Email cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(subject)) {
-            Toast.makeText(ComplaintsForm.this, "Subject cannot be empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PostComplaint.this, "Subject cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(complaint)) {
-            Toast.makeText(ComplaintsForm.this, "Complaint cannot be empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PostComplaint.this, "Complaint cannot be empty", Toast.LENGTH_SHORT).show();
             return;
         }
 
         Complaint complaints =new Complaint(email, subject, complaint);
         //addSucessListener
         complaintsDBRef.push().setValue(complaints);
-        Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
-        Intent returnHome = new Intent(ComplaintsForm.this, Student_homePage.class);
+        Toast.makeText(PostComplaint.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
+        Intent returnHome = new Intent(PostComplaint.this, Student_homePage.class);
         startActivity(returnHome);
         finish();
     }

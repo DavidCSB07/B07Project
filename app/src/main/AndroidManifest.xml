@@ -14,15 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31" >
-        <activity
-            android:name=".homePage.Admin.Admin_homePage"
-            android:exported="false" />
-        <activity
-            android:name=".AnnouncementsPage.PostAnnouncement"
-            android:exported="false" />
-        <activity
-            android:name=".LoginPage.Register"
-            android:exported="false" />
+
         <activity
             android:name=".LoginPage.Login"
             android:exported="true" >
@@ -33,40 +25,48 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RSVP.EventDetail"
-            android:exported="true" >
-        </activity>
-        <activity
-            android:name=".EventPage.EventPage"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ComplaintsPage.ComplaintsPage"
-            android:exported="true" />
+            android:name=".LoginPage.Register"
+            android:exported="false" />
         <activity
             android:name=".homePage.Student.Student_homePage"
             android:exported="true" />
         <activity
-            android:name=".EventPage.ScheduleEvent"
+            android:name=".homePage.Admin.Admin_homePage"
+            android:exported="true" />
+        <activity
+            android:name=".homePage.Admin.ComplaintUI.ComplaintUI"
+            android:exported="false" />
+        <activity
+            android:name=".homePage.Admin.EventUI.EventUI"
+            android:exported="false" />
+        <activity
+            android:name=".homePage.Admin.AnnouncementUI.AnnouncementUI"
+            android:exported="false" />
+        <activity
+            android:name=".AnnouncementPage.PostAnnouncement"
+            android:exported="false" />
+        <activity
+            android:name=".RSVP.EventDetail"
+            android:exported="true" />
+        <activity
+            android:name=".EventPage.EventPage"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".ComplaintsPage.ComplaintPage"
+            android:exported="true" />
+
+        <activity
+            android:name=".EventPage.PostEvent"
             android:exported="true"
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name=".ComplaintsPage.ComplaintsForm"
+            android:name=".ComplaintsPage.PostComplaint"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
+        </activity>
     </application>
 
 </manifest>

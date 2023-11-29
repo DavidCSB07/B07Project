@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ComplaintsPage extends AppCompatActivity {
+public class ComplaintPage extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     ComplaintAdapter complaintAdapter;
@@ -28,7 +28,7 @@ public class ComplaintsPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_complaints);
+        setContentView(R.layout.complaints_page);
 
         recyclerView = findViewById(R.id.ComplaintsList);
         database = FirebaseDatabase.getInstance().getReference("Complaint");

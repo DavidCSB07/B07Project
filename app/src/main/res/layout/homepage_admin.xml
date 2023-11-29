@@ -2,26 +2,38 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".homePage.Student.Student_homePage"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".homePage.Student.Student_homePage"
-    android:padding="30dp"
+    android:padding="20dp"
+    android:layout_margin="40dp"
 
     >
 
-    <TextView
-        android:gravity="center"
-        android:textSize="20dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/admin_home_page_ui">
+        android:padding="15dp"
+        app:cardElevation="8dp"
+        android:layout_margin="15dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Admin Home Page">
 
-    </TextView>
+        </TextView>
+
+
+    </androidx.cardview.widget.CardView>
     <Button
         android:id="@+id/Announcement"
         android:layout_width="wrap_content"
@@ -62,28 +74,6 @@
         android:text="POSt"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="369dp" />
-
-    <Button
-        android:id="@+id/AdminFeature1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:visibility="gone"
-        android:text="Button"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="465dp" />
-
-    <Button
-        android:id="@+id/AdminFeature2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:visibility="gone"
-        android:text="Button"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="574dp" />
 
     <Button
         android:id="@+id/Logout"

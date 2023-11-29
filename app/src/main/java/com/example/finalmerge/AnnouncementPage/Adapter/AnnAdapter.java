@@ -1,4 +1,4 @@
-package com.example.finalmerge.AnnouncementsPage.Adapter;
+package com.example.finalmerge.AnnouncementPage.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalmerge.R;
 
-import com.example.finalmerge.AnnouncementsPage.Model.Announcements;
+import com.example.finalmerge.AnnouncementPage.Model.Announcements;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.complaints_recycleview,parent,false);
         return new MyViewHolder(v);
     }
 

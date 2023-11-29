@@ -1,39 +1,41 @@
 package com.example.finalmerge.homePage.Student;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.finalmerge.AnnouncementsPage.PostAnnouncement;
-import com.example.finalmerge.ComplaintsPage.ComplaintsForm;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.finalmerge.AnnouncementPage.AnnouncementPage;
+import com.example.finalmerge.ComplaintsPage.PostComplaint;
+import com.example.finalmerge.EventPage.EventPage;
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
-import com.example.finalmerge.EventPage.ScheduleEvent;
 
 
 public class Student_homePage extends AppCompatActivity {
 
-    Button Events, Complaints, Announcement, POSt, Logout;
+    Button Announcement, Events, Complaints, POSt, Logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_home_page);
+        setContentView(R.layout.homepage_student);
 
+        Announcement = findViewById(R.id.Announcement);
         Events = findViewById(R.id.Events);
         Complaints = findViewById(R.id.Complaints);
-        Announcement = findViewById(R.id.Announcement);
         POSt = findViewById(R.id.POSt);
         Logout = findViewById(R.id.Logout);
 
         /*
+        Student home Page intent:
 
-
-
-
-
+        Announcement -> AnnouncementPage.class
+        Event -> EventPage.class
+        Complaint -> ComplaintForm.class
+        POSt -> ...
+        Logout -> Login.class
 
          */
         Logout.setOnClickListener(new View.OnClickListener() {
@@ -45,19 +47,11 @@ public class Student_homePage extends AppCompatActivity {
             }
         });
 
-        Complaints.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ComplaintsForm.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         Announcement.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PostAnnouncement.class);
+                Intent intent = new Intent(getApplicationContext(), AnnouncementPage.class);
                 startActivity(intent);
                 finish();
             }
@@ -66,9 +60,25 @@ public class Student_homePage extends AppCompatActivity {
         Events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ScheduleEvent.class);
+                Intent intent = new Intent(getApplicationContext(), EventPage.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        Complaints.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PostComplaint.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        POSt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //to POStPage
             }
         });
 

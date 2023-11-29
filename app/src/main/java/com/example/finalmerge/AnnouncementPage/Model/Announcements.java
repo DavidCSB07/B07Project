@@ -1,4 +1,4 @@
-package com.example.finalmerge.AnnouncementsPage.Model;
+package com.example.finalmerge.AnnouncementPage.Model;
 
 public class Announcements {
     String annSubject, annDes;
