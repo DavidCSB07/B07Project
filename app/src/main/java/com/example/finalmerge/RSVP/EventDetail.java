@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.finalmerge.R;
 
-public class EventDetailPage extends AppCompatActivity {
+public class EventDetail extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

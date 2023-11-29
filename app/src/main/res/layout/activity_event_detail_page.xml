@@ -1,42 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RSVP.EventDetailPage"
-    android:padding="30dp"
+    tools:context=".RSVP.EventDetail"
+    android:padding="15dp"
+    app:cardElevation="8dp"
+    android:layout_margin="15dp"
     >
-
-    <TextView
-        android:id="@+id/title"
-        android:textSize="30dp"
-        android:text="Title"
-        android:textStyle="bold"
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="20dp"
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
         >
-    </TextView>
+        <TextView
+            android:id="@+id/RSVP_PAGE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_edge"
+            android:text="RSVP Page"
+            >
 
-    <TextView
-        android:id="@+id/description"
-        android:textSize="20dp"
-        android:text="description: COCOCOCOCOCOCCCOOCOCOCOCOCOCOCOCNUT"
-        android:textStyle="bold"
-        android:layout_below="@id/title"
-        android:layout_marginTop="10dp"
+
+        </TextView>
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@+id/RSVP_PAGE"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Title..........."
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_below="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="Event Date: 12/04/2023"
+            android:textSize="15dp"
+            android:textColor="@color/seal_grey"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/participationLimit"
+            android:layout_below="@+id/eventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Limits of Participants: 50"
+            android:textSize="15dp"
+            android:textColor="@color/seal_grey"
+            >
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/description_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/participationLimit"
+            android:padding="15dp"
+            app:cardElevation="8dp"
+            android:layout_margin="5dp"
+
+            >
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_below="@+id/participationLimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description Here: .........."
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/charcoal_grey"
+                >
+                </TextView>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/join_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/description_cardView"
+            android:text="Join"
+
+            >
+        </Button>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/join_button"
+            android:padding="10dp"
+
+            android:visibility="visible"
+            >
+
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:text="Submit FeedBack:"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            </TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/feedbackTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedback"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/feedbackTextInput"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type Short Feedback Here:"
+                    >
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/numericTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/feedbackTextInputLayout"
+                android:layout_marginTop="10dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/numericTextInputText"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Type Numeric FeedBack Here: 1 to 10"
+                    android:inputType="number"
+                    >
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
 
 
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="20dp"
 
-        >
-    </TextView>
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>
