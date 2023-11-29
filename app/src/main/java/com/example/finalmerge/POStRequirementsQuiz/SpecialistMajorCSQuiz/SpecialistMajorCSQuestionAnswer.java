@@ -1,6 +1,6 @@
-package com.example.finalmerge;
+package com.example.finalmerge.POStRequirementsQuiz.SpecialistMajorCSQuiz;
 
-public class QuestionAnswer {
+public class SpecialistMajorCSQuestionAnswer {
 
     public static String[] question = {
         "Do you have a GPA of at least 2.5 in CSCA67, CSCa48, MATA67, MATA22, MATA31, MATA37?",

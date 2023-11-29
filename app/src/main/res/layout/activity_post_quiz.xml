@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".POStQuiz">
+    tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorQuiz">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/total_questions"
-        android:text="@string/total_questions"
+        android:id="@+id/totalQuestions"
+        android:text="@string/totalQuestions"
         android:layout_centerHorizontal="true"
         android:textSize="20sp"/>
 
@@ -18,12 +17,12 @@
         android:id="@+id/questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/choices_layout"
+        android:layout_above="@id/choicesLayout"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="This will be the question"
+        android:text="@string/textQuestionPlaceholder"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
@@ -32,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/choices_layout"
+        android:id="@+id/choicesLayout"
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
@@ -41,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
-            android:id="@+id/answer_A"
+            android:id="@+id/answerA"
             android:text="@string/answer_a"
             android:textColor="@color/black"/>
 
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
-            android:id="@+id/answer_B"
+            android:id="@+id/answerB"
             android:text="@string/answer_b"
             android:textColor="@color/black"/>
 
@@ -59,8 +58,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit_button"
+        android:id="@+id/buttonSubmit"
         android:text="@string/submit"
-        android:layout_below="@+id/choices_layout"
+        android:layout_below="@+id/choicesLayout"
         android:layout_marginTop="40dp"/>
 </RelativeLayout>

@@ -43,8 +43,14 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="total_questions">Total Questions</string>
+    <string name="totalQuestions">Total Questions: </string>
     <string name="answer_a">Answer A</string>
     <string name="answer_b">Answer B</string>
     <string name="submit">Submit</string>
+    <string name="buttonSpecMajorCSText">Specialist/Major Program in Computer Science (CS Category)</string>
+    <string name="buttonSpecMajorMathStatsText">Specialist/Major Program in Computer Science (Math/Stats Category)</string>
+    <string name="buttonSpecMajorOutsideCMSText">Specialist/Major Program in Computer Science (Outside CMS)</string>
+    <string name="buttonMinorText">Minor Program in Computer Science</string>
+    <string name="textSelectProgram">Select a Program for which to complete the POSt Requirements Checker</string>
+    <string name="textQuestionPlaceholder">This will be the question</string>
 </resources>
