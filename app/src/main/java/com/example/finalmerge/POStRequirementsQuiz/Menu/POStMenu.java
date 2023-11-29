@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.finalmerge.MainActivity;
 import com.example.finalmerge.POStRequirementsQuiz.MinorQuiz.MinorQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.SpecialistMajorMathStatsQuiz.SpecialistMajorMathStatsQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.SpecialistMajorOutsideCMSQuiz.SpecialistMajorOutsideCMSQuiz;
@@ -19,6 +20,7 @@ public class POStMenu extends AppCompatActivity {
     private Button buttonSpecialistMajorMathStats;
     private Button buttonSpecialistMajorOutsideCMS;
     private Button buttonMinor;
+    private Button buttonHome;
 
 
     @Override
@@ -29,6 +31,7 @@ public class POStMenu extends AppCompatActivity {
         buttonSpecialistMajorCS=findViewById(R.id.buttonSpecialistMajorCS);
         buttonSpecialistMajorMathStats=findViewById(R.id.buttonSpecialistMajorMathStats);
         buttonSpecialistMajorOutsideCMS=findViewById(R.id.buttonSpecialistMajorOutsideCMS);
+        buttonHome=findViewById(R.id.buttonHome);
 
         buttonMinor=findViewById(R.id.buttonMinor);
 
@@ -61,6 +64,14 @@ public class POStMenu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent viewMinorQuiz=new Intent(POStMenu.this, MinorQuiz.class);
                 startActivity(viewMinorQuiz);
+            }
+        });
+
+        buttonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent returnHome=new Intent(POStMenu.this, MainActivity.class);
+                startActivity(returnHome);
             }
         });
     }

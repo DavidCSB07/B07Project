@@ -53,4 +53,5 @@
     <string name="buttonMinorText">Minor Program in Computer Science</string>
     <string name="textSelectProgram">Select a Program for which to complete the POSt Requirements Checker</string>
     <string name="textQuestionPlaceholder">This will be the question</string>
+    <string name="buttonHomeText">Home</string>
 </resources>
