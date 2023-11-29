@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.finalmerge.AnnouncementsPage.PostAnn;
 import com.example.finalmerge.ComplaintsPage.ComplaintsForm;
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
@@ -41,6 +42,15 @@ public class homePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ComplaintsForm.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Announcement.setOnClickListener(new View.OnClickListener()  {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PostAnn.class);
                 startActivity(intent);
                 finish();
             }

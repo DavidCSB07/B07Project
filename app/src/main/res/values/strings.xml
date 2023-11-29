@@ -43,4 +43,9 @@
     <string name="buttonCancel">Cancel</string>
     <string name="buttonSubmitComplaint">SUBMIT</string>
     <string name="buttonSubmitFeedback">Submit Feedback</string>
+
+    <string name="announcements">Post Announcements</string>
+    <string name="ann_subject">Enter announcement subject</string>
+    <string name="ann_description">Enter announcement description</string>
+    <string name="post">Post</string>
 </resources>

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
+            android:name=".AnnouncementsPage.PostAnn"
+            android:exported="false" />
+        <activity
             android:name=".LoginPage.Temp"
             android:exported="false" />
         <activity
@@ -38,7 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ComplaintsPage.ViewComplaints"
             android:exported="true" />
@@ -47,24 +49,14 @@
             android:exported="false" />
         <activity
             android:name=".homePage.homePage"
-            android:exported="true">
-
-        </activity>
-
+            android:exported="true"></activity>
         <activity
             android:name=".EventPage.ScheduleEvent"
             android:exported="true"
-            android:theme="@style/Theme.Material3.Light.NoActionBar">
-
-        </activity>
-
-        \
-
+            android:theme="@style/Theme.Material3.Light.NoActionBar"></activity>
         <activity
             android:name=".ComplaintsPage.ComplaintsForm"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
