@@ -14,7 +14,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class PostAnn extends AppCompatActivity {
+public class PostAnnouncement extends AppCompatActivity {
     ActivityPostAnnBinding binding;
     String annSubject, annDes;
     FirebaseDatabase db;
@@ -41,7 +41,7 @@ public class PostAnn extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             binding.annSubject.setText("");
                             binding.annDes.setText("");
-                            Toast.makeText(PostAnn.this, "Success",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PostAnnouncement.this, "Success",Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

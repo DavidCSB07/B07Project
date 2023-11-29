@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.homePage;
+import com.example.finalmerge.homePage.Student.Student_homePage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -45,7 +45,7 @@ public class ScheduleEvent extends AppCompatActivity {
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), homePage.class);
+                Intent intent = new Intent(getApplicationContext(), Student_homePage.class);
                 startActivity(intent);
                 finish();
             }
@@ -88,7 +88,7 @@ public class ScheduleEvent extends AppCompatActivity {
         //post.setPostKey(key);
 
         // add post data to firebase database
-        eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+        eventDbRef.child("Event1").setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(ScheduleEvent.this, "data inserted", Toast.LENGTH_SHORT).show();

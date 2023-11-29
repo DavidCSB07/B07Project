@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class annlist extends AppCompatActivity {
+public class AnnouncementPage extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference database;

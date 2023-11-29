@@ -1,4 +1,4 @@
-package com.example.finalmerge.homePage;
+package com.example.finalmerge.homePage.Student;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,20 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.finalmerge.AnnouncementsPage.PostAnn;
+import com.example.finalmerge.AnnouncementsPage.PostAnnouncement;
 import com.example.finalmerge.ComplaintsPage.ComplaintsForm;
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
 import com.example.finalmerge.EventPage.ScheduleEvent;
 
 
-public class homePage extends AppCompatActivity {
+public class Student_homePage extends AppCompatActivity {
 
     Button Events, Complaints, Announcement, POSt, Logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage_activity);
+        setContentView(R.layout.activity_student_home_page);
 
         Events = findViewById(R.id.Events);
         Complaints = findViewById(R.id.Complaints);
@@ -28,7 +28,14 @@ public class homePage extends AppCompatActivity {
         POSt = findViewById(R.id.POSt);
         Logout = findViewById(R.id.Logout);
 
+        /*
 
+
+
+
+
+
+         */
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,7 +57,7 @@ public class homePage extends AppCompatActivity {
         Announcement.setOnClickListener(new View.OnClickListener()  {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PostAnn.class);
+                Intent intent = new Intent(getApplicationContext(), PostAnnouncement.class);
                 startActivity(intent);
                 finish();
             }

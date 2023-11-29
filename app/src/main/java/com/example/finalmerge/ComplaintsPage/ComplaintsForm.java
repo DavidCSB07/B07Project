@@ -14,7 +14,7 @@ import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
 
 // firebase
-import com.example.finalmerge.homePage.homePage;
+import com.example.finalmerge.homePage.Student.Student_homePage;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -45,7 +45,7 @@ public class ComplaintsForm extends AppCompatActivity {
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnHome = new Intent(getApplicationContext(), homePage.class);
+                Intent returnHome = new Intent(getApplicationContext(), Student_homePage.class);
                 startActivity(returnHome);
                 finish();
             }
@@ -88,7 +88,7 @@ public class ComplaintsForm extends AppCompatActivity {
         //addSucessListener
         complaintsDBRef.push().setValue(complaints);
         Toast.makeText(ComplaintsForm.this, "Complaint Submitted", Toast.LENGTH_SHORT).show();
-        Intent returnHome = new Intent(ComplaintsForm.this, homePage.class);
+        Intent returnHome = new Intent(ComplaintsForm.this, Student_homePage.class);
         startActivity(returnHome);
         finish();
     }

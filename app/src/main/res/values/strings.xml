@@ -48,4 +48,6 @@
     <string name="ann_subject">Enter announcement subject</string>
     <string name="ann_description">Enter announcement description</string>
     <string name="post">Post</string>
+    <string name="student_home_page_ui">Student Home Page UI</string>
+    <string name="admin_home_page_ui">Admin home Page UI</string>
 </resources>

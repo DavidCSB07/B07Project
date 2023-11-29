@@ -12,15 +12,15 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.finalmerge.MainActivity;
+import com.example.finalmerge.LoginPage.Model.UserInfo;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
@@ -28,6 +28,7 @@ public class Register extends AppCompatActivity {
     TextInputEditText editTextEmail, editTextPassword;
     Button buttonReg;
     FirebaseAuth mAuth;
+    DatabaseReference registerDbRef;
     ProgressBar progressBar; //id of 'stuff' in layout
     TextView loginNow;
 
@@ -50,10 +51,14 @@ public class Register extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
+
         buttonReg = findViewById(R.id.register_button);
-        mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
         loginNow = findViewById(R.id.LoginNow);
+
+        progressBar = findViewById(R.id.progressBar);
+
+        mAuth = FirebaseAuth.getInstance();
+
 
         loginNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +88,10 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
+
+
+
+
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -91,6 +100,11 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(Register.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
+
+                                    String uid = task.getResult().getUser().getUid();
+                                    UserInfo userinfo = new UserInfo(uid, email, password, 0);
+                                    registerDbRef = FirebaseDatabase.getInstance().getReference();
+                                    registerDbRef.child("RegisterInfo").push().setValue(userinfo);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(Register.this, "Register failed.",

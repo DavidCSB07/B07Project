@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.example.finalmerge.ComplaintsPage.Adapter.ComplaintAdapter;
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
@@ -19,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ViewComplaints extends AppCompatActivity {
+public class ComplaintsPage extends AppCompatActivity {
     RecyclerView recyclerView;
     DatabaseReference database;
     ComplaintAdapter complaintAdapter;
