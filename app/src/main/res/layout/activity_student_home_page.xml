@@ -14,7 +14,7 @@
     <TextView
         android:gravity="center"
         android:textSize="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_width="match_parent"
@@ -22,6 +22,15 @@
         android:text="@string/student_home_page_ui">
 
     </TextView>
+    <Button
+        android:id="@+id/Announcement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Announcement"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="369dp" />
     <Button
         android:id="@+id/Events"
         android:layout_width="wrap_content"
@@ -42,22 +51,15 @@
         tools:layout_editor_absoluteX="139dp"
         tools:layout_editor_absoluteY="153dp" />
 
-    <Button
-        android:id="@+id/Announcement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="Announcement"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="369dp" />
+
     <Button
         android:id="@+id/POSt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:text="View POSt"
+        android:text="POSt"
+        android:textAllCaps="false"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="369dp" />
 
