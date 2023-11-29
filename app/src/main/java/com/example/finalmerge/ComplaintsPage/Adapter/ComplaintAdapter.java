@@ -9,12 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalmerge.ComplaintsPage.Holder.ComplaintViewHolder;
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
 
 import java.util.ArrayList;
 
-public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.ComplaintViewHolder> {
+public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintViewHolder> {
 
     Context context;
     ArrayList<Complaint> listComplaints;
@@ -44,16 +45,4 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintAdapter.Comp
         return listComplaints.size();
     }
 
-    public static class ComplaintViewHolder extends RecyclerView.ViewHolder{
-
-        TextView email, subject, complaint;
-
-        public ComplaintViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            email=itemView.findViewById(R.id.contentEmail);
-            subject=itemView.findViewById(R.id.contentSubject);
-            complaint=itemView.findViewById(R.id.contentComplaint);
-        }
-    }
 }
