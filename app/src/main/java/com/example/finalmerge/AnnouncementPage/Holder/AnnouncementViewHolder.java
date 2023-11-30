@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalmerge.R;
 
 public class AnnouncementViewHolder extends RecyclerView.ViewHolder{
-    public TextView subject, description;
+    public TextView subject, description, date;
     public AnnouncementViewHolder(@NonNull View itemView) {
         super(itemView);
         subject = itemView.findViewById(R.id.rSubject);
         description = itemView.findViewById(R.id.rDes);
+        date = itemView.findViewById(R.id.rDate);
     }
 }

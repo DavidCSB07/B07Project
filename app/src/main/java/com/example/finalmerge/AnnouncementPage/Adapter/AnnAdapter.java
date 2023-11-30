@@ -38,7 +38,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
         Announcements announcements = list.get(position);
         holder.subject.setText(announcements.getAnnSubject());
         holder.description.setText(announcements.getAnnDes());
-
+        holder.date.setText(announcements.getCurrentDate());
     }
 
     @Override
