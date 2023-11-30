@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".homePage.Student.Student_homePage"
+    tools:context=".homePage.AnnouncementUI.AnnouncementUI"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Admin Announcement UI">
+            android:text="Announcement UI">
 
         </TextView>
 
@@ -38,6 +38,7 @@
 
     <Button
         android:id="@+id/ViewAnnouncement"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -47,6 +48,7 @@
         tools:layout_editor_absoluteY="369dp" />
     <Button
         android:id="@+id/PostAnnouncement"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.Student.Student_homePage;
+import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
@@ -45,7 +45,7 @@ public class PostEvent extends AppCompatActivity {
         homebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Student_homePage.class);
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
                 startActivity(intent);
                 finish();
             }

@@ -18,12 +18,23 @@ public class EventUI extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ui_event);
-
+        /*
+        EventUI intent:
+        Admin:
+        EventUI -> ScheduleEvent.class + EventPage.class(Rating and Comments --> retrieve from RSVP)
+        home -> homePage.class
+        Student:
+        EventUI -> EventPage.class(-->RSVP)
+        home -> homePage.class
+         */
         //set field
-
         viewEvent = findViewById(R.id.ViewEvent);
         postEvent = findViewById(R.id.PostEvent);
         home = findViewById(R.id.home);
+
+        //set Visibility base on userType (0 --> student, 1 --> admin)
+
+
 
         viewEvent.setOnClickListener(new View.OnClickListener() {
             @Override
