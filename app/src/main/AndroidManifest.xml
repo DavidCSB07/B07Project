@@ -10,17 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalMerge"
+        android:theme="@style/Theme.AppCompat.Light"
         tools:targetApi="31">
         <activity
             android:name=".POStRequirementsQuiz.MinorQuiz.MinorQuiz"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".POStRequirementsQuiz.Menu.POStMenu"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorQuiz"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

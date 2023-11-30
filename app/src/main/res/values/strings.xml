@@ -43,15 +43,37 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="totalQuestions">Total Questions: </string>
-    <string name="answer_a">Answer A</string>
-    <string name="answer_b">Answer B</string>
-    <string name="submit">Submit</string>
-    <string name="buttonSpecMajorCSText">Specialist/Major Program in Computer Science (CS Category)</string>
-    <string name="buttonSpecMajorMathStatsText">Specialist/Major Program in Computer Science (Math/Stats Category)</string>
-    <string name="buttonSpecMajorOutsideCMSText">Specialist/Major Program in Computer Science (Outside CMS)</string>
-    <string name="buttonMinorText">Minor Program in Computer Science</string>
-    <string name="textSelectProgram">Select a Program for which to complete the POSt Requirements Checker</string>
-    <string name="textQuestionPlaceholder">This will be the question</string>
-    <string name="buttonHomeText">Home</string>
+    <string name="totalQuestions">
+        totalQuestions
+    </string>
+    <string name="textQuestionPlaceholder">
+        textQuestionPlaceholder
+    </string>
+    <string name="answer_a">
+        answer_a
+    </string>
+    <string name="answer_b">
+        answer_b
+    </string>
+    <string name="submit">
+        submit
+    </string>
+    <string name="buttonSpecMajorCSText">
+        buttonSpecMajorCSText
+    </string>
+    <string name="buttonSpecMajorMathStatsText">
+        buttonSpecMajorMathStatsText
+    </string>
+    <string name="buttonSpecMajorOutsideCMSText">
+        buttonSpecMajorOutsideCMSText
+    </string>
+    <string name="buttonMinorText">
+        buttonMinorText
+    </string>
+    <string name="textSelectProgram">
+        textSelectProgram
+    </string>
+    <string name="buttonHomeText">
+        buttonHomeText
+    </string>
 </resources>
