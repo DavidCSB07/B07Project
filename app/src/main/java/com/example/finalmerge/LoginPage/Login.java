@@ -13,12 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
@@ -26,8 +31,8 @@ public class Login extends AppCompatActivity {
     Button buttonLog;
     FirebaseAuth mAuth;
     ProgressBar progressBar; //id of 'stuff' in layout
-    TextView RegisterNow;
-
+    TextView StudentRegister;
+    TextView AdminRegister;
     DatabaseReference LoginDbRef;
 
     //Check if acc is signed in
@@ -53,11 +58,12 @@ public class Login extends AppCompatActivity {
         editTextPassword = findViewById(R.id.password);
         buttonLog = findViewById(R.id.login_button);
         progressBar = findViewById(R.id.progressBar);
-        RegisterNow = findViewById(R.id.registerNow);
+        StudentRegister = findViewById(R.id.StudentRegister);
+        AdminRegister = findViewById(R.id.AdminRegister);
 
         mAuth = FirebaseAuth.getInstance();
 
-        RegisterNow.setOnClickListener(new View.OnClickListener() {
+        StudentRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), StudentRegister.class);
@@ -65,6 +71,17 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
+
+        AdminRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AdminRegister.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
 
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,39 +106,27 @@ public class Login extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(getApplicationContext(), "login Successful", Toast.LENGTH_SHORT).show();
-                                    /*
-                                    String uid = task.getResult().getUser().getUid();
                                     LoginDbRef = FirebaseDatabase.getInstance().getReference();
-                                    LoginDbRef.child("RegisterInfo").child(uid).child("userType")
-                                            .addListenerForSingleValueEvent(new ValueEventListener() {
+                                    String uid = task.getResult().getUser().getUid();
+                                    LoginDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             int userType = snapshot.getValue(Integer.class);
-                                            if (userType == 0){
-                                                //student
-                                                Toast.makeText(getApplicationContext(), "login Successful As Student", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
+                                            if(userType == 0) {
+                                                Toast.makeText(getApplicationContext(), "login Successful as Admin", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), homePage.class);
                                                 startActivity(intent);
                                                 finish();
-
-
                                             }
-                                            if (userType == 1){
-                                                //admin
-                                                Toast.makeText(getApplicationContext(), "login Successful As Admin", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
+                                            else if(userType == 1) {
+                                                Toast.makeText(getApplicationContext(), "login Successful as Student", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent(getApplicationContext(), homePage.class);
                                                 startActivity(intent);
                                                 finish();
-
-
                                             }
-                                            else{
-                                                Toast.makeText(Login.this, "Error userType, please delete account", Toast.LENGTH_SHORT).show();
-                                                return;
+                                            else {
+                                                Toast.makeText(getApplicationContext(), "Please Delete account something went wrong", Toast.LENGTH_SHORT).show();
                                             }
-
-
                                         }
 
                                         @Override
@@ -130,7 +135,7 @@ public class Login extends AppCompatActivity {
                                         }
                                     });
 
-                                     */
+
 
                                 } else {
                                     // If sign in fails, display a message to the user.

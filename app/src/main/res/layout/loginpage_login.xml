@@ -58,7 +58,7 @@
         android:layout_height="wrap_content">
     </Button>
     <TextView
-        android:id="@+id/registerNow"
+        android:id="@+id/StudentRegister"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
         >
     </TextView>
     <TextView
-        android:id="@+id/AdminRegisterNow"
+        android:id="@+id/AdminRegister"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

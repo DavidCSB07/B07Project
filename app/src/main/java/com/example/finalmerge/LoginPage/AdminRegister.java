@@ -82,11 +82,10 @@ public class AdminRegister extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(AdminRegister.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
-
                                     String uid = task.getResult().getUser().getUid();
                                     UserInfo userinfo = new UserInfo(uid, email, password, 1);
                                     registerDbRef = FirebaseDatabase.getInstance().getReference();
-                                    registerDbRef.child("RegisterInfo").push().setValue(userinfo);
+                                    registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(AdminRegister.this, "Register failed.",

@@ -104,7 +104,7 @@ public class StudentRegister extends AppCompatActivity {
                                     String uid = task.getResult().getUser().getUid();
                                     UserInfo userinfo = new UserInfo(uid, email, password, 0);
                                     registerDbRef = FirebaseDatabase.getInstance().getReference();
-                                    registerDbRef.child("RegisterInfo").push().setValue(userinfo);
+                                    registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(StudentRegister.this, "Register failed.",

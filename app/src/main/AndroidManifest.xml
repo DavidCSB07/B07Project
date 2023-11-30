@@ -30,10 +30,7 @@
             android:name=".LoginPage.StudentRegister"
             android:exported="false" />
         <activity
-            android:name=".homePage.Student.Student_homePage"
-            android:exported="true" />
-        <activity
-            android:name=".homePage.Admin.homePage"
+            android:name=".homePage.homePage"
             android:exported="true" />
         <activity
             android:name=".homePage.ComplaintUI.ComplaintUI"
