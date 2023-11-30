@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +16,12 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+import java.text.DateFormat;
+
 public class PostAnnouncement extends AppCompatActivity {
     TextInputEditText annSubject, annDes;
+    TextView annDate;
     Button post_btn, home_btn;
     DatabaseReference AnnouncementDbRef;
 
@@ -29,6 +34,10 @@ public class PostAnnouncement extends AppCompatActivity {
 
         annSubject = findViewById(R.id.annSubject);
         annDes = findViewById(R.id.annDes);
+        annDate = findViewById(R.id.annDate);
+        Calendar calendar = Calendar.getInstance();
+        String date = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+        annDate.setText(date);
 
         post_btn = findViewById(R.id.post_btn);
 
@@ -49,7 +58,7 @@ public class PostAnnouncement extends AppCompatActivity {
                     return;
                 }
 
-                Announcements announcements = new Announcements(subject, description);
+                Announcements announcements = new Announcements(subject, description, date);
                 addAnnouncement  (announcements, subject);
             }
         });
