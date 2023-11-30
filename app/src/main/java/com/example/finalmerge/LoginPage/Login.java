@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.Student.Student_homePage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -104,7 +103,7 @@ public class Login extends AppCompatActivity {
                                             int userType = snapshot.getValue(Integer.class);
                                             if (userType == 0){
                                                 //student
-                                                Intent intent = new Intent(getApplicationContext(), Student_homePage.class);
+                                                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                                                 startActivity(intent);
                                                 finish();
 
@@ -112,7 +111,7 @@ public class Login extends AppCompatActivity {
                                             }
                                             if (userType == 1){
                                                 //admin
-                                                Intent intent = new Intent(getApplicationContext(), Student_homePage.class);
+                                                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                                                 startActivity(intent);
                                                 finish();
 

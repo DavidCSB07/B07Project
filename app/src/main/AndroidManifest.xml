@@ -33,16 +33,16 @@
             android:name=".homePage.Student.Student_homePage"
             android:exported="true" />
         <activity
-            android:name=".homePage.Admin.Admin_homePage"
+            android:name=".homePage.Admin.homePage"
             android:exported="true" />
         <activity
-            android:name=".homePage.Admin.ComplaintUI.ComplaintUI"
+            android:name=".homePage.ComplaintUI.ComplaintUI"
             android:exported="false" />
         <activity
-            android:name=".homePage.Admin.EventUI.EventUI"
+            android:name=".homePage.EventUI.EventUI"
             android:exported="false" />
         <activity
-            android:name=".homePage.Admin.AnnouncementUI.AnnouncementUI"
+            android:name=".homePage.AnnouncementUI.AnnouncementUI"
             android:exported="false" />
         <activity
             android:name=".AnnouncementPage.PostAnnouncement"

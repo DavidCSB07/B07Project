@@ -1,4 +1,4 @@
-package com.example.finalmerge.homePage.Admin;
+package com.example.finalmerge.homePage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,13 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalmerge.ComplaintsPage.PostComplaint;
-import com.example.finalmerge.EventPage.PostEvent;
 import com.example.finalmerge.LoginPage.Login;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.Admin.AnnouncementUI.AnnouncementUI;
+import com.example.finalmerge.homePage.AnnouncementUI.AnnouncementUI;
+import com.example.finalmerge.homePage.ComplaintUI.ComplaintUI;
+import com.example.finalmerge.homePage.EventUI.EventUI;
 
-public class Admin_homePage extends AppCompatActivity {
+public class homePage extends AppCompatActivity {
 
 
     Button Announcement, Events, Complaints, POSt, Logout;
@@ -29,7 +29,7 @@ public class Admin_homePage extends AppCompatActivity {
         Logout = findViewById(R.id.Logout);
 
         /*
-        Admin home Page intent:
+        home Page intent:
 
         Announcement -> AnnouncementUI -> AnnouncementPage.class or PostAnnouncement
         Event -> EventPage.class(Rating and Comments --> retrieve from RSVP) + ScheduleEvent
@@ -59,7 +59,7 @@ public class Admin_homePage extends AppCompatActivity {
         Complaints.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PostComplaint.class);
+                Intent intent = new Intent(getApplicationContext(), ComplaintUI.class);
                 startActivity(intent);
                 finish();
             }
@@ -68,7 +68,7 @@ public class Admin_homePage extends AppCompatActivity {
         Events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PostEvent.class);
+                Intent intent = new Intent(getApplicationContext(), EventUI.class);
                 startActivity(intent);
                 finish();
             }

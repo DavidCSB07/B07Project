@@ -1,4 +1,4 @@
-package com.example.finalmerge.homePage.Admin.AnnouncementUI;
+package com.example.finalmerge.homePage.AnnouncementUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalmerge.AnnouncementPage.AnnouncementPage;
 import com.example.finalmerge.AnnouncementPage.PostAnnouncement;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.Admin.Admin_homePage;
 
 public class AnnouncementUI extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class AnnouncementUI extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Admin_homePage.class);
+                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                 startActivity(intent);
                 finish();
             }

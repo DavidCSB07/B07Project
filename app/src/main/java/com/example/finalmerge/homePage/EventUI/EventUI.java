@@ -1,4 +1,4 @@
-package com.example.finalmerge.homePage.Admin.EventUI;
+package com.example.finalmerge.homePage.EventUI;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalmerge.EventPage.EventPage;
 import com.example.finalmerge.EventPage.PostEvent;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.Admin.Admin_homePage;
 
 public class EventUI extends AppCompatActivity {
 
@@ -47,7 +46,7 @@ public class EventUI extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Admin_homePage.class);
+                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                 startActivity(intent);
                 finish();
             }
