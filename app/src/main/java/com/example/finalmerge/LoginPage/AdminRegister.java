@@ -22,8 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Register extends AppCompatActivity {
-
+public class AdminRegister extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
     Button buttonReg;
@@ -31,23 +30,10 @@ public class Register extends AppCompatActivity {
     DatabaseReference registerDbRef;
     ProgressBar progressBar; //id of 'stuff' in layout
     TextView loginNow;
-
-    /*
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), homePage.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loginpage_register);
+        setContentView(R.layout.loginpage_admin_register);
 
         editTextEmail = findViewById(R.id.email);
         editTextPassword = findViewById(R.id.password);
@@ -77,20 +63,16 @@ public class Register extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
                 progressBar.setVisibility(View.VISIBLE);
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Register.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminRegister.this, "Enter password", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Register.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminRegister.this, "Enter email", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
-
-
-
-
 
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -98,16 +80,16 @@ public class Register extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Register.this, "Account created.",
+                                    Toast.makeText(AdminRegister.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
 
                                     String uid = task.getResult().getUser().getUid();
-                                    UserInfo userinfo = new UserInfo(uid, email, password, 0);
+                                    UserInfo userinfo = new UserInfo(uid, email, password, 1);
                                     registerDbRef = FirebaseDatabase.getInstance().getReference();
                                     registerDbRef.child("RegisterInfo").push().setValue(userinfo);
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Register failed.",
+                                    Toast.makeText(AdminRegister.this, "Register failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -115,7 +97,5 @@ public class Register extends AppCompatActivity {
 
             }
         });
-
-
     }
 }

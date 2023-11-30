@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31" >
-
+        <activity
+            android:name=".LoginPage.AdminRegister"
+            android:exported="false" />
         <activity
             android:name=".LoginPage.Login"
             android:exported="true" >
@@ -25,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginPage.Register"
+            android:name=".LoginPage.StudentRegister"
             android:exported="false" />
         <activity
             android:name=".homePage.Student.Student_homePage"
@@ -55,7 +57,6 @@
         <activity
             android:name=".ComplaintsPage.ComplaintPage"
             android:exported="true" />
-
         <activity
             android:name=".EventPage.PostEvent"
             android:exported="true"
