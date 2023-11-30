@@ -44,36 +44,36 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="totalQuestions">
-        totalQuestions
+        Total Questions:
     </string>
     <string name="textQuestionPlaceholder">
         textQuestionPlaceholder
     </string>
     <string name="answer_a">
-        answer_a
+        Yes
     </string>
     <string name="answer_b">
-        answer_b
+        No
     </string>
     <string name="submit">
-        submit
+        Submit
     </string>
     <string name="buttonSpecMajorCSText">
-        buttonSpecMajorCSText
+        Specialist/Major Program for CS Category
     </string>
     <string name="buttonSpecMajorMathStatsText">
-        buttonSpecMajorMathStatsText
+        Specialist/Major Program for Math/Stats Category
     </string>
     <string name="buttonSpecMajorOutsideCMSText">
-        buttonSpecMajorOutsideCMSText
+        Specialist/Major Program Outside CMS
     </string>
     <string name="buttonMinorText">
-        buttonMinorText
+        Minor Program
     </string>
     <string name="textSelectProgram">
-        textSelectProgram
+        Select the Program for which to complete the POSt Requirements Checker
     </string>
     <string name="buttonHomeText">
-        buttonHomeText
+        Home
     </string>
 </resources>
