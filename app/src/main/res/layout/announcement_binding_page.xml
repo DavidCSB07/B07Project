@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnnouncementPage.AnnouncementDetail"
+    android:padding="15dp"
+    app:cardElevation="8dp"
+    android:layout_margin="15dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+
+        >
+        <TextView
+            android:id="@+id/annDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_edge"
+            android:text="Announcement Detail"
+            >
+
+        </TextView>
+        <TextView
+            android:id="@+id/annSubject"
+            android:layout_below="@+id/annDetail"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Subject"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/annDate"
+            android:layout_below="@+id/annSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="Posted Date: 12/04/2023"
+            android:textSize="18dp"
+            android:textColor="@color/seal_grey"
+            >
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/description_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/annDate"
+            android:padding="15dp"
+            app:cardElevation="8dp"
+            android:layout_margin="5dp"
+
+            >
+            <TextView
+                android:id="@+id/description"
+                android:layout_below="@+id/participationLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Announcement Description Here: .........."
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/charcoal_grey"
+                >
+            </TextView>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/description_cardView"
+            android:text="Back"
+            >
+        </Button>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
