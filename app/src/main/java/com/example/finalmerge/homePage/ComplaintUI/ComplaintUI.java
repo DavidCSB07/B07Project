@@ -8,25 +8,43 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.ComplaintsPage.ComplaintPage;
+import com.example.finalmerge.ComplaintsPage.PostComplaint;
 import com.example.finalmerge.R;
 
 public class ComplaintUI extends AppCompatActivity {
 
-    Button viewComplaints, home;
+    Button viewComplaint, postComplaint, home;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ui_complaints);
-
+        /*
+        UI intent:
+        Admin:
+        ComplaintUI -> ComplaintPage.class
+        home -> homePage.class
+        Student:
+        ComplaintUI -> ComplaintPage.class + PostComplaint.class
+        home -> homePage.class
+         */
         //set field
-
-        viewComplaints = findViewById(R.id.ViewComplaints);
+        viewComplaint = findViewById(R.id.ViewComplaints);
+        postComplaint = findViewById(R.id.PostComplaints);
         home = findViewById(R.id.home);
 
-        viewComplaints.setOnClickListener(new View.OnClickListener() {
+        viewComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ComplaintPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        postComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PostComplaint.class);
                 startActivity(intent);
                 finish();
             }

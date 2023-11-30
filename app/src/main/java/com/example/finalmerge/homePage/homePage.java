@@ -20,7 +20,7 @@ public class homePage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.homepage_admin);
+        setContentView(R.layout.homepage);
 
         Announcement = findViewById(R.id.Announcement);
         Events = findViewById(R.id.Events);

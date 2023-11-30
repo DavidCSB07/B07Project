@@ -18,11 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 
@@ -94,6 +90,7 @@ public class Login extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "login Successful", Toast.LENGTH_SHORT).show();
+                                    /*
                                     String uid = task.getResult().getUser().getUid();
                                     LoginDbRef = FirebaseDatabase.getInstance().getReference();
                                     LoginDbRef.child("RegisterInfo").child(uid).child("userType")
@@ -103,6 +100,7 @@ public class Login extends AppCompatActivity {
                                             int userType = snapshot.getValue(Integer.class);
                                             if (userType == 0){
                                                 //student
+                                                Toast.makeText(getApplicationContext(), "login Successful As Student", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                                                 startActivity(intent);
                                                 finish();
@@ -111,6 +109,7 @@ public class Login extends AppCompatActivity {
                                             }
                                             if (userType == 1){
                                                 //admin
+                                                Toast.makeText(getApplicationContext(), "login Successful As Admin", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
                                                 startActivity(intent);
                                                 finish();
@@ -130,6 +129,8 @@ public class Login extends AppCompatActivity {
 
                                         }
                                     });
+
+                                     */
 
                                 } else {
                                     // If sign in fails, display a message to the user.

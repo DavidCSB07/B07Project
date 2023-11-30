@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".homePage.Student.Student_homePage"
+    tools:context=".homePage.ComplaintUI.ComplaintUI"
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +28,7 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Admin Complaints UI">
+            android:text="Complaints UI">
 
         </TextView>
 
@@ -37,11 +37,22 @@
 
     <Button
         android:id="@+id/ViewComplaints"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
         android:text="View Complaints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="369dp" />
+    <Button
+        android:id="@+id/PostComplaints"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Post Complaints"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="369dp" />
 
