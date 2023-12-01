@@ -43,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".AnnouncementPage.PostAnnouncement"
-            android:exported="false" />
+            android:exported="true" />
         <activity android:name=".AnnouncementPage.AnnouncementPage"
             android:exported="true">
         </activity>
@@ -63,7 +63,7 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".ComplaintsPage.PostComplaint"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
