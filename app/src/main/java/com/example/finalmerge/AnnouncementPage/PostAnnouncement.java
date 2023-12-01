@@ -71,12 +71,29 @@ public class PostAnnouncement extends AppCompatActivity {
                 Announcements announcements = new Announcements(subject, description, date);
                 addAnnouncement  (announcements, subject);
             }
-        });
+        });{
+            String subject = annSubject.getText().toString();
+            String description = annDes.getText().toString();
+
+            //Check if TextInput is empty
+            if(TextUtils.isEmpty(subject)){
+                Toast.makeText(PostAnnouncement.this, "Subject cannot be empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if(TextUtils.isEmpty(description)){
+                Toast.makeText(PostAnnouncement.this, "Description cannot be empty", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Announcements announcements = new Announcements(subject, description, date);
+            addAnnouncement  (announcements, subject);
+        }
     }
 
     private void addAnnouncement(Announcements announcements, String subject) {
         AnnouncementDbRef = FirebaseDatabase.getInstance().getReference();
-        AnnouncementDbRef.child("Announcement").child(subject).setValue(announcements).addOnSuccessListener(new OnSuccessListener<Void>() {
+        AnnouncementDbRef.child("Announcement").push().setValue(announcements).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(PostAnnouncement.this, "Announcement is post", Toast.LENGTH_SHORT).show();

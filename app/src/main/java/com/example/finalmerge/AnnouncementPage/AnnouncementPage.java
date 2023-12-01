@@ -3,10 +3,10 @@ package com.example.finalmerge.AnnouncementPage;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,23 +23,41 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class AnnouncementPage extends AppCompatActivity {
+
     RecyclerView recyclerView;
     DatabaseReference database;
+    FirebaseDatabase firebaseDatabase;
     AnnAdapter adapter;
-    ArrayList<Announcements> list;
+    ArrayList<Announcements> announcementList;
+    Button home_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.announcement_page);
 
+        home_btn = findViewById(R.id.home_btn);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         recyclerView = findViewById(R.id.annList);
-        database = FirebaseDatabase.getInstance().getReference("Announcements");
+        database = FirebaseDatabase.getInstance().getReference("Announcement");
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        adapter = new AnnAdapter(this,list);
+        announcementList = new ArrayList<>();
+        //testing
+        announcementList.add(new Announcements("subject", "description", "Thursday, November 30, 2023"));
+
+
+        adapter = new AnnAdapter(this, announcementList);
         recyclerView.setAdapter(adapter);
 
         database.addValueEventListener(new ValueEventListener() {
@@ -47,7 +65,7 @@ public class AnnouncementPage extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Announcements announcements = dataSnapshot.getValue(Announcements.class);
-                    list.add(announcements);
+                    announcementList.add(announcements);
                 }
                 adapter.notifyDataSetChanged();
             }
@@ -57,5 +75,7 @@ public class AnnouncementPage extends AppCompatActivity {
 
             }
         });
+
+
     }
 }
