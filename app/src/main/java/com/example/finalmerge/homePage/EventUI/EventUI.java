@@ -57,12 +57,12 @@ public class EventUI extends AppCompatActivity {
                 if(userType == 0){
                     //student
                     viewEvent.setVisibility(View.VISIBLE);
-                    postEvent.setVisibility(View.VISIBLE);
+                    postEvent.setVisibility(View.GONE);
                 }
                 if(userType == 1){
                     //admin
                     viewEvent.setVisibility(View.VISIBLE);
-                    postEvent.setVisibility(View.GONE);
+                    postEvent.setVisibility(View.VISIBLE);
                 }
             }
 

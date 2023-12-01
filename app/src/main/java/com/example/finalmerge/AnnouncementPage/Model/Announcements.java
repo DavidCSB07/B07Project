@@ -11,6 +11,11 @@ public class Announcements {
         this.currentDate = currentDate;
     }
 
+    public Announcements(String annSubject, String annDes) {
+        this.annSubject = annSubject;
+        this.annDes = annDes;
+    }
+
     public String getAnnSubject() {
         return annSubject;
     }
@@ -21,5 +26,17 @@ public class Announcements {
 
     public String getCurrentDate() {
         return currentDate;
+    }
+
+    public void setAnnSubject(String annSubject) {
+        this.annSubject = annSubject;
+    }
+
+    public void setAnnDes(String annDes) {
+        this.annDes = annDes;
+    }
+
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
     }
 }

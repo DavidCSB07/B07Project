@@ -57,8 +57,8 @@ public class ComplaintUI extends AppCompatActivity {
                 }
                 if(userType == 1){
                     //admin
-                    viewComplaint.setVisibility(View.GONE);
-                    postComplaint.setVisibility(View.VISIBLE);
+                    viewComplaint.setVisibility(View.VISIBLE);
+                    postComplaint.setVisibility(View.GONE);
                 }
             }
 
