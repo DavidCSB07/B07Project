@@ -1,15 +1,19 @@
 package com.example.finalmerge.ComplaintsPage;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-
 import com.example.finalmerge.ComplaintsPage.Adapter.ComplaintAdapter;
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,12 +27,23 @@ public class ComplaintPage extends AppCompatActivity {
     DatabaseReference database;
     ComplaintAdapter complaintAdapter;
     ArrayList<Complaint> complaintList;
+    Button home_btn;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.complaints_page);
+
+        home_btn  = findViewById(R.id.home_btn);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.ComplaintsList);
         database = FirebaseDatabase.getInstance().getReference("Complaint");
@@ -37,6 +52,7 @@ public class ComplaintPage extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         complaintList = new ArrayList<>();
+        //testing
         complaintList.add(new Complaint("email", "subject", "descriptiondshaldhjklahfjkldahfdjlkahfjdklahfjdlkahfjdklahfjldkahfdjlkahfldshajfdsalkfhdasjfldhajklfhdajlkfhdjlafhdjlksahfjdlkahfjlkahfjdlkahfjlkdhaflkjdhajlkhfdjklsaf"));
         complaintList.add(new Complaint("email2", "subject2", "description2"));
         complaintList.add(new Complaint("email3", "subject3", "description3"));

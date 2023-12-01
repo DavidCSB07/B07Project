@@ -1,6 +1,9 @@
 package com.example.finalmerge.EventPage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalmerge.EventPage.Adapter.EventAdapter;
 import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,10 +31,22 @@ public class EventPage extends AppCompatActivity {
     DatabaseReference databaseReference;
     List<Event> eventsList;
 
+    Button home_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_recycleview);
+        setContentView(R.layout.event_page);
+
+        home_btn = findViewById(R.id.home_btn);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("ScheduleEvent");
@@ -38,7 +54,7 @@ public class EventPage extends AppCompatActivity {
         eventsList = new ArrayList<>();
         eventAdapter = new EventAdapter(this, eventsList);
 
-        recyclerview = findViewById(R.id.recycleView);
+        recyclerview = findViewById(R.id.EventList);
         recyclerview.setHasFixedSize(true);
 
         eventsList.add(new Event("title", "description"));

@@ -1,6 +1,9 @@
 package com.example.finalmerge.AnnouncementPage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalmerge.AnnouncementPage.Adapter.AnnAdapter;
 import com.example.finalmerge.AnnouncementPage.Model.Announcements;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,11 +29,22 @@ public class AnnouncementPage extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     AnnAdapter adapter;
     ArrayList<Announcements> announcementList;
+    Button home_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.announcement_page);
+
+        home_btn = findViewById(R.id.home_btn);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         recyclerView = findViewById(R.id.annList);
         database = FirebaseDatabase.getInstance().getReference("Announcement");
