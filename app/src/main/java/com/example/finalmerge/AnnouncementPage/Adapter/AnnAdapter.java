@@ -1,6 +1,7 @@
 package com.example.finalmerge.AnnouncementPage.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalmerge.AnnouncementPage.AnnouncementDetail;
 import com.example.finalmerge.AnnouncementPage.Holder.AnnouncementViewHolder;
 import com.example.finalmerge.R;
 
@@ -30,7 +32,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
     @Override
     public AnnouncementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.complaints_recycleview,parent,false);
-        return new AnnouncementViewHolder(v, context, list);
+        return new AnnouncementViewHolder(v);
     }
 
     @Override
@@ -39,6 +41,18 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
         holder.subject.setText(announcements.getAnnSubject());
         holder.description.setText(announcements.getAnnDes());
         holder.date.setText(announcements.getCurrentDate());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AnnouncementDetail.class);
+                intent.putExtra("annSubject", announcements.getAnnSubject());
+                intent.putExtra("annDate", announcements.getCurrentDate());
+                intent.putExtra("annDes", announcements.getAnnDes());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -82,7 +82,5 @@ public class PostAnnouncement extends AppCompatActivity {
                 Toast.makeText(PostAnnouncement.this, "Announcement is post", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }

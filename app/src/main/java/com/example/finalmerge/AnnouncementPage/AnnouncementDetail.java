@@ -17,7 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 public class AnnouncementDetail extends AppCompatActivity {
     TextInputEditText annSubject, annDes;
     TextView annDate;
-    DatabaseReference AnnouncementDbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +27,9 @@ public class AnnouncementDetail extends AppCompatActivity {
         annDes = findViewById(R.id.annDes);
         annDate = findViewById(R.id.annDate);
 
-        String subject = getIntent().getExtras().getString("subject");
-        annSubject.setText(subject);
-        String description = getIntent().getExtras().getString("description");
-        annDes.setText(description);
-        String date = getIntent().getExtras().getString("date");
-        annDes.setText(date);
+        annSubject.setText(getIntent().getStringExtra("annSubject"));
+        annDate.setText(getIntent().getStringExtra("annDate"));
+        annDes.setText(getIntent().getStringExtra("annDes"));
     }
 
 }
