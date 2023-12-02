@@ -1,7 +1,5 @@
 package com.example.finalmerge.LoginPage.Login;
 
-import android.text.TextUtils;
-
 public class LoginPresenter {
     LoginView view;
     LoginModel model;
@@ -11,22 +9,30 @@ public class LoginPresenter {
         this.model = model;
     }
 
-    public void validateCredentials(String email, String password){
-        model.authenticateLogin(email, password);
+    public void onLoginClicked(String email, String password) {
+        view.showProgressBar();
+        // Call the signIn method in the Model
+        model.signInWithEmailAndPassword(email, password, new LoginModel.OnSignInListener() {
+            @Override
+            public void onSignInSuccess(int userType) {
+                onSignInSuccess(userType);
+                view.hideProgressBar();
+                if (userType == 0) {
+                    view.showLoginSuccessAsAdmin();
+                } else if (userType == 1) {
+                    view.showLoginSuccessAsStudent();
+                } else {
+                    view.showLoginError("Please try again.");
+                }
+            }
 
+            @Override
+            public void onSignInFailure(String errorMessage) {
+                onSignInFailure(errorMessage);
+                view.hideProgressBar();
+                view.showLoginError(errorMessage);
+            }
+        });
     }
-
-    private void Login(String email, String password){
-
-    }
-
-    public void setViewText(String email, String password){
-        if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
-            view.setOutputText("Fields cannot be empty.");
-        }
-    }
-
-
-
 
 }

@@ -32,7 +32,6 @@ public class LoginView extends AppCompatActivity {
     ProgressBar progressBar; //id of 'stuff' in layout
     TextView StudentRegister;
     TextView AdminRegister;
-    DatabaseReference LoginDbRef;
     LoginPresenter presenter;
 
     //Check if acc is signed in
@@ -60,6 +59,7 @@ public class LoginView extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         StudentRegister = findViewById(R.id.StudentRegister);
         AdminRegister = findViewById(R.id.AdminRegister);
+        presenter = new LoginPresenter(this, new LoginModel());
 
         StudentRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,54 +87,46 @@ public class LoginView extends AppCompatActivity {
                 String email, password;
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
-                progressBar.setVisibility(View.VISIBLE);
-                presenter.setViewText(email, password);
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    LoginDbRef = FirebaseDatabase.getInstance().getReference();
-                                    String uid = task.getResult().getUser().getUid();
-                                    LoginDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            int userType = snapshot.getValue(Integer.class);
-                                            if(userType == 0) {
-                                                Toast.makeText(getApplicationContext(), "login Successful as Admin", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(getApplicationContext(), homePage.class);
-                                                startActivity(intent);
-                                                finish();
-                                            }
-                                            else if(userType == 1) {
-                                                Toast.makeText(getApplicationContext(), "login Successful as Student", Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(getApplicationContext(), homePage.class);
-                                                startActivity(intent);
-                                                finish();
-                                            }
-                                            else {
-                                                Toast.makeText(getApplicationContext(), "Please Delete account something went wrong", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
+                if(TextUtils.isEmpty(password)){
+                    Toast.makeText(LoginView.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                                        }
-                                    });
+                if(TextUtils.isEmpty(email)){
+                    Toast.makeText(LoginView.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(LoginView.this, "LoginView fail.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+                presenter.onLoginClicked(email, password);
+
             }
         });
     }
 
-    public void setOutputText(String resultText){
-        Toast.makeText(LoginView.this, resultText, Toast.LENGTH_SHORT).show();
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    public void showLoginSuccessAsAdmin() {
+        Toast.makeText(getApplicationContext(), "Login successful as Admin", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), homePage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void showLoginSuccessAsStudent() {
+        Toast.makeText(getApplicationContext(), "Login successful as Student", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), homePage.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void showLoginError(String errorMessage) {
+        Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
     }
 }
