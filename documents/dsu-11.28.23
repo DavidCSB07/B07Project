@@ -1,1 +1,62 @@
 
+11/27/23
+
+Daily Stand Up meeting 
+
+Summary: 
+
+David: 
+--> What you did: 
+  --> EventPage is complete and can run with no error with FireBase implemented and PostEvent & EventPage connect together
+  --> Helped Hillary to merge ComplaintPage and PostComplaint into homePage (Deleting landing page and layout)
+  --> Debbuged ComplaintPage and PostComplaint with Hillary
+  --> Made ComplaintPage Layout more intuitive (title, home btn, etc) with Hillary
+  --> Assigned Hillary Jess and Kehu to POSt activity
+--> What you gonna do: 
+  --> Make sure everyone is on track
+  --> RSVP (binding Page)
+  --> Admin retriving Feedback 
+--> What you struggling:
+  --> RSVP (binding Page)
+Lynn: 
+Hillary:
+Jess:
+Kehu:
+
+Summary: 
+--> Reassigning work to every group member
+  --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
+  --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
+  --> Admin.complaints inProgress: noProgress
+  --> Student.complaints inProgress: frontEnd done, Hillary, backEnd inProgress, Hillary
+  --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase fixed Lynn
+  --> Student.annoucement inProgress: frontEnd fixing, Jess, backEnd (listview) fixing, Jess, frontEnd/backEnd (recyclerview) done, Lynn
+  --> Admin.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
+  --> Student.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
+  --> POSt page inProgress: no progress
+
+Missing: 
+--> Refactor 
+
+DeadLine:
+--> Tueday 11/28, everyThing Done. frontEnd/backEnd/FireBase
+--> Wednesday 11/29, Refactor everyone's code into one.
+--> Thursday 11/30, Refactor everyone's code into one.
+--> Friday 12/01, Refactor everyone's code into one.
+--> Saturday 12/02, Testing.
+--> Sunday 12/03, Testing.
+--> Monday 12/04, Submit
+
+
+Bug fixing:
+--> Gradle compile SDK to low (David)
+  --> Solution: gradle lv app compileSDK: 33 -> 34
+
+--> Can't start activity no andriod studio (Lynn, Jess)
+  --> Solution: run/debug select a specific activity to run
+
+--> App crushing right after launching with no warning or notification (Lynn)
+  --> Solution: FirebaseDatabase.getInstance().getReference("PATH") --> FirebaseDatabase.getInstance().getReference() to no path
+
+--> Emulator stuck on connecting (Lynn)
+  --> search 'Preferences' --> 'Tools' --> 'Emulator' --> uncheck 'Launch in tool window'
