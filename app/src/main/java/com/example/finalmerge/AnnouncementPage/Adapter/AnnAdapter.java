@@ -5,16 +5,14 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalmerge.AnnouncementPage.AnnouncementDetail;
 import com.example.finalmerge.AnnouncementPage.Holder.AnnouncementViewHolder;
-import com.example.finalmerge.R;
-
 import com.example.finalmerge.AnnouncementPage.Model.Announcements;
+import com.example.finalmerge.R;
 
 import java.util.ArrayList;
 
@@ -31,7 +29,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
     @NonNull
     @Override
     public AnnouncementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.complaints_recycleview,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.announcement_recycleview,parent,false);
         return new AnnouncementViewHolder(v);
     }
 

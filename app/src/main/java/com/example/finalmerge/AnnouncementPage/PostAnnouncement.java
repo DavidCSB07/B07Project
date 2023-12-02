@@ -72,22 +72,7 @@ public class PostAnnouncement extends AppCompatActivity {
                 addAnnouncement  (announcements, subject);
             }
         });{
-            String subject = annSubject.getText().toString();
-            String description = annDes.getText().toString();
 
-            //Check if TextInput is empty
-            if(TextUtils.isEmpty(subject)){
-                Toast.makeText(PostAnnouncement.this, "Subject cannot be empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if(TextUtils.isEmpty(description)){
-                Toast.makeText(PostAnnouncement.this, "Description cannot be empty", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            Announcements announcements = new Announcements(subject, description, date);
-            addAnnouncement  (announcements, subject);
         }
     }
 
