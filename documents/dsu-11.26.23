@@ -20,7 +20,7 @@ Hillary:
 Jess:
 Kehu:
 
-Summary: 
+Work Progress: 
 --> Reassigning work to every group member
   --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
   --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
@@ -28,7 +28,7 @@ Summary:
   --> Student.complaints inProgress: frontEnd done, Hillary, backEnd inProgress, Hillary
   --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase done (Encountered bug rn)
   --> Student.annoucement inProgress: frontEnd fixing, Jess, backEnd fixing, Jess, frontEnd/backEnd inProgress, Lynn
-  --> Admin.eventPage inProgress: frontEnd done, David, frontEnd done, David
+  --> Admin.eventPage inProgress: frontEnd done
   --> Student.eventPage inProgress: no progress
   --> POSt page inProgress: no progress
 
