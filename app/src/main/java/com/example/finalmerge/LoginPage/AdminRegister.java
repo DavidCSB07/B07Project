@@ -87,7 +87,7 @@ public class AdminRegister extends AppCompatActivity {
                                     registerDbRef = FirebaseDatabase.getInstance().getReference();
                                     registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
                                 } else {
-                                    // If sign in fails, display a message to the user.
+                                    // If sign up fails, display a message to the user.
                                     Toast.makeText(AdminRegister.this, "Register failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
