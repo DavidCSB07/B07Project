@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoginModel{
+public class LoginModel implements LoginModelInterface{
     private FirebaseAuth mAuth;
     private DatabaseReference loginDBRef;
 
@@ -22,10 +22,12 @@ public class LoginModel{
         loginDBRef = FirebaseDatabase.getInstance().getReference();
     }
 
+    @Override
     public void signIn(String email, String password, OnCompleteListener<AuthResult> onCompleteListener) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(onCompleteListener);
     }
 
+    @Override
     public void getUserType(String uid, OnSuccessListener<Integer> onSuccessListener, OnFailureListener OnFailureListener) {
         loginDBRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener(){
             @Override
@@ -36,7 +38,7 @@ public class LoginModel{
 
             @Override
             public void onCancelled(@NonNull DatabaseError error){
-                OnFailureListener.onFailure(error.toException());
+                onFailureListener.onFailure(error.toException());
             }
         });
     }

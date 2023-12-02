@@ -27,7 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class LoginView{
+public class LoginView implements LoginViewInterface {
     private ProgressBar progressBar;
     private Context context;
 
@@ -38,22 +38,21 @@ public class LoginView{
 
     @Override
     public void showProgress() {
-        progressBar.setVisibility(View.VISIBLE);
+
     }
 
     @Override
     public void hideProgress() {
-        progressBar.setVisibility(View.GONE);
+
     }
 
     @Override
     public void showError(String message) {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public void navigateToHomePage(String userType) {
-        Toast.makeText(context, "Login Successful as " + userType, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(context, homePage.class)
+
     }
 }
