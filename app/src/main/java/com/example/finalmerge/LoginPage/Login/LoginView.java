@@ -33,6 +33,7 @@ public class LoginView extends AppCompatActivity {
     TextView StudentRegister;
     TextView AdminRegister;
     DatabaseReference LoginDbRef;
+    LoginPresenter presenter;
 
     //Check if acc is signed in
     /*
@@ -59,8 +60,6 @@ public class LoginView extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         StudentRegister = findViewById(R.id.StudentRegister);
         AdminRegister = findViewById(R.id.AdminRegister);
-
-        mAuth = FirebaseAuth.getInstance();
 
         StudentRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,17 +88,7 @@ public class LoginView extends AppCompatActivity {
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
                 progressBar.setVisibility(View.VISIBLE);
-                if(TextUtils.isEmpty(password)){
-                    Toast.makeText(LoginView.this, "Enter password", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(LoginView.this, "Enter email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                mAuth.signInWithEmailAndPassword(email, password)
+                presenter.setViewText(email, password);
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -134,8 +123,6 @@ public class LoginView extends AppCompatActivity {
                                         }
                                     });
 
-
-
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Toast.makeText(LoginView.this, "LoginView fail.",
@@ -145,5 +132,9 @@ public class LoginView extends AppCompatActivity {
                         });
             }
         });
+    }
+
+    public void setOutputText(String resultText){
+        Toast.makeText(LoginView.this, resultText, Toast.LENGTH_SHORT).show();
     }
 }
