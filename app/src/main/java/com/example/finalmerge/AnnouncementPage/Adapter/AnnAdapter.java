@@ -30,7 +30,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
     @Override
     public AnnouncementViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(context).inflate(R.layout.complaints_recycleview,parent,false);
-        return new AnnouncementViewHolder(v, context, list);
+        return new AnnouncementViewHolder(v);
     }
 
     @Override
