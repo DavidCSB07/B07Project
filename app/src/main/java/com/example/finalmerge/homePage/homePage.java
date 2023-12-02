@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalmerge.LoginPage.Login;
+import com.example.finalmerge.LoginPage.Login.LoginView;
 import com.example.finalmerge.R;
 import com.example.finalmerge.homePage.AnnouncementUI.AnnouncementUI;
 import com.example.finalmerge.homePage.ComplaintUI.ComplaintUI;
@@ -35,13 +35,13 @@ public class homePage extends AppCompatActivity {
         Event -> EventPage.class(Rating and Comments --> retrieve from RSVP) + ScheduleEvent
         Complaint -> ComplaintForm.class + ComplaintPage
         ?? POSt -> ... ??
-        Logout -> Login.class
+        Logout -> LoginView.class
 
          */
         Logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), LoginView.class);
                 startActivity(intent);
                 finish();
             }

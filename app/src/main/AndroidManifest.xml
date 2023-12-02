@@ -18,7 +18,7 @@
             android:name=".LoginPage.AdminRegister"
             android:exported="false" />
         <activity
-            android:name=".LoginPage.Login"
+            android:name=".LoginPage.Login.LoginView"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

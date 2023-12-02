@@ -1,4 +1,4 @@
-package com.example.finalmerge.LoginPage;
+package com.example.finalmerge.LoginPage.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,7 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Login extends AppCompatActivity {
+public class LoginView extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
     Button buttonLog;
@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
         StudentRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StudentRegister.class);
+                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.LoginPage.StudentRegister.class);
                 startActivity(intent);
                 finish();
             }
@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity {
         AdminRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdminRegister.class);
+                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.LoginPage.AdminRegister.class);
                 startActivity(intent);
                 finish();
             }
@@ -91,12 +91,12 @@ public class Login extends AppCompatActivity {
                 password = editTextPassword.getText().toString();
                 progressBar.setVisibility(View.VISIBLE);
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(Login.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginView.this, "Enter password", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(Login.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginView.this, "Enter email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -139,7 +139,7 @@ public class Login extends AppCompatActivity {
 
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(Login.this, "Login fail.",
+                                    Toast.makeText(LoginView.this, "LoginView fail.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
