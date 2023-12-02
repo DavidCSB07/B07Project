@@ -12,7 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalmerge.LoginPage.Model.UserInfo;
 import com.example.finalmerge.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,7 +19,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class AdminRegister extends AppCompatActivity {
 
@@ -83,9 +81,9 @@ public class AdminRegister extends AppCompatActivity {
                                     Toast.makeText(AdminRegister.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
                                     String uid = task.getResult().getUser().getUid();
-                                    UserInfo userinfo = new UserInfo(uid, email, password, 1);
-                                    registerDbRef = FirebaseDatabase.getInstance().getReference();
-                                    registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
+                                    //UserInfo userinfo = new UserInfo(uid, email, password, 1);
+                                    //registerDbRef = FirebaseDatabase.getInstance().getReference();
+                                    //registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
                                 } else {
                                     // If sign up fails, display a message to the user.
                                     Toast.makeText(AdminRegister.this, "Register failed.",
