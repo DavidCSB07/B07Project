@@ -29,7 +29,6 @@ public class LoginView extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
     Button buttonLog;
-    FirebaseAuth mAuth;
     ProgressBar progressBar; //id of 'stuff' in layout
     TextView StudentRegister;
     TextView AdminRegister;
