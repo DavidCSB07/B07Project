@@ -6,8 +6,8 @@ public class Event {
     private String postKey;
     private String title;
     private String description;
-    private String userId;
-    private Object date;
+    private String refKey;
+    private int confirmation; // 0 --> not joined 1 otherwise
     private Object timeStamp;
 
     public Event(String title, String description) {
@@ -37,16 +37,15 @@ public class Event {
         return description;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public Object getDate() {
-        return date;
-    }
-
     public Object getTimeStamp() {
         return timeStamp;
     }
 
+    public int getConfirmation() {
+        return confirmation;
+    }
+
+    public void setConfirmation(int confirmation) {
+        this.confirmation = confirmation;
+    }
 }

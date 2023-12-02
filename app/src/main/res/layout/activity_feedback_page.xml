@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    app:cardElevation="8dp"
+    android:layout_margin="15dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        >
+        <TextView
+            android:id="@+id/RSVP_PAGE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_edge"
+            android:text="FEEDBACK Page"
+            >
+
+
+        </TextView>
+        <TextView
+            android:id="@+id/title"
+            android:layout_below="@+id/RSVP_PAGE"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Title..........."
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_below="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:textStyle="bold"
+            android:text="Event Date: 12/04/2023"
+            android:textSize="15dp"
+            android:textColor="@color/seal_grey"
+            >
+        </TextView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/eventDate"
+                android:padding="15dp"
+                app:cardElevation="100dp"
+                android:layout_margin="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp"
+                    >
+                    <TextView
+                        android:id="@+id/feedbackText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:text="Submit FeedBack"
+                        android:textSize="25dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_edge"
+                        android:gravity="center"
+                        >
+                    </TextView>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/numericFeedbackLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/feedbackText"
+                        android:layout_marginVertical="10dp"
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/numericFeedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Numeric Feedback 1 to 10"
+                            android:inputType="number"
+                            >
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ShortFeedbacklayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_below="@+id/numericFeedbackLayout"
+                        >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/shortFeedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Short Feedback"
+                            android:inputType="number"
+                            >
+                        </com.google.android.material.textfield.TextInputEditText>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button
+                        android:id="@+id/submit"
+                        android:layout_below="@+id/ShortFeedbacklayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="submit"
+                        >
+                    </Button>
+                    <Button
+                        android:id="@+id/back"
+                        android:layout_margin="10dp"
+                        android:layout_below="@+id/submit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="EventPage"
+                        >
+                    </Button>
+
+                </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

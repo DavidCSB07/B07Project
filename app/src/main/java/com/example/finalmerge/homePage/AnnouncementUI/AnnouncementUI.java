@@ -47,8 +47,9 @@ public class AnnouncementUI extends AppCompatActivity {
         AnnouncementUI -> AnnouncementPage.class
         home -> homePage.class
          */
-        mAuth = FirebaseAuth.getInstance();
+
         AnnouncementUIDbRef = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         String uid = currentUser.getUid();
         AnnouncementUIDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {

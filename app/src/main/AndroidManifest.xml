@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
+            android:name=".EventPage.RSVP.FeedbackPage"
+            android:exported="false" />
+        <activity
             android:name=".EventPage.RSVP.RSVP"
             android:exported="false" />
         <activity
@@ -49,13 +52,13 @@
             android:exported="true" />
         <activity
             android:name=".AnnouncementPage.AnnouncementPage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".RSVP.EventDetail"
             android:exported="true" />
         <activity
             android:name=".EventPage.EventPage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".ComplaintsPage.ComplaintPage"
             android:exported="true" />
@@ -68,7 +71,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

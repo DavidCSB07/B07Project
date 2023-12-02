@@ -39,7 +39,8 @@ public class PostEvent extends AppCompatActivity {
         date = findViewById(R.id.date);
         text_description = findViewById(R.id.description);
         participats = findViewById(R.id.participation);
-        eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent");
+        eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheuldEvent");
+
 
 
         homebutton.setOnClickListener(new View.OnClickListener() {
@@ -84,11 +85,12 @@ public class PostEvent extends AppCompatActivity {
 
     private void addEvent(Event event) {
 
-        //String key = myRef.getKey();
-        //post.setPostKey(key);
+
+        //FirebaseDatabase database = FirebaseDatabase.getInstance().getReference();
+        //DatabaseReference myRef = database.child("ScheduleEvent").push();
 
         // add post data to firebase database
-        eventDbRef.child("Event1").setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+        eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(PostEvent.this, "data inserted", Toast.LENGTH_SHORT).show();
