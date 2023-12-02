@@ -15,7 +15,6 @@ public class LoginPresenter {
         model.signInWithEmailAndPassword(email, password, new LoginModel.OnSignInListener() {
             @Override
             public void onSignInSuccess(int userType) {
-                onSignInSuccess(userType);
                 view.hideProgressBar();
                 if (userType == 0) {
                     view.showLoginSuccessAsAdmin();
