@@ -4,6 +4,24 @@
 Daily Stand Up meeting 
 
 Summary: 
+
+David: 
+--> What you did: 
+  --> Meeting with Raward about extension and important information 
+  --> Admin.EventPage front and back worked and tested 
+  --> Trying to refactor Login Page and Admin.EventPage (PostEvent) into homePage
+  --> Organize every Page into different Package
+  --> Merge EventPage RecycleView into homePage
+--> What you gonna do: 
+  --> Connect PostEvent and EventPage together
+--> What you struggling:
+  --> EventPage organization and firebase 
+Lynn: 
+Hillary:
+Jess:
+Kehu:
+
+Summary: 
 --> Reassigning work to every group member
   --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
   --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
@@ -11,8 +29,8 @@ Summary:
   --> Student.complaints inProgress: frontEnd done, Hillary, backEnd inProgress, Hillary
   --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase fixed Lynn
   --> Student.annoucement inProgress: frontEnd fixing, Jess, backEnd (listview) fixing, Jess, frontEnd/backEnd (recyclerview) done, Lynn
-  --> Admin.eventPage inProgress: frontEnd done, David, frontEnd done, David
-  --> Student.eventPage inProgress: no progress
+  --> Admin.eventPage inProgress: frontEnd done, David, backEnd done, David
+  --> Student.eventPage inProgress: frontEnd done, David, backEnd done, David
   --> POSt page inProgress: no progress
 
 Missing: 
