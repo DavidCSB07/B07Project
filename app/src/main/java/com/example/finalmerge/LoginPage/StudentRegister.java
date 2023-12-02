@@ -89,9 +89,6 @@ public class StudentRegister extends AppCompatActivity {
                 }
 
 
-
-
-
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override

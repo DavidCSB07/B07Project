@@ -40,3 +40,6 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
         return events.size();
     }
 }
+
+
+
