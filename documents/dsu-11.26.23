@@ -4,6 +4,23 @@
 Daily Stand Up meeting 
 
 Summary: 
+
+David: 
+--> What you did: 
+  --> eventPage admin frontEnd done
+  --> debugging for everyone 
+  --> fixing Login backEnd and firebase
+--> What you gonna do: 
+  --> Finish backEnd of homePage
+  --> Research on how to do eventPage （Recycle View）with Firebase quering and pushing
+--> What you struggling:
+  --> EventPage
+Lynn: 
+Hillary:
+Jess:
+Kehu:
+
+Summary: 
 --> Reassigning work to every group member
   --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
   --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
