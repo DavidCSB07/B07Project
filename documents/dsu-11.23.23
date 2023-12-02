@@ -4,6 +4,24 @@
 Daily Stand Up meeting 
 
 Summary: 
+
+David: 
+--> What you did: 
+  --> Redistributed workload like Work Progress below
+  --> Finished backEnd for Login Page and Firebase
+  --> Finished frontend of homePage
+  --> Debugging for everyone
+--> What you gonna do:
+  --> Finish backEnd and homePage of homePage
+  --> Research on how to do eventPage
+--> What you struggling:
+  --> Nothing
+Lynn: 
+Hillary:
+Jess:
+Kehu:
+
+Work Progress: 
 --> Reassigning work to every group member
   --> Login Page done: frontEnd Jess, backEnd David, FireBase done 
   --> homePage inProgress: frontEnd done, David
@@ -11,6 +29,8 @@ Summary:
   --> annoucement inProgress: frontEnd done, Lynn 
   --> eventPage inProgress: no progress
   --> POSt page inProgress: no progress
+
+
 
 Bug fixing:
 --> Gradle compile SDK to low
