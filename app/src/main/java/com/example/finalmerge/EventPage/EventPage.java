@@ -57,11 +57,8 @@ public class EventPage extends AppCompatActivity {
         recyclerview = findViewById(R.id.EventList);
         recyclerview.setHasFixedSize(true);
 
-        eventsList.add(new Event("title", "description"));
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(eventAdapter);
-
-
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -78,6 +75,8 @@ public class EventPage extends AppCompatActivity {
 
             }
         });
+
+
 
 
 

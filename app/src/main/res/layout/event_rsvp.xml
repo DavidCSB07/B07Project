@@ -114,17 +114,29 @@
             >
         </Button>
         <Button
-            android:id="@+id/feedback_button"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/join_button"
+            android:layout_centerHorizontal="true"
+            android:text="Back"
+
+            >
+        </Button>
+        <Button
+            android:id="@+id/feedback_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/back"
             android:layout_centerHorizontal="true"
             android:visibility="visible"
             android:text="Submit FeedBack"
 
             >
         </Button>
+
 
 
     </RelativeLayout>

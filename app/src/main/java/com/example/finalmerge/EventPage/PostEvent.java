@@ -24,7 +24,7 @@ public class PostEvent extends AppCompatActivity {
 
     Button homebutton, schedulebutton;
 
-    TextInputEditText text_title, date, text_description, participats;
+    TextInputEditText text_title, text_date, text_description, participats;
 
     DatabaseReference eventDbRef;
     @Override
@@ -36,10 +36,10 @@ public class PostEvent extends AppCompatActivity {
         homebutton = findViewById(R.id.home_button);
 
         text_title = findViewById(R.id.title);
-        date = findViewById(R.id.date);
+        text_date = findViewById(R.id.date);
         text_description = findViewById(R.id.description);
         participats = findViewById(R.id.participation);
-        eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheuldEvent");
+
 
 
 
@@ -57,7 +57,8 @@ public class PostEvent extends AppCompatActivity {
             public void onClick(View v) {
                 String description = text_description.getText().toString();
                 String title = text_title.getText().toString();
-                String participants = participats.getText().toString();
+                String date = text_date.getText().toString();
+                int participants = Integer.parseInt(participats.getText().toString());
 
                 //int num_participants = Integer.parseInt(participants);
                 if(TextUtils.isEmpty(title)){
@@ -70,13 +71,22 @@ public class PostEvent extends AppCompatActivity {
                     return;
                 }
 
+                if(TextUtils.isEmpty(date)){
+                    Toast.makeText(PostEvent.this, "date cannot be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(participants <= 0 ){
+                    Toast.makeText(PostEvent.this, "Number of participants cannot be less than 0", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
 
                 // check date & participation condition
 
 
                 // implements Post Object and add to firebase
 
-                Event event = new Event(title, description);
+                Event event = new Event(title, description, date, participants);
                 addEvent(event);
 
             }
@@ -84,11 +94,9 @@ public class PostEvent extends AppCompatActivity {
     }
 
     private void addEvent(Event event) {
-
-
-        //FirebaseDatabase database = FirebaseDatabase.getInstance().getReference();
-        //DatabaseReference myRef = database.child("ScheduleEvent").push();
-
+        eventDbRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent");
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent").push();
+        event.setRefKey(myRef.getKey());
         // add post data to firebase database
         eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -101,6 +109,8 @@ public class PostEvent extends AppCompatActivity {
                 Toast.makeText(PostEvent.this, "data not inserted", Toast.LENGTH_SHORT).show();
             }
         });
+
+        
     }
 
 }

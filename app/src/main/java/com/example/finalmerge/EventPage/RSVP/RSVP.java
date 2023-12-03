@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalmerge.EventPage.EventPage;
+import com.example.finalmerge.EventPage.Feedback.PostFeedback;
 import com.example.finalmerge.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,15 +18,14 @@ public class RSVP extends AppCompatActivity {
 
     TextView title, description;
 
-    Button join, feedback;
+    Button join, feedback, back;
 
     Boolean check_join_btn;
-
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rsvp);
+        setContentView(R.layout.event_rsvp);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -38,12 +39,20 @@ public class RSVP extends AppCompatActivity {
 
         join = findViewById(R.id.join_button);
         feedback = findViewById(R.id.feedback_button);
+        back = findViewById(R.id.back);
         feedback.setVisibility(View.GONE);
 
         title.setText(getIntent().getExtras().getString("title"));
         description.setText(getIntent().getExtras().getString("description"));
 
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EventPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +73,9 @@ public class RSVP extends AppCompatActivity {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), RSVP.class);
-                intent.putExtra("title", title.getText().toString());
+                Intent intent = new Intent(getApplicationContext(), PostFeedback.class);
+                startActivity(intent);
+                finish();
             }
         });
 
