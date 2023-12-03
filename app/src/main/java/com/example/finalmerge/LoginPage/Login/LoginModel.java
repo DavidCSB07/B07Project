@@ -18,7 +18,7 @@ public class LoginModel {
         LoginDbRef = FirebaseDatabase.getInstance().getReference();
     }
 
-    public void signInWithEmailAndPassword(String email, String password, final OnSignInListener listener) {
+    public void signInWithEmailAndPassword(String email, String password, final LoginPresenter presenter) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
@@ -28,23 +28,17 @@ public class LoginModel {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         int userType = snapshot.getValue(Integer.class);
-                                        listener.onSignInSuccess(userType);
+                                        presenter.onSignInSuccess(userType);
                                     }
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
-                                        listener.onSignInFailure("Database error");
+                                        presenter.onSignInFailure("Database error");
                                     }
                                 });
                     } else {
-                        listener.onSignInFailure("Login fail");
+                        presenter.onSignInFailure("Login failed");
                     }
                 });
-    }
-
-    public interface OnSignInListener {
-        void onSignInSuccess(int userType);
-
-        void onSignInFailure(String errorMessage);
     }
 
 }

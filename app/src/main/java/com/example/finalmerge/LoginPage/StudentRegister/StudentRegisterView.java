@@ -1,4 +1,4 @@
-package com.example.finalmerge.LoginPage;
+package com.example.finalmerge.LoginPage.StudentRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,28 +23,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class StudentRegister extends AppCompatActivity {
-
-
-    TextInputEditText editTextEmail, editTextPassword;
-    Button buttonReg;
-    FirebaseAuth mAuth;
-    DatabaseReference registerDbRef;
+public class StudentRegisterView extends AppCompatActivity {
+    private TextInputEditText editTextEmail, editTextPassword;
+    private Button buttonReg;
     ProgressBar progressBar; //id of 'stuff' in layout
-    TextView loginNow;
+    private TextView loginNow;
+    private StudentRegisterPresenter presenter;
 
-    /*
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), homePage.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +43,7 @@ public class StudentRegister extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressBar);
 
-        mAuth = FirebaseAuth.getInstance();
-
+        presenter = new StudentRegisterPresenter(this, new StudentRegisterModel());
 
         loginNow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,45 +62,32 @@ public class StudentRegister extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
                 progressBar.setVisibility(View.VISIBLE);
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(StudentRegister.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentRegisterView.this, "Enter password", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(StudentRegister.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StudentRegisterView.this, "Enter email", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
-
-
-
-
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(StudentRegister.this, "Account created.",
-                                            Toast.LENGTH_SHORT).show();
-
-                                    String uid = task.getResult().getUser().getUid();
-                                    UserInfo userinfo = new UserInfo(uid, email, password, 0);
-                                    registerDbRef = FirebaseDatabase.getInstance().getReference();
-                                    registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(StudentRegister.this, "Register failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
-
+                presenter.onRegisterClicked(email, password);
             }
         });
 
 
+    }
+
+    public void showProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.GONE);
+    }
+
+    public void showCreateAccountStatus(String statusMessage) {
+        Toast.makeText(getApplicationContext(), statusMessage, Toast.LENGTH_SHORT).show();
     }
 }

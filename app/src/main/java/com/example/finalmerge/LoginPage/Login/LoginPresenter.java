@@ -12,26 +12,25 @@ public class LoginPresenter {
     public void onLoginClicked(String email, String password) {
         view.showProgressBar();
         // Call the signIn method in the Model
-        model.signInWithEmailAndPassword(email, password, new LoginModel.OnSignInListener() {
-            @Override
-            public void onSignInSuccess(int userType) {
-                view.hideProgressBar();
-                if (userType == 0) {
-                    view.showLoginSuccessAsAdmin();
-                } else if (userType == 1) {
-                    view.showLoginSuccessAsStudent();
-                } else {
-                    view.showLoginError("Please try again.");
-                }
-            }
+        model.signInWithEmailAndPassword(email, password, this);
 
-            @Override
-            public void onSignInFailure(String errorMessage) {
-                onSignInFailure(errorMessage);
-                view.hideProgressBar();
-                view.showLoginError(errorMessage);
-            }
-        });
     }
 
+    public void onSignInSuccess(int userType) {
+
+        view.hideProgressBar();
+        if (userType == 0) {
+            view.showLoginSuccessAsAdmin();
+        } else if (userType == 1) {
+            view.showLoginSuccessAsStudent();
+        } else {
+            view.showLoginError("Please try again.");
+        }
+    }
+
+    public void onSignInFailure(String errorMessage) {
+        onSignInFailure(errorMessage);
+        view.hideProgressBar();
+        view.showLoginError(errorMessage);
+    }
 }
