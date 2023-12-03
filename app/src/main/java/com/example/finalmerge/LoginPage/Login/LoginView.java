@@ -2,7 +2,6 @@ package com.example.finalmerge.LoginPage.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -11,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.finalmerge.LoginPage.AdminRegister.AdminRegisterView;
 import com.example.finalmerge.LoginPage.StudentRegister.StudentRegisterView;
 import com.example.finalmerge.R;
 import com.example.finalmerge.homePage.homePage;
@@ -40,7 +40,7 @@ public class LoginView extends AppCompatActivity {
     }
      */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage_login);
 
@@ -50,28 +50,21 @@ public class LoginView extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         StudentRegister = findViewById(R.id.StudentRegister);
         AdminRegister = findViewById(R.id.AdminRegister);
-        presenter = new LoginPresenter(this, new LoginModel());
+        presenter = new LoginPresenter(new LoginModel(), this);
 
         StudentRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StudentRegisterView.class);
-                startActivity(intent);
-                finish();
+                presenter.onStudentRegisterClick();
             }
         });
-
 
         AdminRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.LoginPage.AdminRegister.AdminRegister.class);
-                startActivity(intent);
-                finish();
+                presenter.onAdminRegisterClick();
             }
         });
-
-
 
         buttonLog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,23 +73,12 @@ public class LoginView extends AppCompatActivity {
                 email = editTextEmail.getText().toString();
                 password = editTextPassword.getText().toString();
 
-                if(TextUtils.isEmpty(password)){
-                    Toast.makeText(LoginView.this, "Enter password", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(LoginView.this, "Enter email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                presenter.onLoginClicked(email, password);
-
+                presenter.onLoginClick(email, password);
             }
         });
     }
 
-    public void showProgressBar() {
+    public void displayProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
     }
 
@@ -104,21 +86,26 @@ public class LoginView extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
     }
 
-    public void showLoginSuccessAsAdmin() {
-        Toast.makeText(getApplicationContext(), "Login successful as Admin", Toast.LENGTH_SHORT).show();
+    public void displayLoginSuccess(String successMessage) {
+        Toast.makeText(getApplicationContext(), successMessage, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), homePage.class);
         startActivity(intent);
         finish();
     }
 
-    public void showLoginSuccessAsStudent() {
-        Toast.makeText(getApplicationContext(), "Login successful as Student", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(getApplicationContext(), homePage.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void showLoginError(String errorMessage) {
+    public void displayLoginError(String errorMessage) {
         Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+    }
+
+    public void navigateToStudentRegister() {
+        Intent intent = new Intent(getApplicationContext(), StudentRegisterView.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void navigateToAdminRegister() {
+        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
+        startActivity(intent);
+        finish();
     }
 }

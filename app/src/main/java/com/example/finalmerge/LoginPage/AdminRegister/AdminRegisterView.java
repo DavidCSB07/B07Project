@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AdminRegister extends AppCompatActivity {
+public class AdminRegisterView extends AppCompatActivity {
 
     TextInputEditText editTextEmail, editTextPassword;
     Button buttonReg;
@@ -64,13 +64,13 @@ public class AdminRegister extends AppCompatActivity {
                 password = String.valueOf(editTextPassword.getText());
                 progressBar.setVisibility(View.VISIBLE);
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(AdminRegister.this, "Enter password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminRegisterView.this, "Enter password", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(AdminRegister.this, "Enter email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminRegisterView.this, "Enter email", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                     return;
                 }
@@ -81,7 +81,7 @@ public class AdminRegister extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(AdminRegister.this, "Account created.",
+                                    Toast.makeText(AdminRegisterView.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
                                     String uid = task.getResult().getUser().getUid();
                                     UserInfo userinfo = new UserInfo(uid, email, password, 1);
@@ -89,12 +89,11 @@ public class AdminRegister extends AppCompatActivity {
                                     registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
                                 } else {
                                     // If sign in fails, display a message to the user.
-                                    Toast.makeText(AdminRegister.this, "Register failed.",
+                                    Toast.makeText(AdminRegisterView.this, "Register failed.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
-
             }
         });
     }

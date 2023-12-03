@@ -1,8 +1,5 @@
 package com.example.finalmerge.LoginPage.StudentRegister;
 
-import android.view.View;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 
 import com.example.finalmerge.LoginPage.Model.UserInfo;
@@ -14,32 +11,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class StudentRegisterModel {
-    private FirebaseAuth mAuth;
-    private DatabaseReference registerDbRef;
+    private final FirebaseAuth mAuth;
+    private final DatabaseReference registerDbRef;
 
     public StudentRegisterModel() {
         mAuth = FirebaseAuth.getInstance();
         registerDbRef = FirebaseDatabase.getInstance().getReference();
     }
 
-    public void createUserWithEmailAndPassword(String email, String password, final StudentRegisterPresenter presenter){
+    public void createUserWithEmailAndPassword(String email, String password, StudentRegisterPresenter presenter){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            presenter.RegisterStatus("Account created.");
-
-                            String uid = task.getResult().getUser().getUid();
-                            UserInfo userinfo = new UserInfo(uid, email, password, 0);
-
-                            registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
-                        } else {
-                            presenter.RegisterStatus("Register failed.");
-
-                        }
+                        presenter.hideProgressBar();
+                        presenter.registerUser(email, password, task);
                     }
                 });
     }
 
+    public void writeToDB(String email, String password,@NonNull Task<AuthResult> task) {
+        String uid = task.getResult().getUser().getUid();
+        UserInfo userinfo = new UserInfo(uid, email, password, 0);
+
+        registerDbRef.child("RegisterInfo").child(uid).setValue(userinfo);
+    }
 }
