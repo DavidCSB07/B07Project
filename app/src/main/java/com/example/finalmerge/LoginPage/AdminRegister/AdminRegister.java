@@ -1,4 +1,4 @@
-package com.example.finalmerge.LoginPage;
+package com.example.finalmerge.LoginPage.AdminRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
