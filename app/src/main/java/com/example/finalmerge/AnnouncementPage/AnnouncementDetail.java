@@ -15,8 +15,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 
 public class AnnouncementDetail extends AppCompatActivity {
-    TextInputEditText annSubject, annDes;
-    TextView annDate;
+    TextView annSubject, annDes, annDate;
+    Button back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +26,20 @@ public class AnnouncementDetail extends AppCompatActivity {
         annSubject = findViewById(R.id.annSubject);
         annDes = findViewById(R.id.annDes);
         annDate = findViewById(R.id.annDate);
+        back = findViewById(R.id.back_button);
 
-        //annSubject.setText(getIntent().getExtras().getString("annSubject"));
-        //annDate.setText(getIntent().getExtras().getString("annDate"));
-        //annDes.setText(getIntent().getExtras().getString("annDes"));
+        annSubject.setText(getIntent().getExtras().getString("annSubject"));
+        annDate.setText(getIntent().getExtras().getString("annDate"));
+        annDes.setText(getIntent().getExtras().getString("annDes"));
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AnnouncementPage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 }

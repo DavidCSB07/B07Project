@@ -35,18 +35,16 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
-        Announcements announcements = list.get(position);
-        holder.subject.setText(announcements.getAnnSubject());
-        holder.description.setText(announcements.getAnnDes());
-        holder.date.setText(announcements.getCurrentDate());
+        holder.subject.setText(list.get(position).getAnnSubject());
+        holder.description.setText(list.get(position).getAnnDes());
+        holder.date.setText(list.get(position).getCurrentDate());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), AnnouncementDetail.class);
-                //intent.putExtra("annSubject", announcements.getAnnSubject());
-                //intent.putExtra("annDes", announcements.getAnnDes());
-                //intent.putExtra("annDate", announcements.getCurrentDate());
-                //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("annSubject", list.get(position).getAnnSubject());
+                intent.putExtra("annDes", list.get(position).getAnnDes());
+                intent.putExtra("annDate", list.get(position).getCurrentDate());
                 v.getContext().startActivity(intent);
             }
         });
