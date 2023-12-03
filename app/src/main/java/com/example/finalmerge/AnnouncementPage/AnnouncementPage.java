@@ -50,7 +50,10 @@ public class AnnouncementPage extends AppCompatActivity {
         database = FirebaseDatabase.getInstance().getReference("Announcement");
 
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
 
         announcementList = new ArrayList<>();
 
