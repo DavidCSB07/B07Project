@@ -27,9 +27,9 @@ public class AnnouncementDetail extends AppCompatActivity {
         annDes = findViewById(R.id.annDes);
         annDate = findViewById(R.id.annDate);
 
-        annSubject.setText(getIntent().getStringExtra("annSubject"));
-        annDate.setText(getIntent().getStringExtra("annDate"));
-        annDes.setText(getIntent().getStringExtra("annDes"));
+        //annSubject.setText(getIntent().getExtras().getString("annSubject"));
+        //annDate.setText(getIntent().getExtras().getString("annDate"));
+        //annDes.setText(getIntent().getExtras().getString("annDes"));
     }
 
 }
