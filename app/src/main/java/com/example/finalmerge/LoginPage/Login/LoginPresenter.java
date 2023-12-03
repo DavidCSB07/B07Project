@@ -34,9 +34,9 @@ public class LoginPresenter {
     public void onSignInStatus(int userType) {
         view.hideProgressBar();
         if (userType == 0) {
-            view.displayLoginSuccess("Admin Login Successful");
-        } else if (userType == 1) {
             view.displayLoginSuccess("Student Login Successful");
+        } else if (userType == 1) {
+            view.displayLoginSuccess("Admin Login Successful");
         } else {
             view.displayLoginError("Please try again.");
         }
