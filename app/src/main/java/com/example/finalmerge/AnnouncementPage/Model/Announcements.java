@@ -39,4 +39,14 @@ public class Announcements {
     public void setCurrentDate(String currentDate) {
         this.currentDate = currentDate;
     }
+
+    public String getFilteredDescription() {
+        if (annDes.length() > 25) {
+            // If annDes is longer than 25 characters, display the first 22 characters and "..."
+            return annDes.substring(0, 22) + "...";
+        } else {
+            // Otherwise, display as it is
+            return annDes;
+        }
+    }
 }

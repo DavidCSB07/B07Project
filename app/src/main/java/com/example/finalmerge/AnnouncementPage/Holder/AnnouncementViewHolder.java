@@ -21,4 +21,8 @@ public class AnnouncementViewHolder extends RecyclerView.ViewHolder{
         date = itemView.findViewById(R.id.rDate);
         layout = itemView.findViewById(R.id.layout);
     }
+
+    public void setDescription(String description) {
+        this.description.setText(description);
+    }
 }

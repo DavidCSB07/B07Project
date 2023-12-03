@@ -36,7 +36,7 @@ public class AnnAdapter extends RecyclerView.Adapter<AnnouncementViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
         holder.subject.setText(list.get(position).getAnnSubject());
-        holder.description.setText(list.get(position).getAnnDes());
+        holder.description.setText(list.get(position).getFilteredDescription());
         holder.date.setText(list.get(position).getCurrentDate());
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
