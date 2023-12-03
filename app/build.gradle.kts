@@ -49,7 +49,9 @@ dependencies {
 
     // cardview
     implementation("androidx.cardview:cardview:1.0.0")
-    // material edit text library
-    implementation("com.rengwuxian.materialedittext:library:2.1.4")
+
+    // implement Mockito for testing
+    testImplementation("org.mockito:mockito-all:1.10.19")
+
 
 }

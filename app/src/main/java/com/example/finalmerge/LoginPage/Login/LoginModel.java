@@ -33,7 +33,7 @@ public class LoginModel {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                                             int userType = snapshot.getValue(Integer.class);
-                                            presenter.onSignInStatus(userType);
+                                            presenter.onSignInSuccess(userType);
                                         }
 
                                         @Override

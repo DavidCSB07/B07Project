@@ -52,6 +52,7 @@
     </ProgressBar>
     <Button
         android:id="@+id/register_button"
+        android:onClick="onStudentRegisterClick"
         android:text="@string/register"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
@@ -60,6 +61,7 @@
 
     <TextView
         android:id="@+id/LoginNow"
+        android:onClick="onLoginNowClick"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

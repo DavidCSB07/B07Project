@@ -3,7 +3,7 @@ package com.example.finalmerge.LoginPage.Login;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,19 +11,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.LoginPage.AdminRegister.AdminRegisterView;
-import com.example.finalmerge.LoginPage.StudentRegister.StudentRegisterView;
 import com.example.finalmerge.R;
 import com.example.finalmerge.homePage.homePage;
-import com.google.android.material.textfield.TextInputEditText;
 
 public class LoginView extends AppCompatActivity {
 
-    TextInputEditText editTextEmail, editTextPassword;
-    Button buttonLog;
-    ProgressBar progressBar; //id of 'stuff' in layout
-    TextView StudentRegister;
-    TextView AdminRegister;
-    LoginPresenter presenter;
+    private ProgressBar progressBar; //id of 'stuff' in layout
+    private LoginPresenter presenter;
+    private TextView passwordErrorMessage;
+    private TextView emailErrorMessage;
 
     //Check if acc is signed in
     /*
@@ -44,38 +40,21 @@ public class LoginView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage_login);
 
-        editTextEmail = findViewById(R.id.email);
-        editTextPassword = findViewById(R.id.password);
-        buttonLog = findViewById(R.id.login_button);
         progressBar = findViewById(R.id.progressBar);
-        StudentRegister = findViewById(R.id.StudentRegister);
-        AdminRegister = findViewById(R.id.AdminRegister);
+        passwordErrorMessage=findViewById(R.id.PasswordInputMessage);
+        emailErrorMessage=findViewById(R.id.EmailInputMessage);
+
         presenter = new LoginPresenter(new LoginModel(), this);
+    }
 
-        StudentRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onStudentRegisterClick();
-            }
-        });
-
-        AdminRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                presenter.onAdminRegisterClick();
-            }
-        });
-
-        buttonLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String email, password;
-                email = editTextEmail.getText().toString();
-                password = editTextPassword.getText().toString();
-
-                presenter.onLoginClick(email, password);
-            }
-        });
+    public void onLoginClick(View view) {
+        presenter.checkInput();
+    }
+    public void onStudentRegisterClick(View view) {
+        presenter.onStudentRegisterClick();
+    }
+    public void onAdminRegisterClick(View view) {
+        presenter.onAdminRegisterClick();
     }
 
     public void displayProgressBar() {
@@ -86,26 +65,45 @@ public class LoginView extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
     }
 
-    public void displayLoginSuccess(String successMessage) {
+    public void buildLoginSuccess(String successMessage) {
         Toast.makeText(getApplicationContext(), successMessage, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), homePage.class);
         startActivity(intent);
         finish();
     }
 
+    /*
     public void displayLoginError(String errorMessage) {
         Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+    }*/
+
+
+    public void displayEmailError(String message) {
+        emailErrorMessage.setText(message);
+    }
+    public void displayPasswordError(String message) {
+        passwordErrorMessage.setText(message);
     }
 
+
     public void navigateToStudentRegister() {
-        Intent intent = new Intent(getApplicationContext(), StudentRegisterView.class);
+        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
         startActivity(intent);
         finish();
     }
 
     public void navigateToAdminRegister() {
-        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
+        Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.LoginPage.AdminRegister.AdminRegisterView.class);
         startActivity(intent);
         finish();
+    }
+
+    public String getEmail() {
+        EditText editTextEmail = findViewById(R.id.email);
+        return editTextEmail.getText().toString();
+    }
+    public String getPassword() {
+        EditText editTextPassword = findViewById(R.id.password);
+        return editTextPassword.getText().toString();
     }
 }

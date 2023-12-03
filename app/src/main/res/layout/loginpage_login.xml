@@ -52,6 +52,7 @@
 </ProgressBar>
     <Button
         android:id="@+id/login_button"
+        android:onClick="onLoginClick"
 
         android:text="@string/login"
         android:layout_width="wrap_content"
@@ -59,6 +60,7 @@
     </Button>
     <TextView
         android:id="@+id/StudentRegister"
+        android:onClick="onStudentRegisterClick"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,6 +72,7 @@
     </TextView>
     <TextView
         android:id="@+id/AdminRegister"
+        android:onClick="onAdminRegisterClick"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,4 +84,26 @@
         >
 
     </TextView>
+
+    <TextView
+        android:id="@+id/EmailInputMessage"
+        android:layout_width="match_parent"
+
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onStudentRegisterClick"
+        android:text="placeholder"
+        android:textSize="18sp"></TextView>
+    <TextView
+        android:id="@+id/PasswordInputMessage"
+        android:layout_width="match_parent"
+
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onStudentRegisterClick"
+        android:text="placeholder"
+        android:textSize="18sp"></TextView>
 </LinearLayout>
+
