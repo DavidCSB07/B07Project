@@ -51,7 +51,11 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
 
     // implement Mockito for testing
-    testImplementation("org.mockito:mockito-all:1.10.19")
+    //testImplementation("org.mockito:mockito-all:1.10.19")
+    //testImplementation("org.mockito:mockito-core:4.2.0")
+    testImplementation("org.mockito:mockito-core:4.2.0")
+
 
 
 }
+
