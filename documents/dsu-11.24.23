@@ -37,6 +37,8 @@ Hillary:
   --> refactor to maintain declared organization, organize classes into packages
 --> What you struggling:
   --> machine too slow to run emulator
+  --> variety of UI features available, slowly learning features to make things look nice
+  --> time wasted on configuring UI constraints
 Jess:
 --> What you did: 
   --> working on view announcments user story
