@@ -75,14 +75,6 @@ public class EventPage extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
-
     }
 
 }

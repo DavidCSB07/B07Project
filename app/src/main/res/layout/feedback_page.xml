@@ -32,21 +32,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/home_btn"
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ComplaintsTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Home"
+        android:text="EventPage"
         >
     </Button>
     <TextView
         android:id="@+id/NumericRating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/home_btn"
+        android:layout_below="@+id/back"
         android:textSize="15dp"
         android:textColor="@color/black"
         android:gravity="center"

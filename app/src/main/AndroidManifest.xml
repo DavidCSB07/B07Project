@@ -15,6 +15,9 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
+            android:name=".Feedback.UI.feedback_ui"
+            android:exported="false" />
+        <activity
             android:name=".EventPage.Feedback.FeedbackUI.FeedbackUI"
             android:exported="false" />
         <activity

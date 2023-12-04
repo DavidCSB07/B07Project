@@ -28,7 +28,7 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Feedback UI">
+            android:text="Feedback UI 2">
 
         </TextView>
 
@@ -42,17 +42,17 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:text="View Feedbacks"
+        android:text="View Event Feedbacks"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="369dp" />
     <Button
-        android:id="@+id/PostFeedback"
+        android:id="@+id/RSVP"
         android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Post Feedback"
+        android:text="RSVP"
         tools:layout_editor_absoluteX="141dp"
         tools:layout_editor_absoluteY="369dp" />
 

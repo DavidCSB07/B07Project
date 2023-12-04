@@ -17,6 +17,12 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackViewHolder>{
 
     Context context;
     List<FeedBack> feedbacks;
+
+    public FeedbackAdapter(Context context, List<FeedBack> feedbacks) {
+        this.context = context;
+        this.feedbacks = feedbacks;
+    }
+
     @NonNull
     @Override
     public FeedbackViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

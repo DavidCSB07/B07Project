@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalmerge.EventPage.Holder.EventViewHolder;
 import com.example.finalmerge.EventPage.Model.Event;
 import com.example.finalmerge.EventPage.RSVP;
+import com.example.finalmerge.Feedback.UI.feedback_ui;
 import com.example.finalmerge.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -69,7 +70,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
                         }
                         if(userType == 1){
                             //admin
-                            Intent intent = new Intent(v.getContext(), RSVP.class);
+                            Intent intent = new Intent(v.getContext(), feedback_ui.class);
                             intent.putExtra("title", events.get(position).getTitle());
                             intent.putExtra("description", events.get(position).getDescription());
                             intent.putExtra("refKey", events.get(position).getRefKey());
