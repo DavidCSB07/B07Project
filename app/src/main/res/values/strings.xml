@@ -76,4 +76,9 @@
     <string name="buttonHomeText">
         Home
     </string>
+    <string name="total_questions">Total Questions</string>
+    <string name="spCSQuiz">This will be the question</string>
+    <string name="answer_yes">Yes</string>
+    <string name="answer_No">No</string>
+    <string name="btn_submit">Submit</string>
 </resources>
