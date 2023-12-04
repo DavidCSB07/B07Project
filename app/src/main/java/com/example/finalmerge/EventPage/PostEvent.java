@@ -98,7 +98,7 @@ public class PostEvent extends AppCompatActivity {
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference().child("ScheduleEvent").push();
         event.setRefKey(myRef.getKey());
         // add post data to firebase database
-        eventDbRef.push().setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+        eventDbRef.child(myRef.getKey()).setValue(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(PostEvent.this, "data inserted", Toast.LENGTH_SHORT).show();
@@ -110,7 +110,6 @@ public class PostEvent extends AppCompatActivity {
             }
         });
 
-        
     }
 
 }

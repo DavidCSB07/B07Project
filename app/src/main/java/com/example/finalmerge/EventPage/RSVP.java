@@ -1,4 +1,4 @@
-package com.example.finalmerge.EventPage.RSVP;
+package com.example.finalmerge.EventPage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalmerge.EventPage.EventPage;
-import com.example.finalmerge.EventPage.Feedback.PostFeedback;
+import com.example.finalmerge.Feedback.PostFeedback;
 import com.example.finalmerge.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -74,6 +73,7 @@ public class RSVP extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PostFeedback.class);
+                intent.putExtra("refKey", getIntent().getExtras().getString("refKey"));
                 startActivity(intent);
                 finish();
             }

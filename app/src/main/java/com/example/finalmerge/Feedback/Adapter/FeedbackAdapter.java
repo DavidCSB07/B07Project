@@ -1,4 +1,4 @@
-package com.example.finalmerge.EventPage.Feedback.Adapter;
+package com.example.finalmerge.Feedback.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalmerge.EventPage.Feedback.Holder.FeedbackViewHolder;
-import com.example.finalmerge.EventPage.Model.Event;
+import com.example.finalmerge.Feedback.Holder.FeedbackViewHolder;
+import com.example.finalmerge.Feedback.Model.FeedBack;
 import com.example.finalmerge.R;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackViewHolder>{
 
     Context context;
-    List<Event> events;
+    List<FeedBack> feedbacks;
     @NonNull
     @Override
     public FeedbackViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -25,11 +25,13 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull FeedbackViewHolder holder, int position) {
-
+        //holder.username.setText(events.get(position).getTitle());
+        holder.commentText.setText(feedbacks.get(position).getShortFeedback());
+        holder.rating.setText(feedbacks.get(position).getNumFeedback());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return feedbacks.size();
     }
 }

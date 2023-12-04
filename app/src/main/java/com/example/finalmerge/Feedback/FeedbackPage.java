@@ -1,4 +1,4 @@
-package com.example.finalmerge.EventPage.Feedback;
+package com.example.finalmerge.Feedback;
 
 import android.os.Bundle;
 import android.widget.Button;

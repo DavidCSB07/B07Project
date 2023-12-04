@@ -1,4 +1,4 @@
-package com.example.finalmerge.EventPage.Feedback;
+package com.example.finalmerge.Feedback;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.EventPage.EventPage;
-import com.example.finalmerge.EventPage.Feedback.Model.FeedBack;
+import com.example.finalmerge.Feedback.Model.FeedBack;
 import com.example.finalmerge.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

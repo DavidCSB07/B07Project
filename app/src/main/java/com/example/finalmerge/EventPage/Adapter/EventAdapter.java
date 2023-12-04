@@ -9,10 +9,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finalmerge.EventPage.Feedback.FeedbackPage;
 import com.example.finalmerge.EventPage.Holder.EventViewHolder;
 import com.example.finalmerge.EventPage.Model.Event;
-import com.example.finalmerge.EventPage.RSVP.RSVP;
+import com.example.finalmerge.EventPage.RSVP;
 import com.example.finalmerge.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

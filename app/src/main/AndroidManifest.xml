@@ -18,13 +18,13 @@
             android:name=".EventPage.Feedback.FeedbackUI.FeedbackUI"
             android:exported="false" />
         <activity
-            android:name=".EventPage.Feedback.FeedbackPage"
+            android:name=".Feedback.FeedbackPage"
             android:exported="false" />
         <activity
-            android:name=".EventPage.Feedback.PostFeedback"
+            android:name=".Feedback.PostFeedback"
             android:exported="false" />
         <activity
-            android:name=".EventPage.RSVP.RSVP"
+            android:name=".EventPage.RSVP"
             android:exported="false" />
         <activity
             android:name=".LoginPage.AdminRegister"

@@ -1,11 +1,10 @@
-package com.example.finalmerge.EventPage.Feedback.Model;
+package com.example.finalmerge.Feedback.Model;
 
 public class FeedBack {
 
     public int numFeedback;
     public String shortFeedback;
-
-    String refKey;
+    public String refKey;
 
     public FeedBack(int numFeedback, String shortFeedback) {
         this.numFeedback = numFeedback;

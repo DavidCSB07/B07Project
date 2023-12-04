@@ -1,4 +1,4 @@
-package com.example.finalmerge.EventPage.Feedback.Holder;
+package com.example.finalmerge.Feedback.Holder;
 
 import android.view.View;
 import android.widget.TextView;
@@ -10,10 +10,12 @@ import com.example.finalmerge.R;
 
 public class FeedbackViewHolder extends RecyclerView.ViewHolder{
 
-    TextView username, commentText, rating;
+    //public TextView username;
+    public TextView commentText;
+    public TextView rating;
     public FeedbackViewHolder(@NonNull View itemView) {
         super(itemView);
-        username = itemView.findViewById(R.id.UserName);
+        //username = itemView.findViewById(R.id.UserName);
         commentText = itemView.findViewById(R.id.CommentText);
         rating = itemView.findViewById(R.id.rating);
     }
