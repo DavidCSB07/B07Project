@@ -17,7 +17,6 @@ Lynn:
   --> be able to fulfill my assigned user stories
 --> What you struggling:
   --> present announcement in descending order (latest)
-
 Hillary:
 --> What you did:
   --> Work on refactoring Login module with Jess
@@ -26,8 +25,8 @@ Hillary:
   --> finish refactoring and testing
   --> review testing video lecture, notes
 --> What you struggling:
-  --> categorizing components of MVP structural logic
-
+  --> interpreting our code, categorizing components into MVP structural logic
+  --> timeline constraints
 Jess:
 --> What you did: 
   --> finished refactoring Login page with Hillary
