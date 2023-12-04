@@ -18,8 +18,10 @@ Features
 
 4. Announcements
     Admins can post about the latest updates and students receive notifications when updates are announced.
+    When an admin posts an announcement (which includes a subject and description), the current time will be timestamped automatically. All announcements are ordered in descending order by date (with the latest announceemnt at the top).
+    If the description is too long then it will be hidden and the full description is presented in a binding page.
 
-5. Events
+6. Events
     Admins can schedule upcoming events, set participant limits, and manage RSVPs.
     Students can RSVP for upcoming events, ensuring they receive the latest updates and secure a spot if interested.
     After participating in an event, students have the opportunity to submit comments and numeric ratings, offering valuable feedback.
