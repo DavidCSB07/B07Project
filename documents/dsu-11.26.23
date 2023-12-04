@@ -17,6 +17,16 @@ David:
 --> What you struggling:
   --> EventPage
 Lynn: 
+--> What you did: 
+  --> connected to firebase successfully after many trials ㅠㅠ
+  --> learned activity binding and replaced the post announcements with it (from layout id searching, i.e. findViewbyId(R.id.xxx))
+  --> debug
+--> What you gonna do:
+  --> complete the student end view announcements
+  --> be able to implement what I have studied into the project
+  --> be able to fulfill my assigned user stories
+--> What you struggling:
+  --> approach to retrieve data
 Hillary:
 Jess:
 Kehu:
