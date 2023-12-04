@@ -17,6 +17,18 @@ David:
 --> What you struggling:
   --> EventPage organization and firebase 
 Lynn: 
+--> What you did: 
+  --> finished the retrieve announcements and make all announcement in one recycler view (scrollable)
+  --> tested the post and retrieve data process with firebase
+  --> understood Android Studio better by detecting and fixing bugs
+  --> debugged in the branch
+--> What you gonna do:
+  --> refactor my feature into the main homepage
+  --> get ready for testing and more debugging
+  --> be able to implement what I have studied into the project
+  --> be able to fulfill my assigned user stories
+--> What you struggling:
+  --> nothing
 Hillary:
 Jess:
 Kehu:
