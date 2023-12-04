@@ -19,6 +19,19 @@ David:
 --> What you struggling:
   --> RSVP (binding Page)
 Lynn: 
+--> What you did: 
+  --> added additional feature in announcement page to record current time when admin posts and student retrieves
+  --> fixed reference bugs for POSt branch
+  --> completed the frontend for announcement binding page (item click feature for detailed info)
+  --> fixing in progress for the backend of binding page
+--> What you gonna do:
+  --> get the backend of binding page fixed
+  --> polish for more features
+  --> get ready to support teammates if needed
+  --> be able to implement what I have studied into the project
+  --> be able to fulfill my assigned user stories
+--> What you struggling:
+  --> binding page
 Hillary:
 Jess:
 Kehu:
