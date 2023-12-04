@@ -31,7 +31,7 @@ Lynn:
   --> Android Studio bugs
 Hillary:
 --> What you did:
-  --> completed complaints form UI and back end (learned RecylerView implementation)
+  --> completed complaints form UI and back end
   --> write to DB successfully
 --> What you gonna do:
   --> refactor to maintain declared organization, organize classes into packages
