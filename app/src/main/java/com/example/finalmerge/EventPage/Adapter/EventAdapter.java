@@ -49,12 +49,12 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
             public void onClick(View v) {
                 //check userType
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
-                DatabaseReference FeedbackUIDbRef = FirebaseDatabase.getInstance().getReference();
+                DatabaseReference RegisterDbRef = FirebaseDatabase.getInstance().getReference();
                 FirebaseUser currentUser = mAuth.getCurrentUser();
                 String uid = currentUser.getUid();
 
                 //set Visibility base on userType (0 --> student, 1 --> admin)
-                FeedbackUIDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                RegisterDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         // 0 is student, 1 is admin

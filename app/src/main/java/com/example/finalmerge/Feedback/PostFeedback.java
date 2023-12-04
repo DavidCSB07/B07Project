@@ -16,8 +16,13 @@ import com.example.finalmerge.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class PostFeedback extends AppCompatActivity {
     TextInputEditText numericFeedback, shortFeedback;
@@ -49,19 +54,34 @@ public class PostFeedback extends AppCompatActivity {
             public void onClick(View v) {
                 String shortFb = shortFeedback.getText().toString();
                 int numericFb = Integer.parseInt(numericFeedback.getText().toString());
+                FirebaseAuth mAuth = FirebaseAuth.getInstance();
+                DatabaseReference RegisterDbRef = FirebaseDatabase.getInstance().getReference();
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                String uid = currentUser.getUid();
 
-                //check if is empty
-                if(TextUtils.isEmpty(shortFb)){
-                    Toast.makeText(PostFeedback.this, "Title cannot be empty", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                RegisterDbRef.child("RegisterInfo").child(uid).child("email").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String userName = snapshot.getValue(String.class);
+                        if(TextUtils.isEmpty(shortFb)){
+                            Toast.makeText(PostFeedback.this, "Title cannot be empty", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
-                if(numericFb < 0 || numericFb > 10 ){
-                    Toast.makeText(PostFeedback.this, "Rating has to be between 1-10", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                    FeedBack feedback = new FeedBack(numericFb, shortFb);
-                    addFeedback(feedback);
+                        if(numericFb < 0 || numericFb > 10 ){
+                            Toast.makeText(PostFeedback.this, "Rating has to be between 1-10", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        FeedBack feedback = new FeedBack(numericFb, shortFb, userName);
+                        addFeedback(feedback);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
             }
         });
 

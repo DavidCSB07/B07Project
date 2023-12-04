@@ -4,11 +4,13 @@ public class FeedBack {
 
     public int numFeedback;
     public String shortFeedback;
+    public String userName;
     public String refKey;
 
-    public FeedBack(int numFeedback, String shortFeedback) {
+    public FeedBack(int numFeedback, String shortFeedback, String userName) {
         this.numFeedback = numFeedback;
         this.shortFeedback = shortFeedback;
+        this.userName = userName;
     }
 
     public FeedBack() {
@@ -37,5 +39,13 @@ public class FeedBack {
 
     public void setRefKey(String refKey) {
         this.refKey = refKey;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

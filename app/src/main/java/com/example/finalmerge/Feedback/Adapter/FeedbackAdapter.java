@@ -25,7 +25,7 @@ public class FeedbackAdapter extends RecyclerView.Adapter<FeedbackViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull FeedbackViewHolder holder, int position) {
-        //holder.username.setText(events.get(position).getTitle());
+        holder.username.setText(feedbacks.get(position).getUserName());
         holder.commentText.setText(feedbacks.get(position).getShortFeedback());
         holder.rating.setText(feedbacks.get(position).getNumFeedback());
     }
