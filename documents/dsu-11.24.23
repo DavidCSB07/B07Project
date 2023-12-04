@@ -30,6 +30,13 @@ Lynn:
   --> some backend features and firebase
   --> Android Studio bugs
 Hillary:
+--> What you did:
+  --> completed complaints form UI and back end (learned RecylerView implementation)
+  --> write to DB successfully
+--> What you gonna do:
+  --> refactor to maintain declared organization, organize classes into packages
+--> What you struggling:
+  --> machine too slow to run emulator
 Jess:
 --> What you did: 
   --> working on view announcments user story
