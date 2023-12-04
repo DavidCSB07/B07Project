@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.LoginPage.AdminRegister.AdminRegisterView;
+import com.example.finalmerge.LoginPage.StudentRegister.StudentRegisterView;
 import com.example.finalmerge.R;
 import com.example.finalmerge.homePage.homePage;
 
@@ -87,13 +88,13 @@ public class LoginView extends AppCompatActivity {
 
 
     public void navigateToStudentRegister() {
-        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
+        Intent intent = new Intent(getApplicationContext(), StudentRegisterView.class);
         startActivity(intent);
         finish();
     }
 
     public void navigateToAdminRegister() {
-        Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.LoginPage.AdminRegister.AdminRegisterView.class);
+        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
         startActivity(intent);
         finish();
     }
