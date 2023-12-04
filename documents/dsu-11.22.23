@@ -11,6 +11,7 @@ Summary:
 
 David: 
 --> What you did: 
+  --> Created Branch master for people to branch off of
   --> Learned how to use Firebase
   --> Learned how to use Intent
   --> Learned how to rewinded back to previous commit (two types, delete commit, commit previous commit)
