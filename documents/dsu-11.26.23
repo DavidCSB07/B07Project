@@ -28,6 +28,12 @@ Lynn:
 --> What you struggling:
   --> approach to retrieve data
 Hillary:
+--> What you did:
+  --> refactor complaint submission form UI due to organizational error
+--> What you gonna do: 
+  --> learn how to implement complaint form and correctly read from/write to database
+--> What you struggling:
+  --> N/A
 Jess:
 --> What you did: 
   --> Added toast notification and fixed some bugs on PostAnnouncements branch
