@@ -1,0 +1,79 @@
+Final Contribution Page: 
+  Team name: Failed to add one
+  Team members: Yiming Zhong, David Wu, Hillary Tse, Jessica Lam, Kehu Li
+
+Workload distrubtion and contribution:
+
+/*
+
+format: 
+Activity
+  --> ActivityPurpose1
+    --> Author 1, 2 (Assigned to the job, did most of the Job)
+    --> Assistance 1, 2 (Helped Debugging or contributed to the job)
+  --> ActivityPurpose2
+
+*/
+AnnouncementPage:
+
+  --> AnnouncementPage 
+    --> Authors: Lynn, Jess
+    --> Assistance: David 
+  --> PostAnnoucement
+    --> Authors: Lynn
+    --> Assistance: Lynn
+
+ComplaintPage:
+  --> AnnouncementPage 
+    --> Authors: Hillary 
+    --> Assistance: David 
+  --> PostAnnoucement
+    --> Authors: Hillary
+    --> Assistance: Hillary
+
+EventPage: 
+  --> EventPage 
+    --> Authors: David 
+    --> Assistance: David, Lynn
+  --> PostEvent
+    --> Authors: David
+    --> Assistance: David, Lynn
+
+HomePage: 
+  --> HomePage:
+    --> Authors: David 
+    --> Assistance: David 
+  --> UI Pages (Annoucement, Event, Complaint)
+    --> Authors: David 
+    --> Assistance: David 
+
+LoginPage: 
+  --> LoginPage:
+    --> Authors: Jess
+    --> Assistance: Jess, David 
+  --> Register
+    --> Authors: Jess
+    --> Assistance: Jess, David
+  --> Register
+    --> Authors: Jess
+    --> Assistance: Jess, David
+
+
+Testing: 
+  --> Refactoring
+    --> Authors: Hillary, Jess 
+    --> Assistance: Hillary, Jess 
+  --> Testing
+    --> Authors: Hillary, Jess 
+    --> Assistance: Hillary, Jess 
+
+POSt: 
+    --> Authors: Hillary, Jess, Kehu
+    --> Assistance: Hillary, Jess, Kehu 
+  
+  
+  
+  
+  
+
+
