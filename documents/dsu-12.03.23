@@ -88,3 +88,6 @@ Bug fixing:
 --> Emulator stuck on connecting (Lynn)
   --> search 'Preferences' --> 'Tools' --> 'Emulator' --> uncheck 'Launch in tool window'
 
+--> attempt to run JUnit testing file: ExceptionInInitializerError thrown and MockitoVersion not found even though it was implemented in app-level gradle
+  --> Solution: implement up to date Mockito version and import assertEquals
+
