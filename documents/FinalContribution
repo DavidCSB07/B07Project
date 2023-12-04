@@ -18,10 +18,10 @@ AnnouncementPage:
 
   --> AnnouncementPage 
     --> Authors: Lynn
-    --> Assistance: David, Jess
+    --> Assistance: David, Lynn
   --> PostAnnoucement
     --> Authors: Lynn
-    --> Assistance: Lynn
+    --> Assistance: Lynn, Jess
 
 ComplaintPage:
   --> AnnouncementPage 
