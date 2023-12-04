@@ -36,6 +36,7 @@ Hillary:
 --> What you gonna do:
   --> find resources, learn how to read from database
   --> work on Admin side, view of student complaints
+  --> learn how to implement RecyclerView to display what is read from DB
 --> What you struggling:
   --> being extremely detail oriented since my computer cannot run emulator
   --> ensure everything is clean and logically sound before asking scrum master to run
