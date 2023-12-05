@@ -56,7 +56,7 @@ public class FeedbackPage extends AppCompatActivity {
                 .child("FeedBack");
         feedbackList = new ArrayList<>();
         feedbackAdapter = new FeedbackAdapter(this, feedbackList);
-        feedbackList.add(new FeedBack("10", "SOME COMMENT", "DAvid"));
+        feedbackList.add(new FeedBack("Rated: 10", "SOME COMMENT", "DAvid"));
 
         recyclerview = findViewById(R.id.FeedbackList);
         recyclerview.setHasFixedSize(true);

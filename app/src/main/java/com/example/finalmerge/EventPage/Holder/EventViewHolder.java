@@ -12,13 +12,14 @@ import com.example.finalmerge.R;
 public class EventViewHolder extends RecyclerView.ViewHolder{
 
     //public ImageView imageView;
-    public TextView descriptionView, titleView;
+    public TextView descriptionView, titleView, eventDateView;
 
     public RelativeLayout layout;
     public EventViewHolder(@NonNull View itemView) {
         super(itemView);
         titleView = itemView.findViewById(R.id.title);
         descriptionView = itemView.findViewById(R.id.description);
+        eventDateView = itemView.findViewById(R.id.eventDate);
         layout = itemView.findViewById(R.id.layout);
 
     }

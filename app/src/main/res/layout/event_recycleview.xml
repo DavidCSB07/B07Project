@@ -1,55 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ann"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp"
-
-    >
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_centerVertical="true"
-        >
-
-    </ImageView>
-
-    <TextView
-        android:id="@+id/title"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="20dp"
+    android:padding="10dp">
+    <RelativeLayout
+        android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:text="Title:"
-        android:textSize="20dp"
-        android:layout_toEndOf="@id/imageView"
-        >
+        android:padding="20dp">
 
-    </TextView>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginVertical="15dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/Textdescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:"
+            android:layout_below="@+id/TexteventDate"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="TEXTTTT"
+            android:layout_below="@+id/Textdescription"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02/14/2004"
+            android:layout_below="@+id/title"
+            android:layout_toRightOf="@+id/TexteventDate"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/TexteventDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Date:"
+            android:layout_below="@+id/title"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_marginVertical="5dp"
+            >
+        </TextView>
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:layout_below="@id/title"
-        android:text="Description:"
-        android:textSize="10dp"
-        android:layout_toEndOf="@id/imageView"
-        >
+    </RelativeLayout>
 
-    </TextView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/imageView"
-        android:background="@color/black">
-
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
