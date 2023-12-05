@@ -43,42 +43,26 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="totalQuestions">
-        Total Questions:
-    </string>
-    <string name="textQuestionPlaceholder">
-        textQuestionPlaceholder
-    </string>
-    <string name="answer_a">
-        Yes
-    </string>
-    <string name="answer_b">
-        No
-    </string>
-    <string name="submit">
-        Submit
-    </string>
-    <string name="buttonSpecMajorCSText">
-        Specialist/Major Program under CS Category
-    </string>
-    <string name="buttonSpecMajorMathStatsText">
-        Specialist/Major Program for Math/Stats Category
-    </string>
-    <string name="buttonSpecMajorOutsideCMSText">
-        Specialist/Major Program Outside CMS
-    </string>
-    <string name="buttonMinorText">
-        Minor Program
-    </string>
+    <string name="totalQuestions">Total Questions:</string>
+    <string name="textQuestionPlaceholder">textQuestionPlaceholder</string>
+    <string name="ans_A">Yes</string>
+    <string name="ans_B">No</string>
+    <string name="submit">Submit</string>
+    <string name="buttonCMS_inStream">Student Under CMS Category</string>
+    <string name="buttonCMS_outStream">Student Outside of CMS Category</string>
+    <string name="buttonSpecMajorOutsideCMSText">Specialist/Major Program Outside CMS</string>
+    <string name="buttonMinorText">Minor Program</string>
     <string name="textSelectProgram">
         Select the Program for which to complete the POSt Requirements Checker
     </string>
-    <string name="buttonHomeText">
-        Home
-    </string>
+    <string name="btn_home">Home</string>
+    <string name="btn_restart">Restart</string>
+    <string name="buttonHomeText">Home</string>
     <string name="total_questions">Total Questions</string>
-    <string name="spCSQuiz">This will be the question</string>
+    <string name="CMSQuiz">Taking a requirement test?</string>
     <string name="answer_yes">Yes</string>
     <string name="answer_No">No</string>
     <string name="btn_submit">Submit</string>
+    <string name="check_CMS_status_holder">check_CMS_category holder</string>
+    <string name="check_CMS_status">Are you a student under \n the CMS categoty?</string>
 </resources>

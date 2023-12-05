@@ -1,6 +1,6 @@
-package com.example.finalmerge;
+package com.example.finalmerge.POStRequirementsQuiz.SpecialistMajorCSQuiz;
 
-public class QuestionAnswer {
+public class SpecialistMajorCMS_instream_QuestionAnswer {
 
     public static String question[] ={
             "Have you completed 4.0 credits, including all required A-level CSC and MAT courses (CSCA08, CSCA48, and one of CSCA67/MATA67, MATA22/A23, MATA30/A31/A32)?",

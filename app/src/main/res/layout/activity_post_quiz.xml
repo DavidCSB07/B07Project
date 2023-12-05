@@ -41,7 +41,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:id="@+id/answerA"
-            android:text="@string/answer_a"
+            android:text="@string/ans_A"
             android:textColor="@color/black"/>
 
         <Button
@@ -50,7 +50,7 @@
             android:layout_margin="5dp"
             android:backgroundTint="@color/white"
             android:id="@+id/answerB"
-            android:text="@string/answer_b"
+            android:text="@string/ans_B"
             android:textColor="@color/black"/>
 
     </LinearLayout>
