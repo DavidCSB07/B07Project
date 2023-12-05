@@ -1,9 +1,9 @@
-# University Portal #
+# University Portal
 
-## Welcome to the University Portal! This application is designed to streamline communication and engagement between students and the department. ##
+## Welcome to the University Portal! This application is designed to streamline communication and engagement between students and the department.
 
-### Features ###
-#### 1. Home Page ####
+### Features
+#### 1. Home Page
     --> Users can choose whether they would like to register or login depending on their user type (student or admin).
     Users must provide an email and password or else they cannot register/login and a toast message will be shown warning the user.
     If passwords are not more than six characters long, a toast message will appear to alert the user.
