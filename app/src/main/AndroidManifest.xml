@@ -50,6 +50,9 @@
         <activity android:name=".AnnouncementPage.AnnouncementDetail"
             android:exported="true">
         </activity>
+        <activity android:name=".ComplaintsPage.ComplaintDetail"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".EventPage.EventPage"
             android:exported="true" >

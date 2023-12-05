@@ -1,6 +1,7 @@
 package com.example.finalmerge.ComplaintsPage.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,20 +10,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalmerge.ComplaintsPage.ComplaintDetail;
 import com.example.finalmerge.ComplaintsPage.Holder.ComplaintViewHolder;
 import com.example.finalmerge.ComplaintsPage.Model.Complaint;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 import java.util.ArrayList;
 
 public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintViewHolder> {
 
     Context context;
-    ArrayList<Complaint> listComplaints;
+    ArrayList<Complaint> list;
 
     public ComplaintAdapter(Context context, ArrayList<Complaint> listComplaints) {
         this.context = context;
-        this.listComplaints = listComplaints;
+        this.list = listComplaints;
     }
 
     @NonNull
@@ -34,15 +37,25 @@ public class ComplaintAdapter extends RecyclerView.Adapter<ComplaintViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ComplaintViewHolder holder, int position) {
-        Complaint complaints=listComplaints.get(position);
-        holder.email.setText(complaints.getEmail());
-        holder.subject.setText(complaints.getSubject());
-        holder.complaint.setText(complaints.getComplaint());
+        holder.email.setText(list.get(position).getEmail());
+        holder.subject.setText(list.get(position).getSubject());
+        holder.complaint.setText(list.get(position).getComplaint());
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ComplaintDetail.class);
+                intent.putExtra("contentEmail", list.get(position).getEmail());
+                intent.putExtra("contentSubject", list.get(position).getSubject());
+                intent.putExtra("contentComplaint", list.get(position).getComplaint());
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return listComplaints.size();
+        return list.size();
     }
 
 }

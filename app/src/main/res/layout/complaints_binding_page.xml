@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComplaintsPage.ComplaintDetail"
+    android:padding="15dp"
+    app:cardElevation="8dp"
+    android:layout_margin="15dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+
+        >
+        <TextView
+            android:id="@+id/cDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:background="@drawable/rounded_edge"
+            android:text="Complaint Detail"
+            >
+
+        </TextView>
+        <TextView
+            android:id="@+id/contentSubject"
+            android:layout_below="@+id/cDetail"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Subject"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/contentEmail"
+            android:layout_below="@+id/contentSubject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="Student email: b07difficult@gmail.com"
+            android:textSize="18dp"
+            android:textColor="@color/seal_grey"
+            >
+        </TextView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/complaint_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contentEmail"
+            android:padding="15dp"
+            app:cardElevation="8dp"
+            android:layout_margin="5dp"
+
+            >
+            <TextView
+                android:id="@+id/contentComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Complaint Detail Here: .........."
+                android:layout_margin="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/charcoal_grey"
+                >
+            </TextView>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/complaint_cardView"
+            android:text="Back"
+            >
+        </Button>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

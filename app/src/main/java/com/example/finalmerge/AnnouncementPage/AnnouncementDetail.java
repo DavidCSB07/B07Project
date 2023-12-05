@@ -8,11 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.finalmerge.AnnouncementPage.Holder.AnnouncementViewHolder;
 import com.example.finalmerge.R;
-import com.example.finalmerge.homePage.homePage;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.database.DatabaseReference;
 
 public class AnnouncementDetail extends AppCompatActivity {
     TextView annSubject, annDes, annDate;

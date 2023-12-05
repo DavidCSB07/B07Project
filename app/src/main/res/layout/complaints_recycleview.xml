@@ -8,6 +8,7 @@
     android:layout_margin="16dp">
     
     <LinearLayout
+        android:id="@+id/layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -35,6 +36,7 @@
                 android:id="@+id/contentSubject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Difficult Midterm"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -60,6 +62,7 @@
                 android:id="@+id/contentComplaint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Difficult Midterm"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -86,6 +89,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:text="midterm@b07.com"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
