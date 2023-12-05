@@ -1,15 +1,16 @@
 # University Portal
 
-## Welcome to the University Portal! This application is designed to streamline communication and engagement between students and the department.
+## Welcome to the University Portal! This application is designed to streamline communication and engagement between CMS students and the department
 
 ### Features
 
 #### 1. Home Page
+
 --> Users can choose whether they would like to register or login depending on their user type (student or admin).
     Users must provide an email and password or else they cannot register/login and a toast message will be shown warning the user.
     If passwords are not more than six characters long, a toast message will appear to alert the user.
 
-#### 2. Program of Study (POSt) Checker
+#### 2. Program of Study (POSt) Requirements Checker
 
 --> Students can answer a few basic questions in a quiz format to check whether they qualify for a Program of Study (POSt).
     The POSt checker includes both the specialist and major requirements for the Computer and Mathematical Sciences (CMS) category and categories outside CMS, as well as the minor program.
