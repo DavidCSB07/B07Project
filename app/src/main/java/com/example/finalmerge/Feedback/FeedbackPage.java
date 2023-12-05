@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,7 +76,6 @@ public class FeedbackPage extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     FeedBack feedback = dataSnapshot.getValue(FeedBack.class);
                     feedbackList.add(feedback);
-                    Toast.makeText(getApplicationContext(), feedback.getNumFeedback(), Toast.LENGTH_SHORT).show();
                     IntegerList.add(Integer.parseInt(feedback.getNumFeedback()));
                 }
                 feedbackAdapter.notifyDataSetChanged();
