@@ -67,7 +67,7 @@
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:text="Click to register"
+        android:text="@string/click_to_register"
         >
     </TextView>
     <TextView
@@ -84,26 +84,5 @@
         >
 
     </TextView>
-
-    <TextView
-        android:id="@+id/EmailInputMessage"
-        android:layout_width="match_parent"
-
-        android:layout_marginTop="40dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="onStudentRegisterClick"
-        android:text=""
-        android:textSize="18sp"></TextView>
-    <TextView
-        android:id="@+id/PasswordInputMessage"
-        android:layout_width="match_parent"
-
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="onStudentRegisterClick"
-        android:text=""
-        android:textSize="18sp"></TextView>
 </LinearLayout>
 

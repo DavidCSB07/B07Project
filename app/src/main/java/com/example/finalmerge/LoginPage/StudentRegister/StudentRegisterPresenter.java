@@ -19,16 +19,15 @@ public class StudentRegisterPresenter {
     public void onRegisterClick(){
         String email=view.getEmail();
         String password=view.getPassword();
-        view.displayProgressBar();
 
         if (TextUtils.isEmpty(email)) {
-            view.hideProgressBar();
             view.displayStatusMessage("Email cannot be empty");
+            view.hideProgressBar();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            view.hideProgressBar();
             view.displayStatusMessage("Password cannot be empty");
+            view.hideProgressBar();
             return;
         }
         model.createUserWithEmailAndPassword(email, password, this);
@@ -51,5 +50,9 @@ public class StudentRegisterPresenter {
 
     public void hideProgressBar() {
         view.hideProgressBar();
+    }
+
+    public void displayProgressBar() {
+        view.displayProgressBar();
     }
 }

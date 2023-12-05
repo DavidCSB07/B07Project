@@ -22,29 +22,27 @@ public class LoginModel {
     }
 
     public void signInWithEmailAndPassword(String email, String password, LoginPresenter presenter) {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            String uid = task.getResult().getUser().getUid();
-                            LoginDbRef.child("RegisterInfo").child(uid).child("userType")
-                                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            int userType = snapshot.getValue(Integer.class);
-                                            presenter.onSignInSuccess(userType);
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-                                        }
-                                    });
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                presenter.hideProgressBar();
+                if (task.isSuccessful()) {
+                    String uid = task.getResult().getUser().getUid();
+                    LoginDbRef.child("RegisterInfo").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            int userType = snapshot.getValue(Integer.class);
+                            presenter.onLoginSuccess(userType);
                         }
-                        else {
-                            presenter.onSignInError("Login failed");
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
                         }
-                    }
-                });
+                    });
+                }
+                else {
+                    presenter.onLoginError("Email or password is incorrect");
+                }
+            }
+        });
     }
 }

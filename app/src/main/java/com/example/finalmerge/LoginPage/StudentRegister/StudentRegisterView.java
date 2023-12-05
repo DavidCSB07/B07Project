@@ -46,6 +46,7 @@ public class StudentRegisterView extends AppCompatActivity {
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                presenter.displayProgressBar();
                 presenter.onRegisterClick();
             }
         });
@@ -64,8 +65,8 @@ public class StudentRegisterView extends AppCompatActivity {
     }
 
     public void navigateToLogin() {
-        Intent intent = new Intent(getApplicationContext(), LoginView.class);
-        startActivity(intent);
+        Intent goToLogin = new Intent(getApplicationContext(), LoginView.class);
+        startActivity(goToLogin);
         finish();
     }
 

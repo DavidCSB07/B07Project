@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,46 +16,31 @@ import com.example.finalmerge.homePage.homePage;
 
 public class LoginView extends AppCompatActivity {
 
-    private ProgressBar progressBar; //id of 'stuff' in layout
+    private ProgressBar progressBar; //id of items in layout
     private LoginPresenter presenter;
-    private TextView passwordErrorMessage;
-    private TextView emailErrorMessage;
 
-    //Check if acc is signed in
-    /*
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(), homePage.class);
-            startActivity(intent);
-            finish();
-        }
-    }
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage_login);
 
         progressBar = findViewById(R.id.progressBar);
-        passwordErrorMessage=findViewById(R.id.PasswordInputMessage);
-        emailErrorMessage=findViewById(R.id.EmailInputMessage);
 
         presenter = new LoginPresenter(new LoginModel(), this);
     }
 
-    public void onLoginClick(View view) {
-        presenter.checkInput();
-    }
     public void onStudentRegisterClick(View view) {
         presenter.onStudentRegisterClick();
     }
     public void onAdminRegisterClick(View view) {
         presenter.onAdminRegisterClick();
     }
+
+    public void onLoginClick(View view) {
+        presenter.displayProgressBar();
+        presenter.checkInput();
+    }
+
 
     public void displayProgressBar() {
         progressBar.setVisibility(View.VISIBLE);
@@ -73,29 +57,18 @@ public class LoginView extends AppCompatActivity {
         finish();
     }
 
-    /*
-    public void displayLoginError(String errorMessage) {
-        Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
-    }*/
-
-
-    public void displayEmailError(String message) {
-        emailErrorMessage.setText(message);
-    }
-    public void displayPasswordError(String message) {
-        passwordErrorMessage.setText(message);
-    }
-
+    public void displayError(String message) {
+        Toast.makeText(LoginView.this, message, Toast.LENGTH_SHORT).show();    }
 
     public void navigateToStudentRegister() {
-        Intent intent = new Intent(getApplicationContext(), StudentRegisterView.class);
-        startActivity(intent);
+        Intent toStudentRegister = new Intent(getApplicationContext(), StudentRegisterView.class);
+        startActivity(toStudentRegister);
         finish();
     }
 
     public void navigateToAdminRegister() {
-        Intent intent = new Intent(getApplicationContext(), AdminRegisterView.class);
-        startActivity(intent);
+        Intent toAdminRegister = new Intent(getApplicationContext(), AdminRegisterView.class);
+        startActivity(toAdminRegister);
         finish();
     }
 

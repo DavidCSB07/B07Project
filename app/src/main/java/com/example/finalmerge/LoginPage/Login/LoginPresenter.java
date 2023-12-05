@@ -1,7 +1,5 @@
 package com.example.finalmerge.LoginPage.Login;
 
-import android.text.TextUtils;
-
 public class LoginPresenter {
 
     private LoginModel model;
@@ -13,40 +11,36 @@ public class LoginPresenter {
     }
 
     public void checkInput() {
-        view.displayProgressBar();
         String email= view.getEmail();
         String password=view.getPassword();
 
-        if (TextUtils.isEmpty(email)) {
-            view.displayEmailError("Email cannot be empty");
-            return;
+        if(email.equals("")) {
+            view.displayError("Email cannot be empty");
         }
-        if(TextUtils.isEmpty(password)){
-            view.displayPasswordError("Password cannot be empty");
-            return;
+        if (password.equals("")) {
+            view.displayError("Password cannot be empty");
         }
-        else if (password.length()<6) {
-            view.displayPasswordError("Password must be at least 6 characters");
-            return;
+        else if (password.length() < 6) {
+            view.displayError("Password must be at least 6 characters");
         }
-        model.signInWithEmailAndPassword(email, password, this);
+
+        if (!(email.equals("")) && password.length()>=6) {
+            model.signInWithEmailAndPassword(email, password, this);
+        }
     }
 
-
-    public void onSignInSuccess(int userType) {
-        view.hideProgressBar();
+    public void onLoginSuccess(int userType) {
         if (userType == 0) {
             view.buildLoginSuccess("Student Login Successful");
         } else if (userType == 1) {
             view.buildLoginSuccess("Admin Login Successful");
         } else {
-            view.displayEmailError("Please try again.");
+            view.displayError("Please try again");
         }
     }
 
-    public void onSignInError(String errorMessage) {
-        view.hideProgressBar();
-        view.displayEmailError(errorMessage);
+    public void onLoginError(String errorMessage) {
+        view.displayError(errorMessage);
     }
 
     public void onStudentRegisterClick() {
@@ -58,4 +52,12 @@ public class LoginPresenter {
     }
 
 
+    public void hideProgressBar() {
+        view.hideProgressBar();
+    }
+
+    public void displayProgressBar() {
+        view.displayProgressBar();
+    }
 }
+

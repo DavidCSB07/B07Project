@@ -21,8 +21,8 @@
 
     <string name="login">Login</string>
     <string name="password">password</string>
-    <string name="click_to_register">click_to_register</string>
-    <string name="click_to_register_as_admin">Click to register as admin</string>
+    <string name="click_to_register">Click to register as Student</string>
+    <string name="click_to_register_as_admin">Click to register as Admin</string>
     <string name="register">Register</string>
     <string name="click_to_login">Click to Login</string>
     <string name="hello_world">Hello World</string>
