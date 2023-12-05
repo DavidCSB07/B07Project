@@ -27,6 +27,8 @@ Hillary:
   --> aim to finish by tomorrow
 --> What are you struggling:
   --> finishing JUnit testing
+  --> implementing Mockito to gradle file, encountered bugs
+  --> reviewed testing lecture but kept running into errors
 
 Jess:
 --> What you did: 
@@ -89,6 +91,6 @@ Bug fixing:
 --> Emulator stuck on connecting (Lynn)
   --> search 'Preferences' --> 'Tools' --> 'Emulator' --> uncheck 'Launch in tool window'
 
---> attempt to run JUnit testing file: ExceptionInInitializerError thrown and MockitoVersion not found even though it was implemented in app-level gradle
+--> attempt to run JUnit testing file (Hillary): ExceptionInInitializerError thrown and MockitoVersion not found even though it was implemented in app-level gradle
   --> Solution: implement up to date Mockito version and import assertEquals
 
