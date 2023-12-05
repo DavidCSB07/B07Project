@@ -1,4 +1,4 @@
-University Portal
+# University Portal #
 
 Welcome to the University Portal! This application is designed to streamline communication and engagement between students and the department.
 
