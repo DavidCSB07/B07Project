@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_SpecMajor.outStreamCSspecMajorQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_Math.outStream_Math;
@@ -24,6 +25,7 @@ public class outStream_Differentiation extends AppCompatActivity implements View
     TextView questionTextView;
     Button ans_CS,ans_Math,ans_Stats;
     Button submitBtn;
+    Button back_btn;
 
     int totalQuestion = outStream_Differentiation_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
@@ -40,12 +42,15 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         ans_Math = findViewById(R.id.ans_Math);
         ans_Stats = findViewById(R.id.ans_Stats);
         submitBtn = findViewById(R.id.submit_btn);
+        back_btn = findViewById(R.id.back_btn);
 
         ans_CS.setOnClickListener(this);
         ans_Math.setOnClickListener(this);
         ans_Stats.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
 
+        questionTextView.setText("Which stream are you applying for?");
         totalQuestionsTextView.setText("OutStream");
     }
 
@@ -60,34 +65,36 @@ public class outStream_Differentiation extends AppCompatActivity implements View
 
         Button clickedButton = (Button) view;
 
-        if(clickedButton.getId()==R.id.submit_btn){
+        if (clickedButton.getId() == R.id.submit_btn) {
             System.out.println("SUBMIT BUTTON DETECTED!");
-            if(selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[0][0])){
+            if (selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][0])) {
                 System.out.println("OutStream CS Submit!");
                 finishQuiz_to_outStream_CS();
                 return;
-            }
-            if(selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[0][1])){
+            } else if (selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][1])) {
                 System.out.println("OutStream Math Submit!");
                 finishQuiz_to_outStream_Math();
                 return;
-            }
-            if(selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[0][2])){
+            } else if (selectedAnswer.equals(outStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][2])) {
                 System.out.println("OutStream Stats Submit!");
                 finishQuiz_to_outStream_Stats();
                 return;
+            } else {
+                System.out.println("No matching condition for selectedAnswer: " + selectedAnswer);
             }
-
-        }else{
+        }else if (clickedButton.getId() == R.id.back_btn) {
+            System.out.println("Back BUTTON DETECTED!");
+            finishQuiz_back();
+            return;
+        } else {
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
             selectedAnswer = clickedButton.getText().toString();
             clickedButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.teal_200)));
-
         }
     }
 
-    void finishQuiz_to_outStream_CS(){
+    void finishQuiz_to_outStream_CS () {
         Intent intent = new Intent(outStream_Differentiation.this, outStreamCSdiffQuiz.class);
 
 //         Start the new activity
@@ -95,7 +102,7 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         finish();
     }
 
-    void finishQuiz_to_outStream_Math(){
+    void finishQuiz_to_outStream_Math () {
         Intent intent = new Intent(outStream_Differentiation.this, outStream_Math.class);
 
 //         Start the new activity
@@ -103,7 +110,7 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         finish();
     }
 
-    void finishQuiz_to_outStream_Stats(){
+    void finishQuiz_to_outStream_Stats () {
         Intent intent = new Intent(outStream_Differentiation.this, outStream_Stats.class);
 
 //         Start the new activity
@@ -111,8 +118,8 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         finish();
     }
 
-    void restartQuiz(){
-        currentQuestionIndex=0;
+    void restartQuiz () {
+        currentQuestionIndex = 0;
 //        loadNewQuestion();
         Intent returnPostMenu = new Intent(outStream_Differentiation.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
@@ -120,7 +127,7 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         finish();
 
     }
-    void homePage(){
+    void homePage () {
         ////// foo place holder function
         ////// foo place holder function
         ////// foo place holder function
@@ -129,11 +136,17 @@ public class outStream_Differentiation extends AppCompatActivity implements View
         ////// foo place holder function
         ////// foo place holder function
         ////// change to Home Page
-        currentQuestionIndex=0;
+        currentQuestionIndex = 0;
         Intent returnPostMenu = new Intent(outStream_Differentiation.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
 //        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
 //        startActivity((returnHome));
+
+        finish();
+    }
+    void finishQuiz_back () {
+        Intent returnPostMenu = new Intent(outStream_Differentiation.this, POStMenu_ver2.class);
+        startActivity(returnPostMenu);
 
         finish();
     }

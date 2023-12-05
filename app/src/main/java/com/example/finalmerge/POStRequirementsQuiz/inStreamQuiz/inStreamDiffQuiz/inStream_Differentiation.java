@@ -11,39 +11,44 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_diffQuiz.inStreamCSdiffQuiz;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_Math.inStream_Math;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_Stats.inStream_Stats;
 import com.example.finalmerge.R;
 
 public class inStream_Differentiation extends AppCompatActivity implements View.OnClickListener {
-
     TextView totalQuestionsTextView;
     TextView questionTextView;
-    Button ans_A, ans_B;
+    Button ans_CS,ans_Math,ans_Stats;
     Button submitBtn;
+    Button back_btn;
 
-    int totalQuestion = POStMenu_QuestionAnswer.question.length;
+    int totalQuestion = inStream_Differentiation_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_program_menu);
+        setContentView(R.layout.activity_stream_differentiation);
 
         totalQuestionsTextView = findViewById(R.id.total_questions);
-        questionTextView = findViewById(R.id.question);
-        ans_A = findViewById(R.id.ans_A);
-        ans_B = findViewById(R.id.ans_B);
+        questionTextView = findViewById(R.id.stream_diff_question);
+        ans_CS = findViewById(R.id.ans_CS);
+        ans_Math = findViewById(R.id.ans_Math);
+        ans_Stats = findViewById(R.id.ans_Stats);
         submitBtn = findViewById(R.id.submit_btn);
+        back_btn = findViewById(R.id.back_btn);
 
-        ans_A.setOnClickListener(this);
-        ans_B.setOnClickListener(this);
+        ans_CS.setOnClickListener(this);
+        ans_Math.setOnClickListener(this);
+        ans_Stats.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions :" + totalQuestion);
-
-        loadNewQuestion();
+        questionTextView.setText("Which stream are you applying for?");
+        totalQuestionsTextView.setText("OutStream");
     }
 
     @Override
@@ -51,61 +56,66 @@ public class inStream_Differentiation extends AppCompatActivity implements View.
 
 //        ans_A.setBackgroundColor(Color.WHITE);
 //        ans_B.setBackgroundColor(Color.WHITE);
-        ans_A.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
-        ans_B.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
+        ans_CS.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
+        ans_Math.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
+        ans_Stats.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
 
         Button clickedButton = (Button) view;
 
         if (clickedButton.getId() == R.id.submit_btn) {
             System.out.println("SUBMIT BUTTON DETECTED!");
-            if (!selectedAnswer.equals(POStMenu_QuestionAnswer.correctAnswers[currentQuestionIndex])) {
-                finishQuiz_to_outStream();
+            if (selectedAnswer.equals(inStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][0])) {
+                System.out.println("OutStream CS Submit!");
+                finishQuiz_to_outStream_CS();
                 return;
-            }
-            currentQuestionIndex++;
-            if (currentQuestionIndex < POStMenu_QuestionAnswer.question.length) {
-                loadNewQuestion();
+            } else if (selectedAnswer.equals(inStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][1])) {
+                System.out.println("OutStream Math Submit!");
+                finishQuiz_to_outStream_Math();
+                return;
+            } else if (selectedAnswer.equals(inStream_Differentiation_QuestionAnswer.choices[currentQuestionIndex][2])) {
+                System.out.println("OutStream Stats Submit!");
+                finishQuiz_to_outStream_Stats();
+                return;
             } else {
-                System.out.println("SUCCESSFUL SUBMISSION!???!");
-                finishQuiz_to_inStream();
+                System.out.println("No matching condition for selectedAnswer: " + selectedAnswer);
             }
-
+        }else if (clickedButton.getId() == R.id.back_btn) {
+            System.out.println("Back BUTTON DETECTED!");
+            finishQuiz_back();
+            return;
         } else {
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
             selectedAnswer = clickedButton.getText().toString();
-//            clickedButton.setBackgroundColor(Color.BLUE);
-//            clickedButton.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
             clickedButton.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.teal_200)));
-
         }
     }
 
+    void finishQuiz_to_outStream_CS () {
+        Intent intent = new Intent(inStream_Differentiation.this, inStreamCSdiffQuiz.class);
 
-    void loadNewQuestion() {
-
-        questionTextView.setText(POStMenu_QuestionAnswer.question[currentQuestionIndex]);
-        ans_A.setText(POStMenu_QuestionAnswer.choices[currentQuestionIndex][0]);
-        ans_B.setText(POStMenu_QuestionAnswer.choices[currentQuestionIndex][1]);
-    }
-
-    void finishQuiz_to_outStream() {
-        Intent intent = new Intent(inStream_Differentiation.this, inStream_Differentiation.class);
-
-        // Start the new activity
+//         Start the new activity
         startActivity(intent);
         finish();
     }
 
-    void finishQuiz_to_inStream() {
-        Intent intent = new Intent(inStream_Differentiation.this, inStream_Differentiation.class);
+    void finishQuiz_to_outStream_Math () {
+        Intent intent = new Intent(inStream_Differentiation.this, inStream_Math.class);
 
-        // Start the new activity
+//         Start the new activity
         startActivity(intent);
         finish();
     }
 
-    void restartQuiz() {
+    void finishQuiz_to_outStream_Stats () {
+        Intent intent = new Intent(inStream_Differentiation.this, inStream_Stats.class);
+
+//         Start the new activity
+        startActivity(intent);
+        finish();
+    }
+
+    void restartQuiz () {
         currentQuestionIndex = 0;
 //        loadNewQuestion();
         Intent returnPostMenu = new Intent(inStream_Differentiation.this, POStMenu_ver2.class);
@@ -114,15 +124,26 @@ public class inStream_Differentiation extends AppCompatActivity implements View.
         finish();
 
     }
-
-    void homePage() {
-
+    void homePage () {
         ////// foo place holder function
+        ////// foo place holder function
+        ////// foo place holder function
+        ////// change to Home Page
+        ////// foo place holder function
+        ////// foo place holder function
+        ////// foo place holder function
+        ////// change to Home Page
         currentQuestionIndex = 0;
         Intent returnPostMenu = new Intent(inStream_Differentiation.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
 //        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
 //        startActivity((returnHome));
+
+        finish();
+    }
+    void finishQuiz_back () {
+        Intent returnPostMenu = new Intent(inStream_Differentiation.this, POStMenu_ver2.class);
+        startActivity(returnPostMenu);
 
         finish();
     }

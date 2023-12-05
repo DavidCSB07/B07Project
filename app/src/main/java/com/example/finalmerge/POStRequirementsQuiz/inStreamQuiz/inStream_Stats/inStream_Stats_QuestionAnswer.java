@@ -1,6 +1,6 @@
-package com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_Stats;
+package com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_Stats;
 
-public class outStream_Stats_QuestionAnswer {
+public class inStream_Stats_QuestionAnswer {
 
     public static String[] question = {
             "Have you completed all required A-level courses: CSCA08, CSCA48, CSCA67/MATA67, MATA22, MATA31, MATA37?"

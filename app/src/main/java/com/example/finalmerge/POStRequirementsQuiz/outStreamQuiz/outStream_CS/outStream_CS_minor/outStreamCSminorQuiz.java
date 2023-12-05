@@ -13,6 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_SpecMajor.outStreamCSspecMajorQuiz;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_SpecMajor.outStreamCSspecMajorQuiz_QuestionAnswer;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz;
+import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.referenceHillJess.outStreamSpecMajorQuiz.inStreamSpecMajorMath_Quiz.SpecialistMajorCMS_instream_QuestionAnswer;
 import com.example.finalmerge.R;
 
@@ -22,7 +27,7 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
     TextView questionTextView;
     Button ans_A,ans_B;
     Button submitBtn;
-
+    Button back_btn;
     int totalQuestion = outStreamCSminorQuiz_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
@@ -30,17 +35,19 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_program_menu);
+        setContentView(R.layout.activity_program_menu_back_btn);
 
         totalQuestionsTextView = findViewById(R.id.total_questions);
         questionTextView = findViewById(R.id.question);
         ans_A = findViewById(R.id.ans_A);
         ans_B = findViewById(R.id.ans_B);
         submitBtn = findViewById(R.id.submit_btn);
+        back_btn = findViewById(R.id.back_btn);
 
         ans_A.setOnClickListener(this);
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        back_btn.setOnClickListener(this);
 
         totalQuestionsTextView.setText("OutStream > CS > minor");
 
@@ -50,8 +57,6 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
 
-//        ans_A.setBackgroundColor(Color.WHITE);
-//        ans_B.setBackgroundColor(Color.WHITE);
         ans_A.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
         ans_B.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
 
@@ -71,7 +76,10 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
                 System.out.println("SUCCESSFUL SUBMISSION!???!");
                 finishQuiz_Success();
             }
-
+        }else if(clickedButton.getId()==R.id.back_btn){
+            System.out.println("Back BUTTON DETECTED!");
+            finishQuiz_back();
+            return;
         }else{
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
@@ -108,7 +116,7 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
 
         new AlertDialog.Builder(this)
                 .setTitle(passStatus)
-                .setMessage("Based on your answer, you meet the requirements for the restricted program.")
+                .setMessage("You meet the requirements to apply for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
                 .setNegativeButton("Home", (dialogInterface, i) -> homePage())
                 .setCancelable(false)
@@ -132,6 +140,12 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
         startActivity(returnPostMenu);
 //        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
 //        startActivity((returnHome));
+
+        finish();
+    }
+    void finishQuiz_back(){
+        Intent returnPostMenu = new Intent(outStreamCSminorQuiz.this, outStreamCSdiffQuiz.class);
+        startActivity(returnPostMenu);
 
         finish();
     }

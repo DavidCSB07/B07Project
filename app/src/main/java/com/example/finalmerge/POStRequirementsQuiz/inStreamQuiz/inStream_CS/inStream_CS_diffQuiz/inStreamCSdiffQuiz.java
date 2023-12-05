@@ -1,6 +1,5 @@
-package com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz;
+package com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_diffQuiz;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -13,13 +12,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
-import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation;
-import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_SpecMajor.outStreamCSspecMajorQuiz;
-import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_minor.outStreamCSminorQuiz;
-import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_Math.outStream_Math_QuestionAnswer;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz.inStream_Differentiation;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_SpecMajor.inStreamCSspecMajorQuiz;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_minor.inStreamCSminorQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.referenceHillJess.outStreamSpecMajorQuiz.inStreamSpecMajorMath_Quiz.SpecialistMajorCMS_instream_QuestionAnswer;
 import com.example.finalmerge.R;
-public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnClickListener{
+public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button ans_A,ans_B;
@@ -47,7 +45,7 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
 
-        questionTextView.setText(outStreamCSdiffQuiz_QuestionAnswer.question[0]);
+        questionTextView.setText(inStreamCSdiffQuiz_QuestionAnswer.question[0]);
         totalQuestionsTextView.setText("OutStream > CS");
 
         loadNewQuestion();
@@ -63,11 +61,11 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
 
         if(clickedButton.getId()==R.id.submit_btn){
             System.out.println("SUBMIT BUTTON DETECTED!");
-            if(selectedAnswer.equals(outStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][0])){
+            if(selectedAnswer.equals(inStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][0])){
                 finishQuiz_to_CS_minor();
                 return;
             }
-            if(selectedAnswer.equals(outStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][1])){
+            if(selectedAnswer.equals(inStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][1])){
                 finishQuiz_to_CS_SpecMajor();
                 return;
             }
@@ -87,13 +85,13 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
 
     void loadNewQuestion(){
 
-        questionTextView.setText(outStreamCSdiffQuiz_QuestionAnswer.question[currentQuestionIndex]);
-        ans_A.setText(outStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][0]);
-        ans_B.setText(outStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][1]);
+        questionTextView.setText(inStreamCSdiffQuiz_QuestionAnswer.question[currentQuestionIndex]);
+        ans_A.setText(inStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][0]);
+        ans_B.setText(inStreamCSdiffQuiz_QuestionAnswer.choices[currentQuestionIndex][1]);
     }
 
     void finishQuiz_to_CS_minor(){
-        Intent intent = new Intent(outStreamCSdiffQuiz.this, outStreamCSminorQuiz.class);
+        Intent intent = new Intent(inStreamCSdiffQuiz.this, inStreamCSminorQuiz.class);
 
 //         Start the new activity
         startActivity(intent);
@@ -101,7 +99,7 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
     }
 
     void finishQuiz_to_CS_SpecMajor(){
-        Intent intent = new Intent(outStreamCSdiffQuiz.this, outStreamCSspecMajorQuiz.class);
+        Intent intent = new Intent(inStreamCSdiffQuiz.this, inStreamCSspecMajorQuiz.class);
 
 //         Start the new activity
         startActivity(intent);
@@ -111,7 +109,7 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
     void restartQuiz(){
         currentQuestionIndex=0;
 //        loadNewQuestion();
-        Intent returnPostMenu = new Intent(outStreamCSdiffQuiz.this, outStreamCSspecMajorQuiz.class);
+        Intent returnPostMenu = new Intent(inStreamCSdiffQuiz.this, inStreamCSspecMajorQuiz.class);
         startActivity(returnPostMenu);
 
         finish();
@@ -121,7 +119,7 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
 
         ////// foo place holder function
         currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(outStreamCSdiffQuiz.this, POStMenu_ver2.class);
+        Intent returnPostMenu = new Intent(inStreamCSdiffQuiz.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
 //        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
 //        startActivity((returnHome));
@@ -129,7 +127,7 @@ public class outStreamCSdiffQuiz extends AppCompatActivity implements View.OnCli
         finish();
     }
     void finishQuiz_back(){
-        Intent returnPostMenu = new Intent(outStreamCSdiffQuiz.this, outStream_Differentiation.class);
+        Intent returnPostMenu = new Intent(inStreamCSdiffQuiz.this, inStream_Differentiation.class);
         startActivity(returnPostMenu);
 
         finish();
