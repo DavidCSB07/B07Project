@@ -27,7 +27,7 @@ Admins can post about the latest updates and students receive notifications when
     If the description is too long then it will be hidden and the full description is presented in a binding page.
 
 #### 6. Events  
---> Admins can schedule upcoming events, set participant limits, and manage RSVPs.
+Admins can schedule upcoming events, set participant limits, and manage RSVPs.
     Students can RSVP for upcoming events, ensuring they receive the latest updates and secure a spot if interested.
     After participating in an event, students have the opportunity to submit comments and numeric ratings, offering valuable feedback.
     Admins can access and review these comments, numeric ratings, and feedback.
