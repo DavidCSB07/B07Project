@@ -72,7 +72,8 @@ public class PostFeedback extends AppCompatActivity {
                             Toast.makeText(PostFeedback.this, "Rating has to be between 1-10", Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        FeedBack feedback = new FeedBack(numericFb, shortFb, userName);
+                        String numFb = numericFeedback.getText().toString();
+                        FeedBack feedback = new FeedBack(numFb, shortFb, userName);
                         addFeedback(feedback);
                     }
 

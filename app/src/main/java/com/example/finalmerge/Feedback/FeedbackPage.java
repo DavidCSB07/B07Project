@@ -49,18 +49,22 @@ public class FeedbackPage extends AppCompatActivity {
             }
         });
 
+
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("ScheduleEvent")
+        databaseReference = firebaseDatabase.getReference().child("ScheduleEvent")
                 .child(getIntent().getExtras().getString("refKey"))
                 .child("FeedBack");
         feedbackList = new ArrayList<>();
         feedbackAdapter = new FeedbackAdapter(this, feedbackList);
+        feedbackList.add(new FeedBack("10", "SOME COMMENT", "DAvid"));
 
         recyclerview = findViewById(R.id.FeedbackList);
         recyclerview.setHasFixedSize(true);
 
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(feedbackAdapter);
+
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -77,8 +81,6 @@ public class FeedbackPage extends AppCompatActivity {
 
             }
         });
-
-
 
 
     }

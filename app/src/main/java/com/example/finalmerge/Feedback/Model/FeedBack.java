@@ -2,12 +2,12 @@ package com.example.finalmerge.Feedback.Model;
 
 public class FeedBack {
 
-    public int numFeedback;
+    public String numFeedback;
     public String shortFeedback;
     public String userName;
     public String refKey;
 
-    public FeedBack(int numFeedback, String shortFeedback, String userName) {
+    public FeedBack(String numFeedback, String shortFeedback, String userName) {
         this.numFeedback = numFeedback;
         this.shortFeedback = shortFeedback;
         this.userName = userName;
@@ -17,11 +17,11 @@ public class FeedBack {
 
     }
 
-    public int getNumFeedback() {
+    public String getNumFeedback() {
         return numFeedback;
     }
 
-    public void setNumFeedback(int numFeedback) {
+    public void setNumFeedback(String numFeedback) {
         this.numFeedback = numFeedback;
     }
 

@@ -39,6 +39,7 @@ public class feedback_ui extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FeedbackPage.class);
+                intent.putExtra("refKey", getIntent().getExtras().getString("refKey"));
                 startActivity(intent);
                 finish();
             }
