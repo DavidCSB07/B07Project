@@ -19,7 +19,6 @@ public class EventViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         titleView = itemView.findViewById(R.id.title);
         descriptionView = itemView.findViewById(R.id.description);
-        eventDateView = itemView.findViewById(R.id.eventDate);
         layout = itemView.findViewById(R.id.layout);
 
     }

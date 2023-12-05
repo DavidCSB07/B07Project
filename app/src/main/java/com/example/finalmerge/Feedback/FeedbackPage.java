@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,7 @@ public class FeedbackPage extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     List<FeedBack> feedbackList;
+    TextView AverageRating;
 
     Button back;
 
@@ -39,6 +42,7 @@ public class FeedbackPage extends AppCompatActivity {
         setContentView(R.layout.feedback_page);
 
         back = findViewById(R.id.back);
+        AverageRating = findViewById(R.id.AverageRating);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,14 +60,14 @@ public class FeedbackPage extends AppCompatActivity {
                 .child("FeedBack");
         feedbackList = new ArrayList<>();
         feedbackAdapter = new FeedbackAdapter(this, feedbackList);
-        feedbackList.add(new FeedBack("Rated: 10", "SOME COMMENT", "DAvid"));
+        //feedbackList.add(new FeedBack("Rated: 10", "SOME COMMENT", "DAvid"));
 
         recyclerview = findViewById(R.id.FeedbackList);
         recyclerview.setHasFixedSize(true);
 
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(feedbackAdapter);
-
+        ArrayList<Integer> IntegerList = new ArrayList<Integer>();
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -73,8 +77,14 @@ public class FeedbackPage extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     FeedBack feedback = dataSnapshot.getValue(FeedBack.class);
                     feedbackList.add(feedback);
+                    Toast.makeText(getApplicationContext(), feedback.getNumFeedback(), Toast.LENGTH_SHORT).show();
+                    IntegerList.add(Integer.parseInt(feedback.getNumFeedback()));
                 }
                 feedbackAdapter.notifyDataSetChanged();
+                double average = computeAverge(IntegerList);
+                AverageRating.setText("The Average Rating is:   " + average);
+
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -83,5 +93,21 @@ public class FeedbackPage extends AppCompatActivity {
         });
 
 
+
+
+    }
+
+    private double computeAverge(ArrayList<Integer> integerList) {
+
+        if (integerList.isEmpty()) {
+            return 0.0;
+        }
+
+        int sum = 0;
+        for (int num : integerList) {
+            sum += num;
+        }
+        // Calculate the average
+        return (double) sum / integerList.size();
     }
 }

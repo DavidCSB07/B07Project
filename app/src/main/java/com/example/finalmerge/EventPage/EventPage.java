@@ -53,7 +53,7 @@ public class EventPage extends AppCompatActivity {
 
         eventsList = new ArrayList<>();
         eventAdapter = new EventAdapter(this, eventsList);
-        eventsList.add(new Event("B07 final", "final exam", "12/04/2024", 10));
+        //eventsList.add(new Event("B07 final", "final exam", "12/04/2024", 10));
         recyclerview = findViewById(R.id.EventList);
         recyclerview.setHasFixedSize(true);
 

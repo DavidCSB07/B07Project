@@ -69,4 +69,12 @@ public class Event {
     public void setParticipants(int participants) {
         this.participants = participants;
     }
+
+    public String getDateEvent() {
+        return dateEvent;
+    }
+
+    public void setDateEvent(String dateEvent) {
+        this.dateEvent = dateEvent;
+    }
 }

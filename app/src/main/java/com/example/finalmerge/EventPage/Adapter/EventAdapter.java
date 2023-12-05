@@ -65,6 +65,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
                             Intent intent = new Intent(v.getContext(), RSVP.class);
                             intent.putExtra("title", events.get(position).getTitle());
                             intent.putExtra("description", events.get(position).getDescription());
+                            intent.putExtra("date", events.get(position).getDate());
                             intent.putExtra("refKey", events.get(position).getRefKey());
                             v.getContext().startActivity(intent);
                         }
@@ -73,6 +74,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventViewHolder>{
                             Intent intent = new Intent(v.getContext(), feedback_ui.class);
                             intent.putExtra("title", events.get(position).getTitle());
                             intent.putExtra("description", events.get(position).getDescription());
+                            intent.putExtra("date", events.get(position).getDateEvent());
                             intent.putExtra("refKey", events.get(position).getRefKey());
                             v.getContext().startActivity(intent);
                         }
