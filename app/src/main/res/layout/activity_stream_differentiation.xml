@@ -4,20 +4,20 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/white"
+android:background="@color/gray"
 android:padding="24dp"
-tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorCS_instream">
+tools:context=".POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/total_questions"
-    android:text="@string/total_questions"
-    android:layout_centerHorizontal="true"
-    android:textSize="20sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/total_questions"
+        android:text="@string/total_questions"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
 
-<TextView
-    android:id="@+id/question"
+    <TextView
+    android:id="@+id/stream_diff_question"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_above="@id/choices_Layout"
@@ -25,7 +25,7 @@ tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorCS_ins
     android:layout_marginTop="20dp"
     android:layout_marginEnd="20dp"
     android:layout_marginBottom="20dp"
-    android:text="CMS_inStream_general Questions holder"
+    android:text="Stream Diff Questions holder"
     android:textAlignment="center"
     android:textColor="@color/black"
     android:textSize="24sp"
@@ -41,7 +41,7 @@ tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorCS_ins
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ans_A"
+        android:id="@+id/ans_CS"
         android:layout_margin="5dp"
         android:backgroundTint="@color/white"
         android:text="CS"
@@ -50,7 +50,7 @@ tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorCS_ins
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ans_B"
+        android:id="@+id/ans_Math"
         android:layout_margin="5dp"
         android:backgroundTint="@color/white"
         android:text="Maths"
@@ -59,7 +59,7 @@ tools:context=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorCS_ins
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ans_C"
+        android:id="@+id/ans_Stats"
         android:layout_margin="5dp"
         android:backgroundTint="@color/white"
         android:text="Stats"

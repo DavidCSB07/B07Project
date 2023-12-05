@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gray"
     android:padding="24dp"
-    tools:context=".POStRequirementsQuiz.Menu.POStMenu_ver2">
+    tools:context=".POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/CMSquestion"
+        android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/choices_Layout"
