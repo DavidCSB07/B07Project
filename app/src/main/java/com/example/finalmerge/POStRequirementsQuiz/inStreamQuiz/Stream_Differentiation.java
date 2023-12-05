@@ -15,11 +15,11 @@ import com.example.finalmerge.POStRequirementsQuiz.Menu.POStMenu_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.R;
 
-public class Stream_Differentiation extends AppCompatActivity implements View.OnClickListener{
+public class Stream_Differentiation extends AppCompatActivity implements View.OnClickListener {
 
     TextView totalQuestionsTextView;
     TextView questionTextView;
-    Button ans_A,ans_B;
+    Button ans_A, ans_B;
     Button submitBtn;
 
     int totalQuestion = POStMenu_QuestionAnswer.question.length;
@@ -41,7 +41,7 @@ public class Stream_Differentiation extends AppCompatActivity implements View.On
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        totalQuestionsTextView.setText("Total questions :"+totalQuestion);
+        totalQuestionsTextView.setText("Total questions :" + totalQuestion);
 
         loadNewQuestion();
     }
@@ -56,22 +56,21 @@ public class Stream_Differentiation extends AppCompatActivity implements View.On
 
         Button clickedButton = (Button) view;
 
-        if(clickedButton.getId()==R.id.submit_btn){
+        if (clickedButton.getId() == R.id.submit_btn) {
             System.out.println("SUBMIT BUTTON DETECTED!");
-            if(!selectedAnswer.equals(POStMenu_QuestionAnswer.correctAnswers[currentQuestionIndex])){
+            if (!selectedAnswer.equals(POStMenu_QuestionAnswer.correctAnswers[currentQuestionIndex])) {
                 finishQuiz_to_outStream();
                 return;
             }
             currentQuestionIndex++;
             if (currentQuestionIndex < POStMenu_QuestionAnswer.question.length) {
                 loadNewQuestion();
-            }
-            else {
+            } else {
                 System.out.println("SUCCESSFUL SUBMISSION!???!");
                 finishQuiz_to_inStream();
             }
 
-        }else{
+        } else {
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
             selectedAnswer = clickedButton.getText().toString();
@@ -83,31 +82,31 @@ public class Stream_Differentiation extends AppCompatActivity implements View.On
     }
 
 
-    void loadNewQuestion(){
+    void loadNewQuestion() {
 
         questionTextView.setText(POStMenu_QuestionAnswer.question[currentQuestionIndex]);
         ans_A.setText(POStMenu_QuestionAnswer.choices[currentQuestionIndex][0]);
         ans_B.setText(POStMenu_QuestionAnswer.choices[currentQuestionIndex][1]);
     }
 
-    void finishQuiz_to_outStream(){
-        Intent intent = new Intent(Stream_Differentiation.this, outStreamQuiz.class);
+    void finishQuiz_to_outStream() {
+        Intent intent = new Intent(Stream_Differentiation.this, Stream_Differentiation.class);
 
         // Start the new activity
         startActivity(intent);
         finish();
     }
 
-    void finishQuiz_to_inStream(){
-        Intent intent = new Intent(Stream_Differentiation.this, inStreamQuiz.class);
+    void finishQuiz_to_inStream() {
+        Intent intent = new Intent(Stream_Differentiation.this, Stream_Differentiation.class);
 
         // Start the new activity
         startActivity(intent);
         finish();
     }
 
-    void restartQuiz(){
-        currentQuestionIndex=0;
+    void restartQuiz() {
+        currentQuestionIndex = 0;
 //        loadNewQuestion();
         Intent returnPostMenu = new Intent(Stream_Differentiation.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
@@ -115,10 +114,11 @@ public class Stream_Differentiation extends AppCompatActivity implements View.On
         finish();
 
     }
-    void homePage(){
+
+    void homePage() {
 
         ////// foo place holder function
-        currentQuestionIndex=0;
+        currentQuestionIndex = 0;
         Intent returnPostMenu = new Intent(Stream_Differentiation.this, POStMenu_ver2.class);
         startActivity(returnPostMenu);
 //        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
@@ -126,3 +126,4 @@ public class Stream_Differentiation extends AppCompatActivity implements View.On
 
         finish();
     }
+}

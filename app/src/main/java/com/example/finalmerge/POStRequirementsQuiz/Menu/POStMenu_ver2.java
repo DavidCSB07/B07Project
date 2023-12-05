@@ -94,19 +94,19 @@ public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickList
     }
 
     void finishQuiz_to_outStream(){
-        Intent intent = new Intent(POStMenu_ver2.this, outStreamQuiz.class);
+        //Intent intent = new Intent(POStMenu_ver2.this, outStreamQuiz.class);
 
         // Start the new activity
-        startActivity(intent);
-        finish();
+        //startActivity(intent);
+        //finish();
     }
 
     void finishQuiz_to_inStream(){
-        Intent intent = new Intent(POStMenu_ver2.this, inStreamQuiz.class);
+       // Intent intent = new Intent(POStMenu_ver2.this, inStreamQuiz.class);
 
         // Start the new activity
-        startActivity(intent);
-        finish();
+        //startActivity(intent);
+        //finish();
     }
 
     void restartQuiz(){
