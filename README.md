@@ -12,17 +12,17 @@ Users can choose whether they would like to register or login depending on their
 
 #### 2. Program of Study (POSt) Requirements Checker
 
---> Students can answer a few basic questions in a quiz format to check whether they qualify for a Program of Study (POSt).
+Students can answer a few basic questions in a quiz format to check whether they qualify for a Program of Study (POSt).
     The POSt checker includes both the specialist and major requirements for the Computer and Mathematical Sciences (CMS) category and categories outside CMS, as well as the minor program.
     A message will appear on screen stating whether the user meets the POSt requirements based on the user's answers.
 
 #### 3. Complaints
 
---> Students can submit complaints to communicate challenges they may be experiencing and admin can access and view these complaints. 
+Students can submit complaints to communicate challenges they may be experiencing and admin can access and view these complaints. 
 
 #### 4. Announcements
 
---> Admins can post about the latest updates and students receive notifications when updates are announced.
+Admins can post about the latest updates and students receive notifications when updates are announced.
     When an admin posts an announcement (which includes a subject and description), the current time will be timestamped automatically. All announcements are ordered in descending order by date (with the latest announceemnt at the top).
     If the description is too long then it will be hidden and the full description is presented in a binding page.
 
