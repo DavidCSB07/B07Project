@@ -104,7 +104,7 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
                 .setTitle(passStatus)
                 .setMessage("Based on your answer, you do not meet the requirements for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -116,7 +116,7 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
                 .setTitle(passStatus)
                 .setMessage("You meet the requirements to apply for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }

@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation;
 import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 public class outStream_Math extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -22,7 +23,7 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
     Button ans_A,ans_B;
     Button submitBtn;
     Button back_btn;
-
+    Button home_btn;
     int totalQuestion = outStream_Math_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
@@ -38,12 +39,12 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
         ans_B = findViewById(R.id.ans_B);
         submitBtn = findViewById(R.id.submit_btn);
         back_btn = findViewById(R.id.back_btn);
-
+        home_btn = findViewById(R.id.home_btn);
         ans_A.setOnClickListener(this);
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
-
+        home_btn.setOnClick
         questionTextView.setText(outStream_Math_QuestionAnswer.question[0]);
         totalQuestionsTextView.setText("OutStream > Math");
 
@@ -102,7 +103,7 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
                 .setTitle(passStatus)
                 .setMessage("Based on your answer, you do not meet the requirements for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -114,7 +115,7 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
                 .setTitle(passStatus)
                 .setMessage("You meet the requirements to apply for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -128,15 +129,10 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
         finish();
 
     }
-    void homePage() {
-
-        ////// foo place holder function
-        currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(outStream_Math.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+    void finishQuiz_home(){
+        currentQuestionIndex=0;
+        Intent returnHome = new Intent(outStream_Math.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
     void finishQuiz_back(){
