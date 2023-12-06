@@ -1,1 +1,92 @@
 
+12/03/23
+
+Daily Stand Up meeting 
+
+Summary: 
+
+David:
+Lynn: 
+--> What you did: 
+  --> added detail binding page for complaint page
+--> What you gonna do:
+  --> fix Jira
+--> What you struggling:
+  --> Jira
+
+Hillary:
+--> What you did:
+  --> study/review MVP and testing video lecture
+  --> worked on refactoring/reducing redundancy and JUnit testing with Jess
+  --> worked with Jess on zoom, shared my screen 
+  --> styled the README
+--> What are you gonna do:
+  --> visit Rawad in OH, troubleshoot testing
+  --> aim to finish by tomorrow
+--> What are you struggling:
+  --> finishing JUnit testing
+  --> implementing Mockito to gradle file, encountered bugs
+  --> reviewed testing lecture but kept running into errors
+
+Jess:
+--> What you did: 
+  --> worked with Hillary on JUnit testing
+  --> created README file
+--> What you gonna do:
+  --> ask professor questions about JUnit testing with Hillary tomorrow during office hours
+  --> finish README file
+--> What you struggling:
+  --> finishing JUnit testing
+Kehu: 
+--> What you did: 
+  --> created activity_specialist_major_cs_instream
+  --> code in main.xml
+  --> code in QuestionAnswer.java
+  --> fixed bugs
+  --> finish document
+--> What you gonna do:
+  --> build quiz for other category
+  --> fix color b&w
+  --> polishing POSt
+--> What you struggling:
+  --> problem: color b&w
+
+Summary: 
+--> Reassigning work to every group member
+  --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
+  --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
+  --> Admin.complaints inProgress: noProgress
+  --> Student.complaints inProgress: frontEnd done, Hillary, backEnd inProgress, Hillary
+  --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase fixed Lynn
+  --> Student.annoucement inProgress: frontEnd fixing, Jess, backEnd (listview) fixing, Jess, frontEnd/backEnd (recyclerview) done, Lynn
+  --> Admin.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
+  --> Student.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
+  --> POSt page inProgress: no progress
+
+
+DeadLine:
+--> Tueday 11/28, everyThing Done. frontEnd/backEnd/FireBase
+--> Wednesday 11/29, Refactor everyone's code into one.
+--> Thursday 11/30, Refactor everyone's code into one.
+--> Friday 12/01, Refactor everyone's code into one.
+--> Saturday 12/02, Testing.
+--> Sunday 12/03, Testing.
+--> Monday 12/04, Submit
+
+
+Bug fixing:
+--> Gradle compile SDK to low (David)
+  --> Solution: gradle lv app compileSDK: 33 -> 34
+
+--> Can't start activity no andriod studio (Lynn, Jess)
+  --> Solution: run/debug select a specific activity to run
+
+--> App crushing right after launching with no warning or notification (Lynn)
+  --> Solution: FirebaseDatabase.getInstance().getReference("PATH") --> FirebaseDatabase.getInstance().getReference() to no path
+
+--> Emulator stuck on connecting (Lynn)
+  --> search 'Preferences' --> 'Tools' --> 'Emulator' --> uncheck 'Launch in tool window'
+
+--> attempt to run JUnit testing file (Hillary): ExceptionInInitializerError thrown and MockitoVersion not found even though it was implemented in app-level gradle
+  --> Solution: implement up to date Mockito version and import assertEquals
+
