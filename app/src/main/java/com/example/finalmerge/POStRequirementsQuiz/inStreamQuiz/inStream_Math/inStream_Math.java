@@ -47,7 +47,7 @@ public class inStream_Math extends AppCompatActivity implements View.OnClickList
         back_btn.setOnClickListener(this);
 
         questionTextView.setText(inStream_Math_QuestionAnswer.question[0]);
-        totalQuestionsTextView.setText("OutStream > Math");
+        totalQuestionsTextView.setText("InStream > Math");
 
         loadNewQuestion();
     }

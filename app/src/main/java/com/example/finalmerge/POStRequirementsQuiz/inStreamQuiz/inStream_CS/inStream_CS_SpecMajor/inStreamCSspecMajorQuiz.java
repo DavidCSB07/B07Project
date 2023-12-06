@@ -46,7 +46,7 @@ public class inStreamCSspecMajorQuiz extends AppCompatActivity implements View.O
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
         home_btn.setOnClickListener(this);
-        totalQuestionsTextView.setText("OutStream > CS > Spec/Major");
+        totalQuestionsTextView.setText("InStream > CS > Spec/Major");
 
         loadNewQuestion();
     }

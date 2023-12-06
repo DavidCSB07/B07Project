@@ -47,7 +47,7 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
         back_btn.setOnClickListener(this);
         home_btn.setOnClickListener(this);
         questionTextView.setText(outStream_Stats_QuestionAnswer.question[0]);
-        totalQuestionsTextView.setText("OutStream > Math");
+        totalQuestionsTextView.setText("OutStream > Stats");
 
         loadNewQuestion();
     }

@@ -51,7 +51,7 @@ public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClic
         home_btn.setOnClickListener(this);
 
         questionTextView.setText(inStreamCSdiffQuiz_QuestionAnswer.question[0]);
-        totalQuestionsTextView.setText("OutStream > CS");
+        totalQuestionsTextView.setText("InStream > CS");
 
         loadNewQuestion();
     }

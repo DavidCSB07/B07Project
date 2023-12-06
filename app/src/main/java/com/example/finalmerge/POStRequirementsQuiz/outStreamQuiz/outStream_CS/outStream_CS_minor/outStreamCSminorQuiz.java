@@ -47,7 +47,7 @@ public class outStreamCSminorQuiz extends AppCompatActivity implements View.OnCl
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
         home_btn.setOnClickListener(this);
-        totalQuestionsTextView.setText("OutStream > CS > minor");
+        totalQuestionsTextView.setText("OutStream > CS > Minor");
 
         loadNewQuestion();
     }

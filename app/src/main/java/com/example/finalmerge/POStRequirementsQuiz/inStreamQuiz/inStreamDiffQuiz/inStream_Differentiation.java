@@ -50,7 +50,7 @@ public class inStream_Differentiation extends AppCompatActivity implements View.
         back_btn.setOnClickListener(this);
         home_btn.setOnClickListener(this);
         questionTextView.setText("Which stream are you applying for?");
-        totalQuestionsTextView.setText("OutStream");
+        totalQuestionsTextView.setText("InStream");
     }
 
     @Override
