@@ -12,9 +12,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz.inStream_Differentiation;
+import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
+import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_SpecMajor.inStreamCSspecMajorQuiz;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 public class inStream_Math extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -76,6 +78,10 @@ public class inStream_Math extends AppCompatActivity implements View.OnClickList
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
             return;
+        }else if(clickedButton.getId()==R.id.home_btn){
+            System.out.println("Home BUTTON DETECTED!");
+            finishQuiz_home();
+            return;
         }else{
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
@@ -102,7 +108,7 @@ public class inStream_Math extends AppCompatActivity implements View.OnClickList
                 .setTitle(passStatus)
                 .setMessage("Based on your answer, you do not meet the requirements for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -114,7 +120,7 @@ public class inStream_Math extends AppCompatActivity implements View.OnClickList
                 .setTitle(passStatus)
                 .setMessage("You meet the requirements to apply for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -128,15 +134,10 @@ public class inStream_Math extends AppCompatActivity implements View.OnClickList
         finish();
 
     }
-    void homePage() {
-
-        ////// foo place holder function
-        currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(inStream_Math.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+    void finishQuiz_home(){
+        currentQuestionIndex=0;
+        Intent returnHome = new Intent(inStream_Math.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
     void finishQuiz_back(){

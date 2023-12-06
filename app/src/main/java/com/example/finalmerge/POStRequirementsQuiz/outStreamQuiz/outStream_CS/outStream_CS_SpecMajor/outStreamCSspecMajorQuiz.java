@@ -12,9 +12,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz;
-import com.example.finalmerge.POStRequirementsQuiz.referenceHillJess.outStreamSpecMajorQuiz.inStreamSpecMajorMath_Quiz.SpecialistMajorCMS_instream_QuestionAnswer;
+import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
+
 import com.example.finalmerge.R;
 
 public class outStreamCSspecMajorQuiz extends AppCompatActivity implements View.OnClickListener{

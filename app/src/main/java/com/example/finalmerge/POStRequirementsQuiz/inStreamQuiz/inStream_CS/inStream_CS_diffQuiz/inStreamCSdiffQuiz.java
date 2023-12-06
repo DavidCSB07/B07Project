@@ -17,12 +17,15 @@ import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inSt
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_minor.inStreamCSminorQuiz;
 
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
+
 public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
     TextView questionTextView;
     Button ans_A,ans_B;
     Button submitBtn;
     Button back_btn;
+    Button home_btn;
 
     int totalQuestion = inStreamCSdiffQuiz_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
@@ -39,11 +42,13 @@ public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClic
         ans_B = findViewById(R.id.ans_B);
         submitBtn = findViewById(R.id.submit_btn);
         back_btn = findViewById(R.id.back_btn);
+        home_btn = findViewById(R.id.home_btn);
 
         ans_A.setOnClickListener(this);
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
+        home_btn.setOnClickListener(this);
 
         questionTextView.setText(inStreamCSdiffQuiz_QuestionAnswer.question[0]);
         totalQuestionsTextView.setText("OutStream > CS");
@@ -72,6 +77,10 @@ public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClic
         }else if(clickedButton.getId()==R.id.back_btn){
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
+            return;
+        }else if(clickedButton.getId()==R.id.home_btn){
+            System.out.println("Home BUTTON DETECTED!");
+            finishQuiz_home();
             return;
         }else{
             //if user hits choices
@@ -115,17 +124,13 @@ public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClic
         finish();
 
     }
-    void homePage() {
-
-        ////// foo place holder function
-        currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(inStreamCSdiffQuiz.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+    void finishQuiz_home(){
+        currentQuestionIndex=0;
+        Intent returnHome = new Intent(inStreamCSdiffQuiz.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
+
     void finishQuiz_back(){
         Intent returnPostMenu = new Intent(inStreamCSdiffQuiz.this, inStream_Differentiation.class);
         startActivity(returnPostMenu);

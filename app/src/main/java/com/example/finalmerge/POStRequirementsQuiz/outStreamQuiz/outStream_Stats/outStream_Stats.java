@@ -12,10 +12,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_Math.outStream_Math_QuestionAnswer;
+import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 public class outStream_Stats extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -23,7 +24,7 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
     Button ans_A,ans_B;
     Button submitBtn;
     Button back_btn;
-
+    Button home_btn;
     int totalQuestion = outStream_Stats_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
@@ -39,12 +40,12 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
         ans_B = findViewById(R.id.ans_B);
         submitBtn = findViewById(R.id.submit_btn);
         back_btn = findViewById(R.id.back_btn);
-
+        home_btn = findViewById(R.id.home_btn);
         ans_A.setOnClickListener(this);
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
-
+        home_btn.setOnClickListener(this);
         questionTextView.setText(outStream_Stats_QuestionAnswer.question[0]);
         totalQuestionsTextView.setText("OutStream > Math");
 
@@ -129,15 +130,10 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
         finish();
 
     }
-    void homePage() {
-
-        ////// foo place holder function
-        currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(outStream_Stats.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+    void finishQuiz_home(){
+        currentQuestionIndex=0;
+        Intent returnHome = new Intent(outStream_Stats.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
     void finishQuiz_back(){

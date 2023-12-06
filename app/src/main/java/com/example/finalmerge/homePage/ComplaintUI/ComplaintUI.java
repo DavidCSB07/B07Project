@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.finalmerge.ComplaintsPage.ComplaintPage;
 import com.example.finalmerge.ComplaintsPage.PostComplaint;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -90,7 +91,7 @@ public class ComplaintUI extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), com.example.finalmerge.homePage.homePage.class);
+                Intent intent = new Intent(getApplicationContext(), homePage.class);
                 startActivity(intent);
                 finish();
             }

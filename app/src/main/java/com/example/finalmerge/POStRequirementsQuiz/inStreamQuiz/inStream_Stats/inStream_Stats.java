@@ -17,6 +17,7 @@ import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_Math.inStream_Math_QuestionAnswer;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStream_Stats.outStream_Stats_QuestionAnswer;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 public class inStream_Stats extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -78,6 +79,10 @@ public class inStream_Stats extends AppCompatActivity implements View.OnClickLis
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
             return;
+        }else if(clickedButton.getId()==R.id.home_btn){
+            System.out.println("Home BUTTON DETECTED!");
+            finishQuiz_home();
+            return;
         }else{
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
@@ -104,7 +109,7 @@ public class inStream_Stats extends AppCompatActivity implements View.OnClickLis
                 .setTitle(passStatus)
                 .setMessage("Based on your answer, you do not meet the requirements for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -116,7 +121,7 @@ public class inStream_Stats extends AppCompatActivity implements View.OnClickLis
                 .setTitle(passStatus)
                 .setMessage("You meet the requirements to apply for the restricted program.")
                 .setPositiveButton("Restart",(dialogInterface, i) -> restartQuiz())
-                .setNegativeButton("Home", (dialogInterface, i) -> homePage())
+                .setNegativeButton("Home", (dialogInterface, i) -> finishQuiz_home())
                 .setCancelable(false)
                 .show();
     }
@@ -130,15 +135,10 @@ public class inStream_Stats extends AppCompatActivity implements View.OnClickLis
         finish();
 
     }
-    void homePage() {
-
-        ////// foo place holder function
-        currentQuestionIndex = 0;
-        Intent returnPostMenu = new Intent(inStream_Stats.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+    void finishQuiz_home(){
+        currentQuestionIndex=0;
+        Intent returnHome = new Intent(inStream_Stats.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
     void finishQuiz_back(){

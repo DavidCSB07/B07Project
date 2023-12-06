@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz.inStream_Differentiation;
 import com.example.finalmerge.POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation;
 import com.example.finalmerge.R;
+import com.example.finalmerge.homePage.homePage;
 
 public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,6 +23,7 @@ public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickList
     TextView questionTextView;
     Button ans_A,ans_B;
     Button submitBtn;
+    Button home_btn;
 
     int totalQuestion = POStMenu_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
@@ -37,10 +39,12 @@ public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickList
         ans_A = findViewById(R.id.ans_A);
         ans_B = findViewById(R.id.ans_B);
         submitBtn = findViewById(R.id.submit_btn);
+        home_btn = findViewById(R.id.home_btn);
 
         ans_A.setOnClickListener(this);
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        home_btn.setOnClickListener(this);
 
         totalQuestionsTextView.setText("POSt Check Quiz");
     }
@@ -67,7 +71,10 @@ public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickList
                 finishQuiz_to_inStream();
                 return;
             }
-
+        }else if(clickedButton.getId()==R.id.home_btn){
+            System.out.println("Back BUTTON DETECTED!");
+            finishQuiz_home();
+            return;
         }else{
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
@@ -102,21 +109,10 @@ public class POStMenu_ver2 extends AppCompatActivity implements View.OnClickList
         finish();
 
     }
-    void homePage(){
-        ////// foo place holder function
-        ////// foo place holder function
-        ////// foo place holder function
-        ////// change to Home Page
-        ////// foo place holder function
-        ////// foo place holder function
-        ////// foo place holder function
-        ////// change to Home Page
+    void finishQuiz_home(){
         currentQuestionIndex=0;
-        Intent returnPostMenu = new Intent(POStMenu_ver2.this, POStMenu_ver2.class);
-        startActivity(returnPostMenu);
-//        Intent returnHome = new Intent(getApplicationContext(), homePage.class);
-//        startActivity((returnHome));
-
+        Intent returnHome = new Intent(POStMenu_ver2.this, homePage.class);
+        startActivity((returnHome));
         finish();
     }
 }
