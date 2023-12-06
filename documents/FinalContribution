@@ -3,7 +3,17 @@ Final Contribution Page:
   Team members: Lynn (Yiming) Zhong, David Wu, Hillary Tse, Jessica Lam, Kehu Li
 
 🚨 Kehu's work on POSt was revoked due to poor code quality. With 24 classes and 5 layouts, the code did not follow the design principles as there was a lot of code redundancy and was difficult to debug.
-   Time was wasted on redoing code that was already created without signficant improvement on the UI or functionalities which prohibited the progress of other user stories that needed to be worked on.
+   Time was wasted on redoing code that was already created without signficant improvement on the UI or functionalities which prohibited the progress of other user stories that needed to be worked on. 
+   Furthermore, with the given time (5 days) the work is considered light and it is expected to be finished within 2 days (estimated by the scrum master and agreed among other members). 
+   Her action has delayed the final submission time and consumed more of our time and energy than it should.
+
+🚨 Scrum Master(David) has revoked her responsibility on other userStories (3 userStories) that was assigned to her due to no progress being 
+   shown on Dec 05 Tuesday 11:00 pm and it is believe as Mission Impossible (by Tom Cruise) since the deadline is Wednesday Dec 06 Morning (12 hours ish) 
+
+🚨 Scrum Master (David) has revoked Kehu’s code and reused the code from Hillary and Jessica as a final submission with improved UI, which was completed within 2 hours 
+   with the contribution of the entire team.
+
+
 
 Workload distrubtion and contribution:
 
@@ -50,7 +60,7 @@ EventPage:
 HomePage: 
   --> HomePage:
     --> Authors: David 
-    --> Assistance: David 
+    --> Assistance: Hillary, Jessica, Lynn, David 
   --> UI Pages (Annoucement, Event, Complaint)
     --> Authors: David 
     --> Assistance: David 
