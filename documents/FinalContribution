@@ -2,25 +2,26 @@ Final Contribution Page:
   Team name: Failed to add one
   Team members: Lynn (Yiming) Zhong, David Wu, Hillary Tse, Jessica Lam, Kehu Li
 
+🚨 Kehu's work on POSt was revoked due to poor code quality. With 24 classes and 5 layouts, the code did not follow the design principles as there was a lot of code redundancy and was difficult to debug.
+
 Workload distrubtion and contribution:
 
 /*
-
 format: 
 Activity
   --> ActivityPurpose1
     --> Author 1, 2 (Assigned to the job, did most of the Job)
     --> Assistance 1, 2 (Helped Debugging or contributed to the job)
   --> ActivityPurpose2
-
 */
+
 AnnouncementPage:
 
   --> AnnouncementPage 
     --> Authors: Lynn
     --> Assistance: David, Lynn
   --> PostAnnoucement
-    --> Authors: Lynn, Jess
+    --> Authors: Lynn, Jessica
     --> Assistance: Lynn
   --> DetailAnnoucement
     --> Authors: Lynn
@@ -55,27 +56,27 @@ HomePage:
 
 LoginPage: 
   --> LoginPage:
-    --> Authors: Jess
-    --> Assistance: Jess, David 
+    --> Authors: Jessica
+    --> Assistance: Jessica, David 
   --> Register
-    --> Authors: Jess
-    --> Assistance: Jess, David
+    --> Authors: Jessica
+    --> Assistance: Jessica, David
   --> Register
-    --> Authors: Jess
-    --> Assistance: Jess, David
+    --> Authors: Jessica
+    --> Assistance: Jessica, David
 
 
 Refactoring Login Module and JUnit Testing: 
   --> Refactoring
-    --> Authors: Hillary, Jess 
-    --> Assistance: Hillary, Jess 
+    --> Authors: Hillary, Jessica 
+    --> Assistance: Hillary, Jessica 
   --> Testing
-    --> Authors: Hillary, Jess 
-    --> Assistance: Hillary, Jess 
+    --> Authors: Hillary, Jessica 
+    --> Assistance: Hillary, Jessica 
 
 POSt: 
-    --> Authors: Hillary, Jess, Kehu
-    --> Assistance: Hillary, Jess, Kehu, Lynn, David
+    --> Authors: Hillary, Jessica, Kehu
+    --> Assistance: Hillary, Jessica, Kehu, Lynn, David
   
   
   
