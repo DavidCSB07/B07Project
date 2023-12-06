@@ -90,3 +90,6 @@ Bug fixing:
 --> attempt to run JUnit testing file (Hillary): ExceptionInInitializerError thrown and MockitoVersion not found even though it was implemented in app-level gradle
   --> Solution: implement up to date Mockito version and import assertEquals
 
+--> complaint detail binding crashed
+  --> Solution: logic error, add if condition to check nullpointerexception for intent and values in the intent
+
