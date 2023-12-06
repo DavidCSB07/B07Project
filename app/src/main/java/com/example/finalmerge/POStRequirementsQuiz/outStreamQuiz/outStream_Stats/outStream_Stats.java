@@ -78,6 +78,10 @@ public class outStream_Stats extends AppCompatActivity implements View.OnClickLi
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
             return;
+        }else if(clickedButton.getId()==R.id.home_btn){
+            System.out.println("Home BUTTON DETECTED!");
+            finishQuiz_home();
+            return;
         }else{
             //if user hits choices
             System.out.println("NON SUBMIT BUTTON DETECTED!");
