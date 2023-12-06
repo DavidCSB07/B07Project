@@ -11,7 +11,12 @@ Users can choose whether they would like to register or login depending on their
     If passwords are not more than six characters long, a toast message will appear to alert the user.
     Users also cannot create accounts with the same email.
     
+    Admin
     Testing account email: admin@admin.com
+    Testing account password: 123456
+
+    Student
+    Testing account email: student@student.com
     Testing account password: 123456
 
 #### 2. Program of Study (POSt) Requirements Checker
