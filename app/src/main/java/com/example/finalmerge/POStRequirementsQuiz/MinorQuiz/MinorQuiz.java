@@ -1,14 +1,16 @@
 package com.example.finalmerge.POStRequirementsQuiz.MinorQuiz;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.finalmerge.POStRequirementsQuiz.Menu.POStMenu;
 import com.example.finalmerge.R;
 
 public class MinorQuiz extends AppCompatActivity implements View.OnClickListener{
@@ -32,10 +34,31 @@ public class MinorQuiz extends AppCompatActivity implements View.OnClickListener
         answer_A = findViewById(R.id.answerA);
         answer_B = findViewById(R.id.answerB);
         submit_button = findViewById(R.id.buttonSubmit);
+        Button home = findViewById(R.id.home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), POStMenu.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
-        answer_A.setOnClickListener(this);
-        answer_B.setOnClickListener(this);
-        submit_button.setOnClickListener(this);
+        answer_A.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                score++;
+                currentQuestionIndex++;
+                loadNewQuestion();
+            }
+        });
+        answer_B.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentQuestionIndex++;
+                loadNewQuestion();
+            }
+        });
 
         totalQuestionsTextView.setText(getString(R.string.totalQuestions) + totalQuestions);
 

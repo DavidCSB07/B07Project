@@ -3,7 +3,7 @@ package com.example.finalmerge.POStRequirementsQuiz.SpecialistMajorCSQuiz;
 public class SpecialistMajorCSQuestionAnswer {
 
     public static String[] question = {
-        "Do you have a GPA of at least 2.5 in CSCA67, CSCa48, MATA67, MATA22, MATA31, MATA37?",
+        "Do you have a GPA of at least 2.5 in CSCA67, CSCA48, MATA67, MATA22, MATA31, MATA37?",
             "Do you have a grade of at least B in CSCA48?",
             "Do you have a grade of at least C- in two of the following: CSCA67, MATA67, MATA22, MATA37?"
     };

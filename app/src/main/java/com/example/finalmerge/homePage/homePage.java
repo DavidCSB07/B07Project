@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.finalmerge.LoginPage.Login.LoginView;
+import com.example.finalmerge.POStRequirementsQuiz.Menu.POStMenu;
 import com.example.finalmerge.R;
 import com.example.finalmerge.homePage.AnnouncementUI.AnnouncementUI;
 import com.example.finalmerge.homePage.ComplaintUI.ComplaintUI;
@@ -69,6 +70,14 @@ public class homePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), EventUI.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        POSt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), POStMenu.class);
                 startActivity(intent);
                 finish();
             }
