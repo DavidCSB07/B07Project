@@ -15,6 +15,15 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31">
         <activity
+            android:name=".POStRequirementsQuiz.MinorQuiz.MinorQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.Menu.POStMenu"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.SpecialistMajorCSQuiz.SpecialistMajorQuiz"
+            android:exported="true" />
+        <activity
             android:name=".LoginPage.AdminRegister.AdminRegisterView"
             android:exported="false" />
         <activity
@@ -26,9 +35,7 @@
         <activity
             android:name=".Feedback.PostFeedback"
             android:exported="false" />
-        <activity
-            android:name=".LoginPage.AdminRegister"
-            android:exported="false" />
+
         <activity
             android:name=".LoginPage.Login.LoginView"
             android:exported="true" >

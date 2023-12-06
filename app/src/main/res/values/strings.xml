@@ -50,4 +50,38 @@
     <string name="post">Post</string>
     <string name="student_home_page_ui">Student Home Page UI</string>
     <string name="admin_home_page_ui">Admin home Page UI</string>
+
+    <string name="totalQuestions">
+        Total Questions:
+    </string>
+    <string name="textQuestionPlaceholder">
+        textQuestionPlaceholder
+    </string>
+    <string name="answer_a">
+        Yes
+    </string>
+    <string name="answer_b">
+        No
+    </string>
+    <string name="submit">
+        Submit
+    </string>
+    <string name="buttonSpecMajorCSText">
+        Specialist/Major Program for CS Category
+    </string>
+    <string name="buttonSpecMajorMathStatsText">
+        Specialist/Major Program for Math/Stats Category
+    </string>
+    <string name="buttonSpecMajorOutsideCMSText">
+        Specialist/Major Program Outside CMS
+    </string>
+    <string name="buttonMinorText">
+        Minor Program
+    </string>
+    <string name="textSelectProgram">
+        Select the Program for which to complete the POSt Requirements Checker
+    </string>
+    <string name="buttonHomeText">
+        Home
+    </string>
 </resources>
