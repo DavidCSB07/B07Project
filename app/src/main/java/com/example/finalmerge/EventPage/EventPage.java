@@ -60,8 +60,6 @@ public class EventPage extends AppCompatActivity {
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(eventAdapter);
 
-
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -77,6 +75,10 @@ public class EventPage extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
 
     }

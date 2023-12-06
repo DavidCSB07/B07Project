@@ -3,50 +3,78 @@ package com.example.finalmerge.EventPage.Model;
 public class Event {
 
 
-    private String postKey;
-    private String title;
-    private String description;
-    private String userId;
-    private Object date;
-    private Object timeStamp;
+    String postKey;
+    String title;
+    String description;
+    String refKey;
+    String dateEvent;
+    int participants;
 
-    public Event(String title, String description) {
+    public Event( String title, String description, String date, int participants) {
+        //this.postKey = postKey;
         this.title = title;
         this.description = description;
+        //this.refKey = refKey;
+        this.dateEvent = date;
+        this.participants = participants;
     }
 
     public Event() {
-
-    }
-
-    public void setPostKey(String postKey) {
-        this.postKey = postKey;
     }
 
     public String getPostKey() {
         return postKey;
     }
 
-
+    public void setPostKey(String postKey) {
+        this.postKey = postKey;
+    }
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getUserId() {
-        return userId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Object getDate() {
-        return date;
+    public String getRefKey() {
+        return refKey;
     }
 
-    public Object getTimeStamp() {
-        return timeStamp;
+    public void setRefKey(String refKey) {
+        this.refKey = refKey;
     }
 
+    public String getDate() {
+        return dateEvent;
+    }
+
+    public void setDate(String date) {
+        this.dateEvent = date;
+    }
+
+    public int getParticipants() {
+        return participants;
+    }
+
+    public void setParticipants(int participants) {
+        this.participants = participants;
+    }
+
+    public String getDateEvent() {
+        return dateEvent;
+    }
+
+    public void setDateEvent(String dateEvent) {
+        this.dateEvent = dateEvent;
+    }
 }
