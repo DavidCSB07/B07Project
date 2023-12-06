@@ -54,14 +54,14 @@ Kehu:
 Summary: 
 --> Reassigning work to every group member
   --> Login Page done: frontEnd done, Jess, backEnd done, David, FireBase done 
-  --> homePage inProgress: frontEnd done, David, backEnd done(waiting for refactor) David,
-  --> Admin.complaints inProgress: noProgress
-  --> Student.complaints inProgress: frontEnd done, Hillary, backEnd inProgress, Hillary
-  --> Admin.annoucement inProgress: frontEnd done, Lynn, backEnd Lynn, FireBase fixed Lynn
-  --> Student.annoucement inProgress: frontEnd fixing, Jess, backEnd (listview) fixing, Jess, frontEnd/backEnd (recyclerview) done, Lynn
-  --> Admin.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
-  --> Student.eventPage inProgress: frontEnd done, David, backEnd done, David, FireBase done
-  --> POSt page inProgress: no progress
+  --> homePage done: frontEnd done, David, backEnd done(waiting for refactor) David,
+  --> Admin.complaints done: noProgress
+  --> Student.complaints done: frontEnd done, Hillary, backEnd inProgress, Hillary
+  --> Admin.annoucement done: frontEnd done, Lynn, backEnd Lynn, FireBase fixed Lynn
+  --> Student.annoucement done: frontEnd fixing, Jess, backEnd (listview) fixing, Jess, frontEnd/backEnd (recyclerview) done, Lynn
+  --> Admin.eventPage done: frontEnd done, David, backEnd done, David, FireBase done
+  --> Student.eventPage done: frontEnd done, David, backEnd done, David, FireBase done
+  --> POSt page inProgress: done
 
 
 DeadLine:
