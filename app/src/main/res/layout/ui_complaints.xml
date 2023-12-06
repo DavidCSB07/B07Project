@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".homePage.ComplaintUI.ComplaintUI"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:layout_margin="40dp"
+
+
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        app:cardElevation="8dp"
+        android:layout_margin="15dp">
+        <TextView
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complaints UI">
+
+        </TextView>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/ViewComplaints"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="View Complaints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="369dp" />
+    <Button
+        android:id="@+id/PostComplaints"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Post Complaints"
+        tools:layout_editor_absoluteX="141dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+    <Button
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Home"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="655dp" />
+</LinearLayout>

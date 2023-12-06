@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "FinalMerge"
 include(":app")
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")

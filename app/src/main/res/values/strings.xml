@@ -65,4 +65,47 @@
     <string name="btn_submit">Submit</string>
     <string name="check_CMS_status_holder">check_CMS_category holder</string>
     <string name="check_CMS_status">Are you a student under \n the CMS categoty?</string>
+
+    <string name="schedule_event">Schedule Event</string>
+    <string name="Title">title</string>
+    <string name="Date">date</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="participation">participation</string>
+    <string name="number_of_participant">Number of Participant</string>
+    <string name="button">Button</string>
+    <string name="home">Home</string>
+
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="click_to_register">click_to_register</string>
+    <string name="click_to_register_as_admin">Click to register as admin</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Click to Login</string>
+    <string name="hello_world">Hello World</string>
+    <string name="logout">Logout</string>
+    <string name="home_page_ui">Home Page UI</string>
+    <string name="schedule">Schedule</string>
+
+    <string name="buttonViewFeedback">View Student Complaints</string>
+    <string name="subject">Subject:</string>
+    <string name="complaint">Complaint:</string>
+    <string name="email">Email:</string>
+    <string name="sectionTitle">Student Complaints</string>
+
+    <string name="editEmail">Email</string>
+    <string name="editSubject">Subject</string>
+    <string name="formTitle">Complaints Submission</string>
+    <string name="editComplaint">Complaint</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="buttonSubmitComplaint">SUBMIT</string>
+    <string name="buttonSubmitFeedback">Submit Feedback</string>
+
+    <string name="announcements">Post Announcements</string>
+    <string name="ann_subject">Enter announcement subject</string>
+    <string name="ann_description">Enter announcement description</string>
+    <string name="post">Post</string>
+    <string name="student_home_page_ui">Student Home Page UI</string>
+    <string name="admin_home_page_ui">Admin home Page UI</string>
 </resources>
