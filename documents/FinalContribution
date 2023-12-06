@@ -20,8 +20,11 @@ AnnouncementPage:
     --> Authors: Lynn
     --> Assistance: David, Lynn
   --> PostAnnoucement
+    --> Authors: Lynn, Jess
+    --> Assistance: Lynn
+  --> DetailAnnoucement
     --> Authors: Lynn
-    --> Assistance: Lynn, Jess
+    --> Assistance: Lynn, David
 
 ComplaintPage:
   --> AnnouncementPage 
@@ -30,6 +33,9 @@ ComplaintPage:
   --> PostAnnoucement
     --> Authors: Hillary
     --> Assistance: Hillary
+  --> DetailComplaint
+    --> Authors: Lynn
+    --> Assistance: Lynn, Hillary
 
 EventPage: 
   --> EventPage 
@@ -69,7 +75,7 @@ Refactoring Login Module and JUnit Testing:
 
 POSt: 
     --> Authors: Hillary, Jess, Kehu
-    --> Assistance: Hillary, Jess, Kehu 
+    --> Assistance: Hillary, Jess, Kehu, Lynn
   
   
   
