@@ -9,6 +9,10 @@
 Users can choose whether they would like to register or login depending on their user type (student or admin).
     Users must provide an email and password or else they cannot register/login and a toast message will be shown warning the user.
     If passwords are not more than six characters long, a toast message will appear to alert the user.
+    Users also cannot create accounts with the same email.
+    
+    Testing account email: admin@admin.com
+    Testing account password: 123456
 
 #### 2. Program of Study (POSt) Requirements Checker
 
