@@ -52,8 +52,8 @@ public class ComplaintUI extends AppCompatActivity {
                 int userType = snapshot.getValue(Integer.class);
                 if(userType == 0){
                     //student
-                    viewComplaint.setVisibility(View.VISIBLE);
-                    postComplaint.setVisibility(View.GONE);
+                    viewComplaint.setVisibility(View.GONE);
+                    postComplaint.setVisibility(View.VISIBLE);
                 }
                 if(userType == 1){
                     //admin
