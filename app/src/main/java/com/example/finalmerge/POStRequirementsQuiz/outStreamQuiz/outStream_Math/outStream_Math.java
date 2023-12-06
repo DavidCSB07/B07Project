@@ -77,7 +77,7 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
             return;
-        }else if(clickedButton.getId()==R.id.home_btn_btn){
+        }else if(clickedButton.getId()==R.id.home_btn){
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_home();
             return;
