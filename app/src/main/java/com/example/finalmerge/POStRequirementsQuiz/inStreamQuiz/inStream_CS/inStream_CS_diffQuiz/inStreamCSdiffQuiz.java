@@ -15,7 +15,7 @@ import com.example.finalmerge.POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz.inStream_Differentiation;
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_SpecMajor.inStreamCSspecMajorQuiz;
 import com.example.finalmerge.POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_minor.inStreamCSminorQuiz;
-import com.example.finalmerge.POStRequirementsQuiz.referenceHillJess.outStreamSpecMajorQuiz.inStreamSpecMajorMath_Quiz.SpecialistMajorCMS_instream_QuestionAnswer;
+
 import com.example.finalmerge.R;
 public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClickListener{
     TextView totalQuestionsTextView;
@@ -24,7 +24,7 @@ public class inStreamCSdiffQuiz extends AppCompatActivity implements View.OnClic
     Button submitBtn;
     Button back_btn;
 
-    int totalQuestion = SpecialistMajorCMS_instream_QuestionAnswer.question.length;
+    int totalQuestion = inStreamCSdiffQuiz_QuestionAnswer.question.length;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
 
