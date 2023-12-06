@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalMerge"
+        android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31" >
         <activity
             android:name=".LoginPage.AdminRegister.AdminRegisterView"
@@ -22,10 +22,12 @@
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".POStRequirementsQuiz.GeneralQuiz.Menu.POStMenu_ver2"
+            android:exported="true" />
         <activity
             android:name=".LoginPage.StudentRegister.StudentRegisterView"
             android:exported="false" />
@@ -66,10 +68,54 @@
             android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
             android:name=".ComplaintsPage.PostComplaint"
+            android:exported="true" >
+        </activity>
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_diffQuiz.inStreamCSdiffQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStreamDiffQuiz.inStream_Differentiation"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_minor.inStreamCSminorQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStream_CS.inStream_CS_SpecMajor.inStreamCSspecMajorQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStream_Math.inStream_Math"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.inStreamQuiz.inStream_Stats.inStream_Stats"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStreamDiffQuiz.outStream_Differentiation"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_diffQuiz.outStreamCSdiffQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_minor.outStreamCSminorQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStream_CS.outStream_CS_SpecMajor.outStreamCSspecMajorQuiz"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStream_Math.outStream_Math"
+            android:exported="true" />
+        <activity
+            android:name=".POStRequirementsQuiz.outStreamQuiz.outStream_Stats.outStream_Stats"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 
