@@ -52,10 +52,7 @@ public class ComplaintPage extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         complaintList = new ArrayList<>();
-        //testing
-        complaintList.add(new Complaint("email", "subject", "descriptiondshaldhjklahfjkldahfdjlkahfjdklahfjdlkahfjdklahfjldkahfdjlkahfldshajfdsalkfhdasjfldhajklfhdajlkfhdjlafhdjlksahfjdlkahfjlkahfjdlkahfjlkdhaflkjdhajlkhfdjklsaf"));
-        complaintList.add(new Complaint("email2", "subject2", "description2"));
-        complaintList.add(new Complaint("email3", "subject3", "description3"));
+
 
         complaintAdapter = new ComplaintAdapter(this, complaintList);
         recyclerView.setAdapter(complaintAdapter);

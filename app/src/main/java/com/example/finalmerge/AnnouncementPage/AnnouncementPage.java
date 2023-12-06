@@ -56,11 +56,6 @@ public class AnnouncementPage extends AppCompatActivity {
         layoutManager.setStackFromEnd(true);
 
         announcementList = new ArrayList<>();
-
-        announcementList.add(new Announcements("subject", "description", "Thursday, November 30, 2023"));
-        announcementList.add(new Announcements("subject2",
-                "This is a longer description that exceeds 25 characters!!!!", "Thursday, November 30, 2023"));
-
         adapter = new AnnAdapter(this, announcementList);
         recyclerView.setAdapter(adapter);
 
