@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="15dp"
-    tools:context=".LoginPage.Login">
+    tools:context=".LoginPage.Login.LoginView">
 
     <TextView
         android:layout_width="match_parent"
@@ -52,6 +52,7 @@
 </ProgressBar>
     <Button
         android:id="@+id/login_button"
+        android:onClick="onLoginClick"
 
         android:text="@string/login"
         android:layout_width="wrap_content"
@@ -59,17 +60,19 @@
     </Button>
     <TextView
         android:id="@+id/StudentRegister"
+        android:onClick="onStudentRegisterClick"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:text="Click to register"
+        android:textSize="20sp"
+        android:text="@string/click_to_register"
         >
     </TextView>
     <TextView
         android:id="@+id/AdminRegister"
+        android:onClick="onAdminRegisterClick"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,3 +85,4 @@
 
     </TextView>
 </LinearLayout>
+

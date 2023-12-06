@@ -15,10 +15,10 @@
         android:theme="@style/Theme.FinalMerge"
         tools:targetApi="31" >
         <activity
-            android:name=".LoginPage.AdminRegister"
+            android:name=".LoginPage.AdminRegister.AdminRegisterView"
             android:exported="false" />
         <activity
-            android:name=".LoginPage.Login"
+            android:name=".LoginPage.Login.LoginView"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginPage.StudentRegister"
+            android:name=".LoginPage.StudentRegister.StudentRegisterView"
             android:exported="false" />
         <activity
             android:name=".homePage.homePage"
