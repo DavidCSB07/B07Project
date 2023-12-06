@@ -44,7 +44,7 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
         ans_B.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
         back_btn.setOnClickListener(this);
-        home_btn.setOnClick
+        home_btn.setOnClickListener(this);
         questionTextView.setText(outStream_Math_QuestionAnswer.question[0]);
         totalQuestionsTextView.setText("OutStream > Math");
 
@@ -76,6 +76,10 @@ public class outStream_Math extends AppCompatActivity implements View.OnClickLis
         }else if(clickedButton.getId()==R.id.back_btn){
             System.out.println("Back BUTTON DETECTED!");
             finishQuiz_back();
+            return;
+        }else if(clickedButton.getId()==R.id.home_btn_btn){
+            System.out.println("Back BUTTON DETECTED!");
+            finishQuiz_home();
             return;
         }else{
             //if user hits choices
